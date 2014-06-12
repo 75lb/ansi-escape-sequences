@@ -2,7 +2,7 @@
   "name": "ansi-escape-sequences",
   "author": "Lloyd Brookes <75pound@gmail.com>",
   "version": "0.0.0",
-  "description": "A library of all known ansi escape sequences, not only the colours.",
+  "description": "A library of all known ansi escape sequences",
   "repository": "https://github.com/75lb/ansi-escape-sequences.git",
   "main": "./lib/ansi-escape-sequences.js",
   "bin": {
