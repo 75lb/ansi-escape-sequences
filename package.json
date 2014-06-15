@@ -16,5 +16,8 @@
     "test": "tape test/*.js",
     "lint": "jshint lib/*.js bin/*.js test/*.js; echo",
     "docs": "jsdoc2md -t jsdoc2md/README.hbs lib/*.js > README.md; echo"
+  },
+  "dependencies": {
+    "array-tools": "^1.0.6"
   }
 }
