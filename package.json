@@ -1,7 +1,7 @@
 {
   "name": "ansi-escape-sequences",
   "author": "Lloyd Brookes <75pound@gmail.com>",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A library of all known ansi escape sequences",
   "repository": "https://github.com/75lb/ansi-escape-sequences.git",
   "main": "./lib/ansi-escape-sequences.js",
