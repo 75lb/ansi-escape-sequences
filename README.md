@@ -11,36 +11,36 @@ A simple library containing all the known [ansi escape codes and sequences](http
 
   
 **Symbols**  
-  * [ansi-escape-sequences.reset](#module_ansi-escape-sequences.reset)
-  * [ansi-escape-sequences.bold](#module_ansi-escape-sequences.bold)
-  * [ansi-escape-sequences.cursorUp(lines)](#module_ansi-escape-sequences.cursorUp)
-  * [ansi-escape-sequences.cursorDown(lines)](#module_ansi-escape-sequences.cursorDown)
-  * [ansi-escape-sequences.format(str, effectArray)](#module_ansi-escape-sequences.format)
+  * [ansi.reset](#module_ansi-escape-sequences.reset)
+  * [ansi.bold](#module_ansi-escape-sequences.bold)
+  * [ansi.cursorUp(lines)](#module_ansi-escape-sequences.cursorUp)
+  * [ansi.cursorDown(lines)](#module_ansi-escape-sequences.cursorDown)
+  * [ansi.format(str, effectArray)](#module_ansi-escape-sequences.format)
 
 <a name="module_ansi-escape-sequences.reset"></a>
-###ansi-escape-sequences.reset
+###ansi.reset
 remove all sgr effects
 
 **Type**: `string`  
 <a name="module_ansi-escape-sequences.bold"></a>
-###ansi-escape-sequences.bold
+###ansi.bold
 Bold or increased intensity
 
 **Type**: `string`  
 <a name="module_ansi-escape-sequences.cursorUp"></a>
-###ansi-escape-sequences.cursorUp(lines)
+###ansi.cursorUp(lines)
 **Params**
 
 - lines `number` - the number of lines to move up
 
 <a name="module_ansi-escape-sequences.cursorDown"></a>
-###ansi-escape-sequences.cursorDown(lines)
+###ansi.cursorDown(lines)
 **Params**
 
 - lines `number` - the number of lines to move down
 
 <a name="module_ansi-escape-sequences.format"></a>
-###ansi-escape-sequences.format(str, effectArray)
+###ansi.format(str, effectArray)
 **Params**
 
 - str `string` - the string to format

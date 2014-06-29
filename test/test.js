@@ -1,6 +1,7 @@
 var test = require("tape");
-var lib = require("../");
+var ansi = require("../");
 
-test("first", function(t){
-    
+test("format", function(t){
+    t.equal(ansi.format("clive", ["red", "underline"]), "\u001b[31;4mclive\u001b[0m");
+    t.end();
 });

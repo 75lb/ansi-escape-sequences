@@ -21,6 +21,7 @@
     "array-tools": "^1.0.6"
   },
   "devDependencies": {
-    "jsdoc-to-markdown": "^0.2.14"
+    "jsdoc-to-markdown": "^0.2.14",
+    "tape": "^2.13.3"
   }
 }
