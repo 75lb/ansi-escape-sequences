@@ -11,6 +11,10 @@
 A simple library containing all the known [ansi escape codes and sequences](http://en.wikipedia.org/wiki/ANSI_escape_code).
 
   
+**Example**  
+```js
+var ansi = require("ansi-escape-sequences");
+```
 **Symbols**  
   * [ansi.cursorUp()](#module_ansi-escape-sequences.cursorUp)
   * [ansi.cursorDown()](#module_ansi-escape-sequences.cursorDown)
