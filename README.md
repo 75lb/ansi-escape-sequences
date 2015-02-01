@@ -12,6 +12,7 @@ A simple library containing all the known [ansi escape codes and sequences](http
 **Example**  
 ```js
 var ansi = require("ansi-escape-sequences");
+```
 
 * [ansi-escape-sequences](#module_ansi-escape-sequences)
   * [enum: .sgr](#module_ansi-escape-sequences.sgr) → <code>string</code>
