@@ -5,32 +5,70 @@
 
 ***work in progress, draft documentation***
 
-#ansi-escape-sequences
 <a name="module_ansi-escape-sequences"></a>
-
+##ansi-escape-sequences
 A simple library containing all the known [ansi escape codes and sequences](http://en.wikipedia.org/wiki/ANSI_escape_code).
 
-  
 **Example**  
 ```js
 var ansi = require("ansi-escape-sequences");
-```
-**Symbols**  
-  * [ansi.cursorUp()](#module_ansi-escape-sequences.cursorUp)
-  * [ansi.cursorDown()](#module_ansi-escape-sequences.cursorDown)
-  * [ansi.format(str, effectArray)](#module_ansi-escape-sequences.format)
-  * [ansi.reset](#module_ansi-escape-sequences.reset)
-  * [ansi.bold](#module_ansi-escape-sequences.bold)
-  * [ansi.italic](#module_ansi-escape-sequences.italic)
-  * [ansi.underline](#module_ansi-escape-sequences.underline)
-  * [ansi.imageNegative](#module_ansi-escape-sequences.imageNegative)
-  * [ansi.fontDefault](#module_ansi-escape-sequences.fontDefault)
-  * [ansi.font2](#module_ansi-escape-sequences.font2)
-  * [ansi.font3](#module_ansi-escape-sequences.font3)
-  * [ansi.font4](#module_ansi-escape-sequences.font4)
-  * [ansi.font5](#module_ansi-escape-sequences.font5)
-  * [ansi.font6](#module_ansi-escape-sequences.font6)
 
+* [ansi-escape-sequences](#module_ansi-escape-sequences)
+  * [enum: .sgr](#module_ansi-escape-sequences.sgr) → <code>string</code>
+  * [.sgrSequence(effectArray)](#module_ansi-escape-sequences.sgrSequence) ⇒ <code>string</code>
+  * [.cursorUp()](#module_ansi-escape-sequences.cursorUp)
+  * [.cursorDown()](#module_ansi-escape-sequences.cursorDown)
+  * [.format(str, effectArray)](#module_ansi-escape-sequences.format) ⇒ <code>string</code>
+
+<a name="module_ansi-escape-sequences.sgr"></a>
+###enum: ansi.sgr → <code>string</code>
+Select Graphic Rendition codes
+
+**Read only**: true  
+**Properties**
+
+| Name | Type | Default |
+| --- | --- | --- |
+| reset | <code>string</code> | `[0m` | 
+| bold | <code>string</code> | `[1m` | 
+| italic | <code>string</code> | `[3m` | 
+| underline | <code>string</code> | `[4m` | 
+| fontDefault | <code>string</code> | `[10m` | 
+| font2 | <code>string</code> | `[11m` | 
+| font3 | <code>string</code> | `[12m` | 
+| font4 | <code>string</code> | `[13m` | 
+| font5 | <code>string</code> | `[14m` | 
+| font6 | <code>string</code> | `[15m` | 
+| imageNegative | <code>string</code> | `[7m` | 
+| imagePositive | <code>string</code> | `[27m` | 
+| black | <code>string</code> | `[30m` | 
+| red | <code>string</code> | `[31m` | 
+| green | <code>string</code> | `[32m` | 
+| yellow | <code>string</code> | `[33m` | 
+| blue | <code>string</code> | `[34m` | 
+| magenta | <code>string</code> | `[35m` | 
+| cyan | <code>string</code> | `[36m` | 
+| white | <code>string</code> | `[37m` | 
+
+**Example**  
+```js
+console.log(ansi.sgr.red + "this is red" + ansi.sgr.reset);
+```
+<a name="module_ansi-escape-sequences.sgrSequence"></a>
+###ansi.sgrSequence(effectArray) ⇒ <code>string</code>
+Returns an a sequence setting one or more effects
+
+| Param | Type | Description |
+| --- | --- | --- |
+| effectArray | <code>string</code> \| <code>Array.&lt;string&gt;</code> | a sgr effect, or list of effects |
+
+**Example**  
+```js
+> ansi.sgrSequence("green")
+'\u001b[32m'
+> ansi.sgrSequence([ "green", "underline" ])
+'\u001b[32;4m'
+```
 <a name="module_ansi-escape-sequences.cursorUp"></a>
 ###ansi.cursorUp()
 Moves the cursor `lines` (default 1) cells up. If the cursor is already at the edge of the screen, this has no effect
@@ -40,47 +78,19 @@ Moves the cursor `lines` (default 1) cells up. If the cursor is already at the e
 Moves the cursor `lines` (default 1) cells down. If the cursor is already at the edge of the screen, this has no effect
 
 <a name="module_ansi-escape-sequences.format"></a>
-###ansi.format(str, effectArray)
-**Params**
+###ansi.format(str, effectArray) ⇒ <code>string</code>
+Formats the input string with the specified sgr effects
 
-- str `string` - the string to format
-- effectArray `Array.<string>` - a list of sgr effects to add
+| Param | Type | Description |
+| --- | --- | --- |
+| str | <code>string</code> | the string to format |
+| effectArray | <code>Array.&lt;string&gt;</code> | a list of sgr effects to add |
 
-**Returns**: `string`  
-<a name="module_ansi-escape-sequences.reset"></a>
-###ansi.reset
-remove all sgr effects
+**Example**  
+```js
+> ansi.format("what?", "green")
+'\u001b[32mwhat?\u001b[0m'
+> ansi.format("what?", ["green", "bold"])
+'\u001b[32;1mwhat?\u001b[0m'
+```
 
-**Type**: `string`  
-<a name="module_ansi-escape-sequences.bold"></a>
-###ansi.bold
-Bold or increased intensity
-
-**Type**: `string`  
-<a name="module_ansi-escape-sequences.italic"></a>
-###ansi.italic
-**Type**: `string`  
-<a name="module_ansi-escape-sequences.underline"></a>
-###ansi.underline
-**Type**: `string`  
-<a name="module_ansi-escape-sequences.imageNegative"></a>
-###ansi.imageNegative
-**Type**: `string`  
-<a name="module_ansi-escape-sequences.fontDefault"></a>
-###ansi.fontDefault
-**Type**: `string`  
-<a name="module_ansi-escape-sequences.font2"></a>
-###ansi.font2
-**Type**: `string`  
-<a name="module_ansi-escape-sequences.font3"></a>
-###ansi.font3
-**Type**: `string`  
-<a name="module_ansi-escape-sequences.font4"></a>
-###ansi.font4
-**Type**: `string`  
-<a name="module_ansi-escape-sequences.font5"></a>
-###ansi.font5
-**Type**: `string`  
-<a name="module_ansi-escape-sequences.font6"></a>
-###ansi.font6
-**Type**: `string`  
