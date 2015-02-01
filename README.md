@@ -78,9 +78,9 @@ Returns an a sequence setting one or more effects
 **Example**  
 ```js
 > ansi.sgrSequence("green")
-    '\u001b[32m'
-    > ansi.sgrSequence([ "green", "underline" ])
-    '\u001b[32;4m'
+'\u001b[32m'
+> ansi.sgrSequence([ "green", "underline" ])
+'\u001b[32;4m'
 ```
 <a name="module_ansi-escape-sequences.sgr.format"></a>
 ### sgr.format() ⇒ <code>string</code>
@@ -94,9 +94,9 @@ A convenience function, formatting the input string with the specified sgr effec
 **Example**  
 ```js
 > ansi.sgr.format("what?", "green")
-    '\u001b[32mwhat?\u001b[0m'
-    > ansi.sgr.format("what?", ["green", "bold"])
-    '\u001b[32;1mwhat?\u001b[0m'
+'\u001b[32mwhat?\u001b[0m'
+> ansi.sgr.format("what?", ["green", "bold"])
+'\u001b[32;1mwhat?\u001b[0m'
 ```
 <a name="module_ansi-escape-sequences.cursor"></a>
 ## ansi.cursor
