@@ -1,7 +1,7 @@
 {
   "name": "ansi-escape-sequences",
   "author": "Lloyd Brookes <75pound@gmail.com>",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "description": "A simple library containing all known terminal ansi escape codes and sequences. Useful for adding colour to your command-line output or building a dynamic text user interface.",
   "repository": "https://github.com/75lb/ansi-escape-sequences.git",
   "main": "./lib/ansi-escape-sequences.js",
@@ -9,7 +9,14 @@
     "ansi": "bin/cli.js"
   },
   "license": "MIT",
-  "keywords": [ "ansi", "terminal", "colour", "color", "command line", "cursor" ],
+  "keywords": [
+    "ansi",
+    "terminal",
+    "colour",
+    "color",
+    "command line",
+    "cursor"
+  ],
   "engines": {
     "node": ">=0.10.0"
   },
