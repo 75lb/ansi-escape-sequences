@@ -13,7 +13,8 @@ var ansi = require("ansi-escape-sequences");
 ```
 
 * [ansi-escape-sequences](#module_ansi-escape-sequences)
-  * [enum: .sgr](#module_ansi-escape-sequences.sgr) → <code>string</code>
+  * [.sgr](#module_ansi-escape-sequences.sgr)
+    * [.sequence()](#module_ansi-escape-sequences.sgr.sequence) ⇒ <code>string</code>
   * [.cursor](#module_ansi-escape-sequences.cursor)
     * [.up([lines])](#module_ansi-escape-sequences.cursor.up) ⇒ <code>string</code>
     * [.down([lines])](#module_ansi-escape-sequences.cursor.down) ⇒ <code>string</code>
@@ -30,38 +31,44 @@ var ansi = require("ansi-escape-sequences");
   * [.format(str, effectArray)](#module_ansi-escape-sequences.format) ⇒ <code>string</code>
 
 <a name="module_ansi-escape-sequences.sgr"></a>
-## enum: ansi.sgr → <code>string</code>
+## ansi.sgr
 Select Graphic Rendition codes
 
-**Read only**: true  
 **Properties**
 
-| Name | Type | Default |
-| --- | --- | --- |
-| reset | <code>string</code> | `[0m` | 
-| bold | <code>string</code> | `[1m` | 
-| italic | <code>string</code> | `[3m` | 
-| underline | <code>string</code> | `[4m` | 
-| fontDefault | <code>string</code> | `[10m` | 
-| font2 | <code>string</code> | `[11m` | 
-| font3 | <code>string</code> | `[12m` | 
-| font4 | <code>string</code> | `[13m` | 
-| font5 | <code>string</code> | `[14m` | 
-| font6 | <code>string</code> | `[15m` | 
-| imageNegative | <code>string</code> | `[7m` | 
-| imagePositive | <code>string</code> | `[27m` | 
-| black | <code>string</code> | `[30m` | 
-| red | <code>string</code> | `[31m` | 
-| green | <code>string</code> | `[32m` | 
-| yellow | <code>string</code> | `[33m` | 
-| blue | <code>string</code> | `[34m` | 
-| magenta | <code>string</code> | `[35m` | 
-| cyan | <code>string</code> | `[36m` | 
-| white | <code>string</code> | `[37m` | 
+| Name | Type |
+| --- | --- |
+| reset | <code>string</code> | 
+| bold | <code>string</code> | 
+| italic | <code>string</code> | 
+| underline | <code>string</code> | 
+| fontDefault | <code>string</code> | 
+| font2 | <code>string</code> | 
+| font3 | <code>string</code> | 
+| font4 | <code>string</code> | 
+| font5 | <code>string</code> | 
+| font6 | <code>string</code> | 
+| imageNegative | <code>string</code> | 
+| imagePositive | <code>string</code> | 
 
 **Example**  
 ```js
 console.log(ansi.sgr.red + "this is red" + ansi.sgr.reset);
+```
+<a name="module_ansi-escape-sequences.sgr.sequence"></a>
+### sgr.sequence() ⇒ <code>string</code>
+Returns an a sequence setting one or more effects
+
+| Type | Description |
+| --- | --- |
+| <code>string</code> \| <code>Array.&lt;string&gt;</code> | a sgr effect, or list of effects |
+
+**Example**  
+```js
+> ansi.sgrSequence("green")
+    '\u001b[32m'
+    > ansi.sgrSequence([ "green", "underline" ])
+    '\u001b[32;4m'
 ```
 <a name="module_ansi-escape-sequences.cursor"></a>
 ## ansi.cursor
@@ -185,7 +192,7 @@ Returns an a sequence setting one or more effects
 ```
 <a name="module_ansi-escape-sequences.format"></a>
 ## ansi.format(str, effectArray) ⇒ <code>string</code>
-Formats the input string with the specified sgr effects
+A convenience function, formatting the input string with the specified sgr effects.
 
 | Param | Type | Description |
 | --- | --- | --- |

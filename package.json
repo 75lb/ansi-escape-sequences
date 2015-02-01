@@ -8,6 +8,7 @@
   "bin": {
     "ansi": "bin/cli.js"
   },
+  "license": "MIT",
   "keywords": [ "ansi", "terminal", "colour", "color", "command line", "cursor" ],
   "engines": {
     "node": ">=0.10.0"
