@@ -6,7 +6,7 @@
 ***work in progress, draft documentation***
 
 <a name="module_ansi-escape-sequences"></a>
-##ansi-escape-sequences
+## ansi-escape-sequences
 A simple library containing all the known [ansi escape codes and sequences](http://en.wikipedia.org/wiki/ANSI_escape_code).
 
 **Example**  
@@ -22,7 +22,7 @@ var ansi = require("ansi-escape-sequences");
   * [.format(str, effectArray)](#module_ansi-escape-sequences.format) ⇒ <code>string</code>
 
 <a name="module_ansi-escape-sequences.sgr"></a>
-###enum: ansi.sgr → <code>string</code>
+### enum: ansi.sgr → <code>string</code>
 Select Graphic Rendition codes
 
 **Read only**: true  
@@ -56,7 +56,7 @@ Select Graphic Rendition codes
 console.log(ansi.sgr.red + "this is red" + ansi.sgr.reset);
 ```
 <a name="module_ansi-escape-sequences.sgrSequence"></a>
-###ansi.sgrSequence(effectArray) ⇒ <code>string</code>
+### ansi.sgrSequence(effectArray) ⇒ <code>string</code>
 Returns an a sequence setting one or more effects
 
 | Param | Type | Description |
@@ -71,15 +71,15 @@ Returns an a sequence setting one or more effects
 '\u001b[32;4m'
 ```
 <a name="module_ansi-escape-sequences.cursorUp"></a>
-###ansi.cursorUp()
+### ansi.cursorUp()
 Moves the cursor `lines` (default 1) cells up. If the cursor is already at the edge of the screen, this has no effect
 
 <a name="module_ansi-escape-sequences.cursorDown"></a>
-###ansi.cursorDown()
+### ansi.cursorDown()
 Moves the cursor `lines` (default 1) cells down. If the cursor is already at the edge of the screen, this has no effect
 
 <a name="module_ansi-escape-sequences.format"></a>
-###ansi.format(str, effectArray) ⇒ <code>string</code>
+### ansi.format(str, effectArray) ⇒ <code>string</code>
 Formats the input string with the specified sgr effects
 
 | Param | Type | Description |
