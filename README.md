@@ -35,28 +35,56 @@ Select Graphic Rendition codes
 
 **Properties**
 
-| Name | Type |
-| --- | --- |
-| reset | <code>string</code> | 
-| bold | <code>string</code> | 
-| italic | <code>string</code> | 
-| underline | <code>string</code> | 
-| fontDefault | <code>string</code> | 
-| font2 | <code>string</code> | 
-| font3 | <code>string</code> | 
-| font4 | <code>string</code> | 
-| font5 | <code>string</code> | 
-| font6 | <code>string</code> | 
-| imageNegative | <code>string</code> | 
-| imagePositive | <code>string</code> | 
-| black | <code>string</code> | 
-| red | <code>string</code> | 
-| green | <code>string</code> | 
-| yellow | <code>string</code> | 
-| blue | <code>string</code> | 
-| magenta | <code>string</code> | 
-| cyan | <code>string</code> | 
-| white | <code>string</code> | 
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <td>reset</td><td><code>string</code></td>
+    </tr><tr>
+    <td>bold</td><td><code>string</code></td>
+    </tr><tr>
+    <td>italic</td><td><code>string</code></td>
+    </tr><tr>
+    <td>underline</td><td><code>string</code></td>
+    </tr><tr>
+    <td>fontDefault</td><td><code>string</code></td>
+    </tr><tr>
+    <td>font2</td><td><code>string</code></td>
+    </tr><tr>
+    <td>font3</td><td><code>string</code></td>
+    </tr><tr>
+    <td>font4</td><td><code>string</code></td>
+    </tr><tr>
+    <td>font5</td><td><code>string</code></td>
+    </tr><tr>
+    <td>font6</td><td><code>string</code></td>
+    </tr><tr>
+    <td>imageNegative</td><td><code>string</code></td>
+    </tr><tr>
+    <td>imagePositive</td><td><code>string</code></td>
+    </tr><tr>
+    <td>black</td><td><code>string</code></td>
+    </tr><tr>
+    <td>red</td><td><code>string</code></td>
+    </tr><tr>
+    <td>green</td><td><code>string</code></td>
+    </tr><tr>
+    <td>yellow</td><td><code>string</code></td>
+    </tr><tr>
+    <td>blue</td><td><code>string</code></td>
+    </tr><tr>
+    <td>magenta</td><td><code>string</code></td>
+    </tr><tr>
+    <td>cyan</td><td><code>string</code></td>
+    </tr><tr>
+    <td>white</td><td><code>string</code></td>
+    </tr>
+  </tbody>
+</table>
 
 **Example**  
 ```js
@@ -71,9 +99,18 @@ console.log(ansi.sgr.red + "this is red" + ansi.sgr.reset);
 ### sgr.sequence() ⇒ <code>string</code>
 Returns an a sequence setting one or more effects
 
-| Type | Description |
-| --- | --- |
-| <code>string</code> \| <code>Array.&lt;string&gt;</code> | a sgr effect, or list of effects |
+<table>
+  <thead>
+    <tr>
+      <th>Type</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <td><code>string</code> | <code>Array.&lt;string&gt;</code></td><td>a sgr effect, or list of effects</td>
+    </tr>
+  </tbody>
+</table>
 
 **Example**  
 ```js
@@ -86,10 +123,20 @@ Returns an a sequence setting one or more effects
 ### sgr.format() ⇒ <code>string</code>
 A convenience function, formatting the input string with the specified sgr effects.
 
-| Type | Description |
-| --- | --- |
-| <code>string</code> | the string to format |
-| <code>Array.&lt;string&gt;</code> | a list of sgr effects to add |
+<table>
+  <thead>
+    <tr>
+      <th>Type</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <td><code>string</code></td><td>the string to format</td>
+    </tr><tr>
+    <td><code>Array.&lt;string&gt;</code></td><td>a list of sgr effects to add</td>
+    </tr>
+  </tbody>
+</table>
 
 **Example**  
 ```js
@@ -117,66 +164,139 @@ cursor-related sequences
 ### cursor.up([lines]) ⇒ <code>string</code>
 Moves the cursor `lines` cells up. If the cursor is already at the edge of the screen, this has no effect
 
-| Param | Type | Default |
-| --- | --- | --- |
-| [lines] | <code>number</code> | <code>1</code> | 
+<table>
+  <thead>
+    <tr>
+      <th>Param</th><th>Type</th><th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <td>[lines]</td><td><code>number</code></td><td><code>1</code></td>
+    </tr>
+  </tbody>
+</table>
 
 <a name="module_ansi-escape-sequences.cursor.down"></a>
 ### cursor.down([lines]) ⇒ <code>string</code>
 Moves the cursor `lines` cells down. If the cursor is already at the edge of the screen, this has no effect
 
-| Param | Type | Default |
-| --- | --- | --- |
-| [lines] | <code>number</code> | <code>1</code> | 
+<table>
+  <thead>
+    <tr>
+      <th>Param</th><th>Type</th><th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <td>[lines]</td><td><code>number</code></td><td><code>1</code></td>
+    </tr>
+  </tbody>
+</table>
 
 <a name="module_ansi-escape-sequences.cursor.forward"></a>
 ### cursor.forward([lines]) ⇒ <code>string</code>
 Moves the cursor `lines` cells forward. If the cursor is already at the edge of the screen, this has no effect
 
-| Param | Type | Default |
-| --- | --- | --- |
-| [lines] | <code>number</code> | <code>1</code> | 
+<table>
+  <thead>
+    <tr>
+      <th>Param</th><th>Type</th><th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <td>[lines]</td><td><code>number</code></td><td><code>1</code></td>
+    </tr>
+  </tbody>
+</table>
 
 <a name="module_ansi-escape-sequences.cursor.back"></a>
 ### cursor.back([lines]) ⇒ <code>string</code>
 Moves the cursor `lines` cells back. If the cursor is already at the edge of the screen, this has no effect
 
-| Param | Type | Default |
-| --- | --- | --- |
-| [lines] | <code>number</code> | <code>1</code> | 
+<table>
+  <thead>
+    <tr>
+      <th>Param</th><th>Type</th><th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <td>[lines]</td><td><code>number</code></td><td><code>1</code></td>
+    </tr>
+  </tbody>
+</table>
 
 <a name="module_ansi-escape-sequences.cursor.nextLine"></a>
 ### cursor.nextLine([lines]) ⇒ <code>string</code>
 Moves cursor to beginning of the line n lines down.
 
-| Param | Type | Default |
-| --- | --- | --- |
-| [lines] | <code>number</code> | <code>1</code> | 
+<table>
+  <thead>
+    <tr>
+      <th>Param</th><th>Type</th><th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <td>[lines]</td><td><code>number</code></td><td><code>1</code></td>
+    </tr>
+  </tbody>
+</table>
 
 <a name="module_ansi-escape-sequences.cursor.previousLine"></a>
 ### cursor.previousLine([lines]) ⇒ <code>string</code>
 Moves cursor to beginning of the line n lines up.
 
-| Param | Type | Default |
-| --- | --- | --- |
-| [lines] | <code>number</code> | <code>1</code> | 
+<table>
+  <thead>
+    <tr>
+      <th>Param</th><th>Type</th><th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <td>[lines]</td><td><code>number</code></td><td><code>1</code></td>
+    </tr>
+  </tbody>
+</table>
 
 <a name="module_ansi-escape-sequences.cursor.horizontalAbsolute"></a>
 ### cursor.horizontalAbsolute(n) ⇒ <code>string</code>
 Moves the cursor to column n.
 
-| Param | Type | Description |
-| --- | --- | --- |
-| n | <code>number</code> | column number |
+<table>
+  <thead>
+    <tr>
+      <th>Param</th><th>Type</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <td>n</td><td><code>number</code></td><td>column number</td>
+    </tr>
+  </tbody>
+</table>
 
 <a name="module_ansi-escape-sequences.cursor.position"></a>
 ### cursor.position(n, m) ⇒ <code>string</code>
 Moves the cursor to row n, column m. The values are 1-based, and default to 1 (top left corner) if omitted.
 
-| Param | Type | Description |
-| --- | --- | --- |
-| n | <code>number</code> | row number |
-| m | <code>number</code> | column number |
+<table>
+  <thead>
+    <tr>
+      <th>Param</th><th>Type</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <td>n</td><td><code>number</code></td><td>row number</td>
+    </tr><tr>
+    <td>m</td><td><code>number</code></td><td>column number</td>
+    </tr>
+  </tbody>
+</table>
 
 <a name="module_ansi-escape-sequences.erase"></a>
 ## ansi.erase
@@ -191,17 +311,35 @@ erase sequences
 ### erase.display(n) ⇒ <code>string</code>
 Clears part of the screen. If n is 0 (or missing), clear from cursor to end of screen. If n is 1, clear from cursor to beginning of the screen. If n is 2, clear entire screen.
 
-| Param | Type |
-| --- | --- |
-| n | <code>number</code> | 
+<table>
+  <thead>
+    <tr>
+      <th>Param</th><th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <td>n</td><td><code>number</code></td>
+    </tr>
+  </tbody>
+</table>
 
 <a name="module_ansi-escape-sequences.erase.inLine"></a>
 ### erase.inLine(n) ⇒ <code>string</code>
 Erases part of the line. If n is zero (or missing), clear from cursor to the end of the line. If n is one, clear from cursor to beginning of the line. If n is two, clear entire line. Cursor position does not change.
 
-| Param | Type |
-| --- | --- |
-| n | <code>number</code> | 
+<table>
+  <thead>
+    <tr>
+      <th>Param</th><th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <td>n</td><td><code>number</code></td>
+    </tr>
+  </tbody>
+</table>
 
 
 
