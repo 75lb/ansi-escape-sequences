@@ -23,13 +23,13 @@
   "scripts": {
     "test": "tape test/*.js",
     "lint": "jshint lib/*.js bin/*.js test/*.js; echo",
-    "docs": "jsdoc2md -d 1 -l js --no-gfm -t jsdoc2md/README.hbs lib/*.js > README.md; echo"
+    "docs": "jsdoc2md -d 1 --no-gfm -t jsdoc2md/README.hbs lib/*.js > README.md; echo"
   },
   "dependencies": {
     "array-tools": "^1.4.1"
   },
   "devDependencies": {
-    "jsdoc-to-markdown": "next",
-    "tape": "^3.5.0"
+    "jsdoc-to-markdown": "^1.0.1",
+    "tape": "^4.0.0"
   }
 }
