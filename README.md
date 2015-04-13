@@ -27,7 +27,7 @@ var ansi = require("ansi-escape-sequences");
     * [.display(n)](#module_ansi-escape-sequences.erase.display) ⇒ <code>string</code>
     * [.inLine(n)](#module_ansi-escape-sequences.erase.inLine) ⇒ <code>string</code>
   * [.styles(effectArray)](#module_ansi-escape-sequences.styles) ⇒ <code>string</code>
-  * [.format(str, effectArray)](#module_ansi-escape-sequences.format) ⇒ <code>string</code>
+  * [.format(str, styleArray)](#module_ansi-escape-sequences.format) ⇒ <code>string</code>
 
 <a name="module_ansi-escape-sequences.style"></a>
 ## ansi.style : <code>enum</code>
@@ -208,15 +208,15 @@ Returns an ansi sequence setting one or more effects
 '\u001b[32;4m'
 ```
 <a name="module_ansi-escape-sequences.format"></a>
-## ansi.format(str, effectArray) ⇒ <code>string</code>
-A convenience function, applying the provided styles to the input string and then resetting them.
+## ansi.format(str, styleArray) ⇒ <code>string</code>
+A convenience function, applying the provided styles to the input string and then resetting.
 
 **Kind**: static method of <code>[ansi-escape-sequences](#module_ansi-escape-sequences)</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | str | <code>string</code> | the string to format |
-| effectArray | <code>Array.&lt;string&gt;</code> | a list of styles to add to the input string |
+| styleArray | <code>Array.&lt;string&gt;</code> | a list of styles to add to the input string |
 
 **Example**  
 ```js
