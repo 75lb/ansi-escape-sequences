@@ -26,7 +26,8 @@
     "docs": "jsdoc2md -d 1 -t jsdoc2md/README.hbs lib/*.js > README.md; echo"
   },
   "dependencies": {
-    "array-tools": "^1.4.1"
+    "array-tools": "^1.4.1",
+    "transform-tools": "0.0.3"
   },
   "devDependencies": {
     "jsdoc-to-markdown": "^1.0.1",

@@ -1,19 +1,21 @@
 #!/usr/bin/env node
 "use strict";
-
 var ansi = require("../");
+var tr = require("transform-tools");
 
-var name = process.argv[2];
-var name2 = process.argv[3];
-var arg1 = process.argv[4];
-var arg2 = process.argv[5];
-var seq = null;
+process.argv.splice(0, 2);
+var method = process.argv.shift();
+var args = process.argv;
 
-if (typeof ansi[name][name2] === "function"){
-    seq = ansi[name][name2](arg1, arg2);
-} else {
-    seq = ansi[name][name2];
-}
-if (seq !== null) {
-    process.stdout.write(seq);
-}
+process.stdin
+    .pipe(tr.collect({
+        through: function(input){
+            if (method === "format"){
+                return ansi.format(input, args);
+            } else {
+                console.error(ansi.format("invalid method: " + method, "red"));
+            }
+        }
+    }))
+    .pipe(process.stdout);
+
