@@ -3,10 +3,17 @@
 [![Build Status](https://travis-ci.org/75lb/ansi-escape-sequences.svg?branch=master)](https://travis-ci.org/75lb/ansi-escape-sequences)
 [![Dependency Status](https://david-dm.org/75lb/ansi-escape-sequences.svg)](https://david-dm.org/75lb/ansi-escape-sequences)
 
-<a name="module_ansi-escape-sequences"></a>
 # ansi-escape-sequences
 A simple library containing all known terminal [ansi escape codes and sequences](http://en.wikipedia.org/wiki/ANSI_escape_code). Useful for adding colour to your command-line output, or building a dynamic text user interface.
 
+## Command-line usage
+Format text in the terminal (bold red, in this case):
+<pre><code>
+$ echo yeah | ansi format bold red
+<strong>yeah</strong>
+</code></pre>
+
+## API Reference
 **Example**  
 ```js
 var ansi = require("ansi-escape-sequences");
@@ -224,6 +231,18 @@ A convenience function, applying the provided styles to the input string and the
 '\u001b[32mwhat?\u001b[0m'
 > ansi.format("what?", ["green", "bold"])
 '\u001b[32;1mwhat?\u001b[0m'
+```
+
+## Install
+As a library:
+
+```
+$ npm install ansi-escape-sequences --save
+```
+
+As a command-line tool:
+```
+$ npm install -g ansi-escape-sequences
 ```
 
 * * *

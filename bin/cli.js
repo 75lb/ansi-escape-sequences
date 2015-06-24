@@ -4,6 +4,14 @@ var ansi = require("../");
 var tr = require("transform-tools");
 
 process.argv.splice(0, 2);
+if (!process.argv.length){
+    console.error(ansi.format("Usage", "underline"));
+    console.error("$ ansi <method> <args>");
+    console.error();
+    console.error(ansi.format("Example", "underline"));
+    console.error("$ echo yeah | ansi format underline");
+    process.exit(1);
+}
 var method = process.argv.shift();
 var args = process.argv;
 

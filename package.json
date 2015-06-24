@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "array-tools": "^1.4.1",
-    "transform-tools": "0.0.3"
+    "transform-tools": "~0.1.1"
   },
   "devDependencies": {
     "jsdoc-to-markdown": "^1.0.1",
