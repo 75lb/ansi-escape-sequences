@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 "use strict";
 var ansi = require("../");
-var tr = require("transform-tools");
+var collect = require("collect-all");
 
 process.argv.splice(0, 2);
 if (!process.argv.length){
@@ -16,7 +16,7 @@ var method = process.argv.shift();
 var args = process.argv;
 
 process.stdin
-    .pipe(tr.collect({
+    .pipe(collect({
         through: function(input){
             if (method === "format"){
                 return ansi.format(input, args);
