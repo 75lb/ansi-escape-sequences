@@ -22,6 +22,8 @@ var ansi = require("ansi-escape-sequences");
 * [ansi-escape-sequences](#module_ansi-escape-sequences)
   * [.style](#module_ansi-escape-sequences.style) : <code>enum</code>
   * [.cursor](#module_ansi-escape-sequences.cursor)
+    * [.hide](#module_ansi-escape-sequences.cursor.hide)
+    * [.show](#module_ansi-escape-sequences.cursor.show)
     * [.up([lines])](#module_ansi-escape-sequences.cursor.up) ⇒ <code>string</code>
     * [.down([lines])](#module_ansi-escape-sequences.cursor.down) ⇒ <code>string</code>
     * [.forward([lines])](#module_ansi-escape-sequences.cursor.forward) ⇒ <code>string</code>
@@ -77,6 +79,8 @@ cursor-related sequences
 **Kind**: static property of <code>[ansi-escape-sequences](#module_ansi-escape-sequences)</code>  
 
 * [.cursor](#module_ansi-escape-sequences.cursor)
+  * [.hide](#module_ansi-escape-sequences.cursor.hide)
+  * [.show](#module_ansi-escape-sequences.cursor.show)
   * [.up([lines])](#module_ansi-escape-sequences.cursor.up) ⇒ <code>string</code>
   * [.down([lines])](#module_ansi-escape-sequences.cursor.down) ⇒ <code>string</code>
   * [.forward([lines])](#module_ansi-escape-sequences.cursor.forward) ⇒ <code>string</code>
@@ -86,6 +90,16 @@ cursor-related sequences
   * [.horizontalAbsolute(n)](#module_ansi-escape-sequences.cursor.horizontalAbsolute) ⇒ <code>string</code>
   * [.position(n, m)](#module_ansi-escape-sequences.cursor.position) ⇒ <code>string</code>
 
+<a name="module_ansi-escape-sequences.cursor.hide"></a>
+### cursor.hide
+Hides the cursor
+
+**Kind**: static property of <code>[cursor](#module_ansi-escape-sequences.cursor)</code>  
+<a name="module_ansi-escape-sequences.cursor.show"></a>
+### cursor.show
+Shows the cursor
+
+**Kind**: static property of <code>[cursor](#module_ansi-escape-sequences.cursor)</code>  
 <a name="module_ansi-escape-sequences.cursor.up"></a>
 ### cursor.up([lines]) ⇒ <code>string</code>
 Moves the cursor `lines` cells up. If the cursor is already at the edge of the screen, this has no effect
