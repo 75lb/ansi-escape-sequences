@@ -19,7 +19,7 @@ process.stdin
     .pipe(collect({
         through: function(input){
             if (method === "format"){
-                return ansi.format(input, args);
+                return ansi.format(input.toString(), args);
             } else {
                 console.error(ansi.format("invalid method: " + method, "red"));
             }

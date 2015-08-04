@@ -36,7 +36,7 @@ var ansi = require("ansi-escape-sequences");
     * [.display(n)](#module_ansi-escape-sequences.erase.display) ⇒ <code>string</code>
     * [.inLine(n)](#module_ansi-escape-sequences.erase.inLine) ⇒ <code>string</code>
   * [.styles(effectArray)](#module_ansi-escape-sequences.styles) ⇒ <code>string</code>
-  * [.format(str, styleArray)](#module_ansi-escape-sequences.format) ⇒ <code>string</code>
+  * [.format(str, [styleArray])](#module_ansi-escape-sequences.format) ⇒ <code>string</code>
 
 <a name="module_ansi-escape-sequences.style"></a>
 ## ansi.style : <code>enum</code>
@@ -237,21 +237,27 @@ Returns an ansi sequence setting one or more effects
 '\u001b[32;4m'
 ```
 <a name="module_ansi-escape-sequences.format"></a>
-## ansi.format(str, styleArray) ⇒ <code>string</code>
-A convenience function, applying the provided styles to the input string and then resetting.
+## ansi.format(str, [styleArray]) ⇒ <code>string</code>
+A convenience function, applying the provided styles to the input string and then resetting. 
+
+Inline styling can be applied using the syntax `[space-separated-style-list]{text to format}`, for example `[bold white bg-red]{this text is bold white on a red background}`.
 
 **Kind**: static method of <code>[ansi-escape-sequences](#module_ansi-escape-sequences)</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | str | <code>string</code> | the string to format |
-| styleArray | <code>Array.&lt;string&gt;</code> | a list of styles to add to the input string |
+| [styleArray] | <code>Array.&lt;string&gt;</code> | a list of styles to add to the input string |
 
 **Example**  
 ```js
 > ansi.format("what?", "green")
 '\u001b[32mwhat?\u001b[0m'
+
 > ansi.format("what?", ["green", "bold"])
+'\u001b[32;1mwhat?\u001b[0m'
+
+> ansi.format("[green bold]{what?}")
 '\u001b[32;1mwhat?\u001b[0m'
 ```
 
