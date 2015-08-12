@@ -241,7 +241,7 @@ Returns an ansi sequence setting one or more effects
 ## ansi.format(str, [styleArray]) ⇒ <code>string</code>
 A convenience function, applying the provided styles to the input string and then resetting. 
 
-Inline styling can be applied using the syntax `[space-separated-style-list]{text to format}`, for example `[bold white bg-red]{bold white text on a red background}`.
+Inline styling can be applied using the syntax `[style-list]{text to format}`, where `style-list` is a space-separated list of styles from [ansi.style](#module_ansi-escape-sequences.style). For example `[bold white bg-red]{bold white text on a red background}`.
 
 **Kind**: static method of <code>[ansi-escape-sequences](#module_ansi-escape-sequences)</code>  
 
