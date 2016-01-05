@@ -2,6 +2,7 @@
 [![npm module downloads](http://img.shields.io/npm/dt/ansi-escape-sequences.svg)](https://www.npmjs.org/package/ansi-escape-sequences)
 [![Build Status](https://travis-ci.org/75lb/ansi-escape-sequences.svg?branch=master)](https://travis-ci.org/75lb/ansi-escape-sequences)
 [![Dependency Status](https://david-dm.org/75lb/ansi-escape-sequences.svg)](https://david-dm.org/75lb/ansi-escape-sequences)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](https://github.com/feross/standard)
 
 # ansi-escape-sequences
 A simple library containing all known terminal [ansi escape codes and sequences](http://en.wikipedia.org/wiki/ANSI_escape_code). Useful for adding colour to your command-line output, or building a dynamic text user interface.
@@ -16,7 +17,7 @@ $ echo yeah | ansi format bold red
 ## API Reference
 **Example**  
 ```js
-var ansi = require("ansi-escape-sequences");
+var ansi = require('ansi-escape-sequences')
 ```
 
 * [ansi-escape-sequences](#module_ansi-escape-sequences)
@@ -78,7 +79,7 @@ Various formatting styles (aka Select Graphic Rendition codes).
 
 **Example**  
 ```js
-console.log(ansi.style.red + "this is red" + ansi.style.reset);
+console.log(ansi.style.red + 'this is red' + ansi.style.reset)
 ```
 <a name="module_ansi-escape-sequences.cursor"></a>
 ## ansi.cursor
@@ -231,15 +232,15 @@ Returns an ansi sequence setting one or more effects
 
 **Example**  
 ```js
-> ansi.styles("green")
+> ansi.styles('green')
 '\u001b[32m'
 
-> ansi.styles([ "green", "underline" ])
+> ansi.styles([ 'green', 'underline' ])
 '\u001b[32;4m'
 ```
 <a name="module_ansi-escape-sequences.format"></a>
 ## ansi.format(str, [styleArray]) ⇒ <code>string</code>
-A convenience function, applying the provided styles to the input string and then resetting. 
+A convenience function, applying the provided styles to the input string and then resetting.
 
 Inline styling can be applied using the syntax `[style-list]{text to format}`, where `style-list` is a space-separated list of styles from [ansi.style](#module_ansi-escape-sequences.style). For example `[bold white bg-red]{bold white text on a red background}`.
 
@@ -252,13 +253,13 @@ Inline styling can be applied using the syntax `[style-list]{text to format}`, w
 
 **Example**  
 ```js
-> ansi.format("what?", "green")
+> ansi.format('what?', 'green')
 '\u001b[32mwhat?\u001b[0m'
 
-> ansi.format("what?", ["green", "bold"])
+> ansi.format('what?', ['green', 'bold'])
 '\u001b[32;1mwhat?\u001b[0m'
 
-> ansi.format("[green bold]{what?}")
+> ansi.format('[green bold]{what?}')
 '\u001b[32;1mwhat?\u001b[0m'
 ```
 
