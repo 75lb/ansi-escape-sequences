@@ -1,5 +1,5 @@
 [![view on npm](http://img.shields.io/npm/v/ansi-escape-sequences.svg)](https://www.npmjs.org/package/ansi-escape-sequences)
-[![npm module downloads per month](http://img.shields.io/npm/dm/ansi-escape-sequences.svg)](https://www.npmjs.org/package/ansi-escape-sequences)
+[![npm module downloads](http://img.shields.io/npm/dt/ansi-escape-sequences.svg)](https://www.npmjs.org/package/ansi-escape-sequences)
 [![Build Status](https://travis-ci.org/75lb/ansi-escape-sequences.svg?branch=master)](https://travis-ci.org/75lb/ansi-escape-sequences)
 [![Dependency Status](https://david-dm.org/75lb/ansi-escape-sequences.svg)](https://david-dm.org/75lb/ansi-escape-sequences)
 
@@ -20,23 +20,23 @@ var ansi = require("ansi-escape-sequences");
 ```
 
 * [ansi-escape-sequences](#module_ansi-escape-sequences)
-  * [.style](#module_ansi-escape-sequences.style) : <code>enum</code>
-  * [.cursor](#module_ansi-escape-sequences.cursor)
-    * [.hide](#module_ansi-escape-sequences.cursor.hide)
-    * [.show](#module_ansi-escape-sequences.cursor.show)
-    * [.up([lines])](#module_ansi-escape-sequences.cursor.up) ⇒ <code>string</code>
-    * [.down([lines])](#module_ansi-escape-sequences.cursor.down) ⇒ <code>string</code>
-    * [.forward([lines])](#module_ansi-escape-sequences.cursor.forward) ⇒ <code>string</code>
-    * [.back([lines])](#module_ansi-escape-sequences.cursor.back) ⇒ <code>string</code>
-    * [.nextLine([lines])](#module_ansi-escape-sequences.cursor.nextLine) ⇒ <code>string</code>
-    * [.previousLine([lines])](#module_ansi-escape-sequences.cursor.previousLine) ⇒ <code>string</code>
-    * [.horizontalAbsolute(n)](#module_ansi-escape-sequences.cursor.horizontalAbsolute) ⇒ <code>string</code>
-    * [.position(n, m)](#module_ansi-escape-sequences.cursor.position) ⇒ <code>string</code>
-  * [.erase](#module_ansi-escape-sequences.erase)
-    * [.display(n)](#module_ansi-escape-sequences.erase.display) ⇒ <code>string</code>
-    * [.inLine(n)](#module_ansi-escape-sequences.erase.inLine) ⇒ <code>string</code>
-  * [.styles(effectArray)](#module_ansi-escape-sequences.styles) ⇒ <code>string</code>
-  * [.format(str, [styleArray])](#module_ansi-escape-sequences.format) ⇒ <code>string</code>
+    * [.style](#module_ansi-escape-sequences.style) : <code>enum</code>
+    * [.cursor](#module_ansi-escape-sequences.cursor)
+        * [.hide](#module_ansi-escape-sequences.cursor.hide)
+        * [.show](#module_ansi-escape-sequences.cursor.show)
+        * [.up([lines])](#module_ansi-escape-sequences.cursor.up) ⇒ <code>string</code>
+        * [.down([lines])](#module_ansi-escape-sequences.cursor.down) ⇒ <code>string</code>
+        * [.forward([lines])](#module_ansi-escape-sequences.cursor.forward) ⇒ <code>string</code>
+        * [.back([lines])](#module_ansi-escape-sequences.cursor.back) ⇒ <code>string</code>
+        * [.nextLine([lines])](#module_ansi-escape-sequences.cursor.nextLine) ⇒ <code>string</code>
+        * [.previousLine([lines])](#module_ansi-escape-sequences.cursor.previousLine) ⇒ <code>string</code>
+        * [.horizontalAbsolute(n)](#module_ansi-escape-sequences.cursor.horizontalAbsolute) ⇒ <code>string</code>
+        * [.position(n, m)](#module_ansi-escape-sequences.cursor.position) ⇒ <code>string</code>
+    * [.erase](#module_ansi-escape-sequences.erase)
+        * [.display(n)](#module_ansi-escape-sequences.erase.display) ⇒ <code>string</code>
+        * [.inLine(n)](#module_ansi-escape-sequences.erase.inLine) ⇒ <code>string</code>
+    * [.styles(effectArray)](#module_ansi-escape-sequences.styles) ⇒ <code>string</code>
+    * [.format(str, [styleArray])](#module_ansi-escape-sequences.format) ⇒ <code>string</code>
 
 <a name="module_ansi-escape-sequences.style"></a>
 ## ansi.style : <code>enum</code>
@@ -87,16 +87,16 @@ cursor-related sequences
 **Kind**: static property of <code>[ansi-escape-sequences](#module_ansi-escape-sequences)</code>  
 
 * [.cursor](#module_ansi-escape-sequences.cursor)
-  * [.hide](#module_ansi-escape-sequences.cursor.hide)
-  * [.show](#module_ansi-escape-sequences.cursor.show)
-  * [.up([lines])](#module_ansi-escape-sequences.cursor.up) ⇒ <code>string</code>
-  * [.down([lines])](#module_ansi-escape-sequences.cursor.down) ⇒ <code>string</code>
-  * [.forward([lines])](#module_ansi-escape-sequences.cursor.forward) ⇒ <code>string</code>
-  * [.back([lines])](#module_ansi-escape-sequences.cursor.back) ⇒ <code>string</code>
-  * [.nextLine([lines])](#module_ansi-escape-sequences.cursor.nextLine) ⇒ <code>string</code>
-  * [.previousLine([lines])](#module_ansi-escape-sequences.cursor.previousLine) ⇒ <code>string</code>
-  * [.horizontalAbsolute(n)](#module_ansi-escape-sequences.cursor.horizontalAbsolute) ⇒ <code>string</code>
-  * [.position(n, m)](#module_ansi-escape-sequences.cursor.position) ⇒ <code>string</code>
+    * [.hide](#module_ansi-escape-sequences.cursor.hide)
+    * [.show](#module_ansi-escape-sequences.cursor.show)
+    * [.up([lines])](#module_ansi-escape-sequences.cursor.up) ⇒ <code>string</code>
+    * [.down([lines])](#module_ansi-escape-sequences.cursor.down) ⇒ <code>string</code>
+    * [.forward([lines])](#module_ansi-escape-sequences.cursor.forward) ⇒ <code>string</code>
+    * [.back([lines])](#module_ansi-escape-sequences.cursor.back) ⇒ <code>string</code>
+    * [.nextLine([lines])](#module_ansi-escape-sequences.cursor.nextLine) ⇒ <code>string</code>
+    * [.previousLine([lines])](#module_ansi-escape-sequences.cursor.previousLine) ⇒ <code>string</code>
+    * [.horizontalAbsolute(n)](#module_ansi-escape-sequences.cursor.horizontalAbsolute) ⇒ <code>string</code>
+    * [.position(n, m)](#module_ansi-escape-sequences.cursor.position) ⇒ <code>string</code>
 
 <a name="module_ansi-escape-sequences.cursor.hide"></a>
 ### cursor.hide
@@ -196,8 +196,8 @@ erase sequences
 **Kind**: static property of <code>[ansi-escape-sequences](#module_ansi-escape-sequences)</code>  
 
 * [.erase](#module_ansi-escape-sequences.erase)
-  * [.display(n)](#module_ansi-escape-sequences.erase.display) ⇒ <code>string</code>
-  * [.inLine(n)](#module_ansi-escape-sequences.erase.inLine) ⇒ <code>string</code>
+    * [.display(n)](#module_ansi-escape-sequences.erase.display) ⇒ <code>string</code>
+    * [.inLine(n)](#module_ansi-escape-sequences.erase.inLine) ⇒ <code>string</code>
 
 <a name="module_ansi-escape-sequences.erase.display"></a>
 ### erase.display(n) ⇒ <code>string</code>

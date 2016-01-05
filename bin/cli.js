@@ -16,14 +16,11 @@ var method = process.argv.shift();
 var args = process.argv;
 
 process.stdin
-    .pipe(collect({
-        through: function(input){
-            if (method === "format"){
-                return ansi.format(input.toString(), args);
-            } else {
-                console.error(ansi.format("invalid method: " + method, "red"));
-            }
-        }
+    .pipe(collect(function(input){
+      if (method === "format"){
+          return ansi.format(input.toString(), args);
+      } else {
+          console.error(ansi.format("invalid method: " + method, "red"));
+      }
     }))
     .pipe(process.stdout);
-
