@@ -15,11 +15,7 @@ $ echo yeah | ansi format bold red
 </code></pre>
 
 ## API Reference
-{{#module name="ansi-escape-sequences"}}
-{{>body~}}
-{{>member-index~}}
-{{>members~}}
-{{/module}}
+${docs.module('ansi-escape-sequences').render()}
 
 ## Install
 As a library:
