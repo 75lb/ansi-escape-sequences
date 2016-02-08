@@ -16,7 +16,6 @@ $ echo yeah | ansi format bold red
 
 ## API Reference
 <a name="module_ansi-escape-sequences"></a>
-## ansi-escape-sequences
 **Example**
 ```js
 var ansi = require('ansi-escape-sequences')
