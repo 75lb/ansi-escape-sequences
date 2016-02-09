@@ -48,9 +48,8 @@ var ansi = require('ansi-escape-sequences')
 Various formatting styles (aka Select Graphic Rendition codes).
 
 **Kind**: static enum of module:ansi-escape-sequences  
-**Properties**
 
-| name          | type      | default        | description |
+| Property      | Type      | Default        | Description |
 | ------------- | --------- | -------------- | ----------- |
 | reset         |  `string` | `"\u001b[0m"`  |             |
 | bold          |  `string` | `"\u001b[1m"`  |             |
@@ -91,9 +90,8 @@ console.log(ansi.style.red + 'this is red' + ansi.style.reset)
 style enum - used by `ansi.styles()`.
 
 **Kind**: inner enum of module:ansi-escape-sequences  
-**Properties**
 
-| name          | type      | default | description |
+| Property      | Type      | Default | Description |
 | ------------- | --------- | ------- | ----------- |
 | reset         |  `number` | `0`     |             |
 | bold          |  `number` | `1`     |             |
@@ -130,9 +128,8 @@ style enum - used by `ansi.styles()`.
 Returns an ansi sequence setting one or more effects
 
 **Kind**: static method of module:ansi-escape-sequences  
-**Params**
 
-| name        | type | description                |
+| Param       | Type | Description                |
 | ----------- | ---- | -------------------------- |
 | effectArray | TYPE | a style, or list or styles |
 
@@ -152,9 +149,8 @@ A convenience function, applying the provided styles to the input string and the
 Inline styling can be applied using the syntax `[style-list]{text to format}`, where `style-list` is a space-separated list of styles from {@link module:ansi-escape-sequences.style ansi.style}. For example `[bold white bg-red]{bold white text on a red background}`.
 
 **Kind**: static method of module:ansi-escape-sequences  
-**Params**
 
-| name       | type | description                                 |
+| Param      | Type | Description                                 |
 | ---------- | ---- | ------------------------------------------- |
 | str        | TYPE | the string to format                        |
 | styleArray | TYPE | a list of styles to add to the input string |
@@ -195,9 +191,8 @@ cursor-related sequences
 Moves the cursor `lines` cells up. If the cursor is already at the edge of the screen, this has no effect
 
 **Kind**: static method of module:ansi-escape-sequences.cursor  
-**Params**
 
-| name  | type | description |
+| Param | Type | Description |
 | ----- | ---- | ----------- |
 | lines | TYPE |             |
 
@@ -207,9 +202,8 @@ Moves the cursor `lines` cells up. If the cursor is already at the edge of the s
 Moves the cursor `lines` cells down. If the cursor is already at the edge of the screen, this has no effect
 
 **Kind**: static method of module:ansi-escape-sequences.cursor  
-**Params**
 
-| name  | type | description |
+| Param | Type | Description |
 | ----- | ---- | ----------- |
 | lines | TYPE |             |
 
@@ -219,9 +213,8 @@ Moves the cursor `lines` cells down. If the cursor is already at the edge of the
 Moves the cursor `lines` cells forward. If the cursor is already at the edge of the screen, this has no effect
 
 **Kind**: static method of module:ansi-escape-sequences.cursor  
-**Params**
 
-| name  | type | description |
+| Param | Type | Description |
 | ----- | ---- | ----------- |
 | lines | TYPE |             |
 
@@ -231,9 +224,8 @@ Moves the cursor `lines` cells forward. If the cursor is already at the edge of 
 Moves the cursor `lines` cells back. If the cursor is already at the edge of the screen, this has no effect
 
 **Kind**: static method of module:ansi-escape-sequences.cursor  
-**Params**
 
-| name  | type | description |
+| Param | Type | Description |
 | ----- | ---- | ----------- |
 | lines | TYPE |             |
 
@@ -243,9 +235,8 @@ Moves the cursor `lines` cells back. If the cursor is already at the edge of the
 Moves cursor to beginning of the line n lines down.
 
 **Kind**: static method of module:ansi-escape-sequences.cursor  
-**Params**
 
-| name  | type | description |
+| Param | Type | Description |
 | ----- | ---- | ----------- |
 | lines | TYPE |             |
 
@@ -255,9 +246,8 @@ Moves cursor to beginning of the line n lines down.
 Moves cursor to beginning of the line n lines up.
 
 **Kind**: static method of module:ansi-escape-sequences.cursor  
-**Params**
 
-| name  | type | description |
+| Param | Type | Description |
 | ----- | ---- | ----------- |
 | lines | TYPE |             |
 
@@ -267,11 +257,10 @@ Moves cursor to beginning of the line n lines up.
 Moves the cursor to column n.
 
 **Kind**: static method of module:ansi-escape-sequences.cursor  
-**Params**
 
-| name | type | description   |
-| ---- | ---- | ------------- |
-| n    | TYPE | column number |
+| Param | Type | Description   |
+| ----- | ---- | ------------- |
+| n     | TYPE | column number |
 
 
 <a name="module_ansi-escape-sequences.cursor.position"></a>
@@ -279,12 +268,11 @@ Moves the cursor to column n.
 Moves the cursor to row n, column m. The values are 1-based, and default to 1 (top left corner) if omitted.
 
 **Kind**: static method of module:ansi-escape-sequences.cursor  
-**Params**
 
-| name | type | description   |
-| ---- | ---- | ------------- |
-| n    | TYPE | row number    |
-| m    | TYPE | column number |
+| Param | Type | Description   |
+| ----- | ---- | ------------- |
+| n     | TYPE | row number    |
+| m     | TYPE | column number |
 
 
 <a name="module_ansi-escape-sequences.cursor.hide"></a>
@@ -315,11 +303,10 @@ erase sequences.
 Clears part of the screen. If n is 0 (or missing), clear from cursor to end of screen. If n is 1, clear from cursor to beginning of the screen. If n is 2, clear entire screen.
 
 **Kind**: static method of module:ansi-escape-sequences.erase  
-**Params**
 
-| name | type | description |
-| ---- | ---- | ----------- |
-| n    | TYPE |             |
+| Param | Type | Description |
+| ----- | ---- | ----------- |
+| n     | TYPE |             |
 
 
 <a name="module_ansi-escape-sequences.erase.inLine"></a>
@@ -327,11 +314,10 @@ Clears part of the screen. If n is 0 (or missing), clear from cursor to end of s
 Erases part of the line. If n is zero (or missing), clear from cursor to the end of the line. If n is one, clear from cursor to beginning of the line. If n is two, clear entire line. Cursor position does not change.
 
 **Kind**: static method of module:ansi-escape-sequences.erase  
-**Params**
 
-| name | type | description |
-| ---- | ---- | ----------- |
-| n    | TYPE |             |
+| Param | Type | Description |
+| ----- | ---- | ----------- |
+| n     | TYPE |             |
 
 
 
