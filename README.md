@@ -42,10 +42,6 @@ var ansi = require('ansi-escape-sequences')
         * [.inLine(n)](#module_ansi-escape-sequences.erase.inLine) ⇒ `string`  
 
 
-
-* * *
-
-
 <a name="module_ansi-escape-sequences.style"></a>
 ### ansi.style : `enum`  
 Various formatting styles (aka Select Graphic Rendition codes).
@@ -55,17 +51,9 @@ Various formatting styles (aka Select Graphic Rendition codes).
 console.log(ansi.style.red + 'this is red' + ansi.style.reset)
 ```
 
-
-* * *
-
-
 <a name="module_ansi-escape-sequences..eStyles"></a>
 ### ansi~eStyles : `enum`  
 style enum - used by `ansi.styles()`.
-
-
-
-* * *
 
 
 <a name="module_ansi-escape-sequences.styles"></a>
@@ -74,7 +62,10 @@ Returns an ansi sequence setting one or more effects
 
 **Params**
 
-- effectArray string &#124; Array.<string> - a style, or list or styles
+| name        | type | description                |
+| ----------- | ---- | -------------------------- |
+| effectArray | TYPE | a style, or list or styles |
+
 **Example**
 ```js
 > ansi.styles('green')
@@ -84,10 +75,6 @@ Returns an ansi sequence setting one or more effects
 '\u001b[32;4m'
 ```
 
-
-* * *
-
-
 <a name="module_ansi-escape-sequences.format"></a>
 ### ansi.format(str, [styleArray]) ⇒ `string`  
 A convenience function, applying the provided styles to the input string and then resetting.
@@ -96,8 +83,11 @@ Inline styling can be applied using the syntax `[style-list]{text to format}`, w
 
 **Params**
 
-- str string - the string to format
-- [styleArray] Array.<string> - a list of styles to add to the input string
+| name       | type | description                                 |
+| ---------- | ---- | ------------------------------------------- |
+| str        | TYPE | the string to format                        |
+| styleArray | TYPE | a list of styles to add to the input string |
+
 **Example**
 ```js
 > ansi.format('what?', 'green')
@@ -109,10 +99,6 @@ Inline styling can be applied using the syntax `[style-list]{text to format}`, w
 > ansi.format('[green bold]{what?}')
 '\u001b[32;1mwhat?\u001b[0m'
 ```
-
-
-* * *
-
 
 <a name="module_ansi-escape-sequences.cursor"></a>
 ### ansi.cursor : `object`  
@@ -132,20 +118,15 @@ cursor-related sequences
     * [.show](#module_ansi-escape-sequences.cursor.show) : `string`  
 
 
-
-* * *
-
-
 <a name="module_ansi-escape-sequences.cursor.up"></a>
 #### cursor.up([lines]) ⇒ `string`  
 Moves the cursor `lines` cells up. If the cursor is already at the edge of the screen, this has no effect
 
 **Params**
 
-- [lines] number <code> = 1</code>
-
-
-* * *
+| name  | type | description |
+| ----- | ---- | ----------- |
+| lines | TYPE |             |
 
 
 <a name="module_ansi-escape-sequences.cursor.down"></a>
@@ -154,10 +135,9 @@ Moves the cursor `lines` cells down. If the cursor is already at the edge of the
 
 **Params**
 
-- [lines] number <code> = 1</code>
-
-
-* * *
+| name  | type | description |
+| ----- | ---- | ----------- |
+| lines | TYPE |             |
 
 
 <a name="module_ansi-escape-sequences.cursor.forward"></a>
@@ -166,10 +146,9 @@ Moves the cursor `lines` cells forward. If the cursor is already at the edge of 
 
 **Params**
 
-- [lines] number <code> = 1</code>
-
-
-* * *
+| name  | type | description |
+| ----- | ---- | ----------- |
+| lines | TYPE |             |
 
 
 <a name="module_ansi-escape-sequences.cursor.back"></a>
@@ -178,10 +157,9 @@ Moves the cursor `lines` cells back. If the cursor is already at the edge of the
 
 **Params**
 
-- [lines] number <code> = 1</code>
-
-
-* * *
+| name  | type | description |
+| ----- | ---- | ----------- |
+| lines | TYPE |             |
 
 
 <a name="module_ansi-escape-sequences.cursor.nextLine"></a>
@@ -190,10 +168,9 @@ Moves cursor to beginning of the line n lines down.
 
 **Params**
 
-- [lines] number <code> = 1</code>
-
-
-* * *
+| name  | type | description |
+| ----- | ---- | ----------- |
+| lines | TYPE |             |
 
 
 <a name="module_ansi-escape-sequences.cursor.previousLine"></a>
@@ -202,10 +179,9 @@ Moves cursor to beginning of the line n lines up.
 
 **Params**
 
-- [lines] number <code> = 1</code>
-
-
-* * *
+| name  | type | description |
+| ----- | ---- | ----------- |
+| lines | TYPE |             |
 
 
 <a name="module_ansi-escape-sequences.cursor.horizontalAbsolute"></a>
@@ -214,10 +190,9 @@ Moves the cursor to column n.
 
 **Params**
 
-- n number - column number
-
-
-* * *
+| name | type | description   |
+| ---- | ---- | ------------- |
+| n    | TYPE | column number |
 
 
 <a name="module_ansi-escape-sequences.cursor.position"></a>
@@ -226,11 +201,10 @@ Moves the cursor to row n, column m. The values are 1-based, and default to 1 (t
 
 **Params**
 
-- n number - row number
-- m number - column number
-
-
-* * *
+| name | type | description   |
+| ---- | ---- | ------------- |
+| n    | TYPE | row number    |
+| m    | TYPE | column number |
 
 
 <a name="module_ansi-escape-sequences.cursor.hide"></a>
@@ -238,31 +212,19 @@ Moves the cursor to row n, column m. The values are 1-based, and default to 1 (t
 Hides the cursor
 
 
-
-* * *
-
-
 <a name="module_ansi-escape-sequences.cursor.show"></a>
 #### cursor.show : `string`  
 Shows the cursor
 
 
-
-* * *
-
-
 <a name="module_ansi-escape-sequences.erase"></a>
 ### ansi.erase : `object`  
-erase sequences
+erase sequences.
 
 
 * [.erase](#module_ansi-escape-sequences.erase) : `object`  
     * [.display(n)](#module_ansi-escape-sequences.erase.display) ⇒ `string`  
     * [.inLine(n)](#module_ansi-escape-sequences.erase.inLine) ⇒ `string`  
-
-
-
-* * *
 
 
 <a name="module_ansi-escape-sequences.erase.display"></a>
@@ -271,10 +233,9 @@ Clears part of the screen. If n is 0 (or missing), clear from cursor to end of s
 
 **Params**
 
-- n number
-
-
-* * *
+| name | type | description |
+| ---- | ---- | ----------- |
+| n    | TYPE |             |
 
 
 <a name="module_ansi-escape-sequences.erase.inLine"></a>
@@ -283,10 +244,9 @@ Erases part of the line. If n is zero (or missing), clear from cursor to the end
 
 **Params**
 
-- n number
-
-
-* * *
+| name | type | description |
+| ---- | ---- | ----------- |
+| n    | TYPE |             |
 
 
 

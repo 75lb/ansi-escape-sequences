@@ -22,7 +22,7 @@
   },
   "scripts": {
     "test": "tape test/*.js",
-    "docs": "jsdoc2md -d 1 -t jsdoc2md/README.hbs lib/*.js > README.md; echo"
+    "docs": "jsdoc2md -t jsdoc2md/README.md --skip-heading lib/*.js > README.md; echo"
   },
   "dependencies": {
     "array-back": "^1.0.2",
