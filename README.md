@@ -46,6 +46,39 @@ var ansi = require('ansi-escape-sequences')
 ### ansi.style : `enum`  
 Various formatting styles (aka Select Graphic Rendition codes).
 
+**Properties**
+
+| name          | type      | default | description |
+| ------------- | --------- | ------- | ----------- |
+| reset         |  `string` | [0m        |             |
+| bold          |  `string` | [1m        |             |
+| italic        |  `string` | [3m        |             |
+| underline     |  `string` | [4m        |             |
+| fontDefault   |  `string` | [10m        |             |
+| font2         |  `string` | [11m        |             |
+| font3         |  `string` | [12m        |             |
+| font4         |  `string` | [13m        |             |
+| font5         |  `string` | [14m        |             |
+| font6         |  `string` | [15m        |             |
+| imageNegative |  `string` | [7m        |             |
+| imagePositive |  `string` | [27m        |             |
+| black         |  `string` | [30m        |             |
+| red           |  `string` | [31m        |             |
+| green         |  `string` | [32m        |             |
+| yellow        |  `string` | [33m        |             |
+| blue          |  `string` | [34m        |             |
+| magenta       |  `string` | [35m        |             |
+| cyan          |  `string` | [36m        |             |
+| white         |  `string` | [37m        |             |
+| "bg-black"    |  `string` | [40m        |             |
+| "bg-red"      |  `string` | [41m        |             |
+| "bg-green"    |  `string` | [42m        |             |
+| "bg-yellow"   |  `string` | [43m        |             |
+| "bg-blue"     |  `string` | [44m        |             |
+| "bg-magenta"  |  `string` | [45m        |             |
+| "bg-cyan"     |  `string` | [46m        |             |
+| "bg-white"    |  `string` | [47m        |             |
+
 **Example**
 ```js
 console.log(ansi.style.red + 'this is red' + ansi.style.reset)
@@ -54,6 +87,39 @@ console.log(ansi.style.red + 'this is red' + ansi.style.reset)
 <a name="module_ansi-escape-sequences..eStyles"></a>
 ### ansi~eStyles : `enum`  
 style enum - used by `ansi.styles()`.
+
+**Properties**
+
+| name          | type      | default | description |
+| ------------- | --------- | ------- | ----------- |
+| reset         |  `number` | 0       |             |
+| bold          |  `number` | 1       |             |
+| italic        |  `number` | 3       |             |
+| underline     |  `number` | 4       |             |
+| imageNegative |  `number` | 7       |             |
+| fontDefault   |  `number` | 10      |             |
+| font2         |  `number` | 11      |             |
+| font3         |  `number` | 12      |             |
+| font4         |  `number` | 13      |             |
+| font5         |  `number` | 14      |             |
+| font6         |  `number` | 15      |             |
+| imagePositive |  `number` | 27      |             |
+| black         |  `number` | 30      |             |
+| red           |  `number` | 31      |             |
+| green         |  `number` | 32      |             |
+| yellow        |  `number` | 33      |             |
+| blue          |  `number` | 34      |             |
+| magenta       |  `number` | 35      |             |
+| cyan          |  `number` | 36      |             |
+| white         |  `number` | 37      |             |
+| "bg-black"    |  `number` | 40      |             |
+| "bg-red"      |  `number` | 41      |             |
+| "bg-green"    |  `number` | 42      |             |
+| "bg-yellow"   |  `number` | 43      |             |
+| "bg-blue"     |  `number` | 44      |             |
+| "bg-magenta"  |  `number` | 45      |             |
+| "bg-cyan"     |  `number` | 46      |             |
+| "bg-white"    |  `number` | 47      |             |
 
 
 <a name="module_ansi-escape-sequences.styles"></a>
