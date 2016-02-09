@@ -16,6 +16,7 @@ $ echo yeah | ansi format bold red
 
 ## API Reference
 <a name="module_ansi-escape-sequences"></a>
+  
 **Example**
 ```js
 var ansi = require('ansi-escape-sequences')
@@ -46,6 +47,7 @@ var ansi = require('ansi-escape-sequences')
 ### ansi.style : `enum`  
 Various formatting styles (aka Select Graphic Rendition codes).
 
+**Kind**: static enum of module:ansi-escape-sequences  
 **Properties**
 
 | name          | type      | default        | description |
@@ -88,6 +90,7 @@ console.log(ansi.style.red + 'this is red' + ansi.style.reset)
 ### ansi~eStyles : `enum`  
 style enum - used by `ansi.styles()`.
 
+**Kind**: inner enum of module:ansi-escape-sequences  
 **Properties**
 
 | name          | type      | default | description |
@@ -126,6 +129,7 @@ style enum - used by `ansi.styles()`.
 ### ansi.styles(effectArray) ⇒ `string`  
 Returns an ansi sequence setting one or more effects
 
+**Kind**: static method of module:ansi-escape-sequences  
 **Params**
 
 | name        | type | description                |
@@ -147,6 +151,7 @@ A convenience function, applying the provided styles to the input string and the
 
 Inline styling can be applied using the syntax `[style-list]{text to format}`, where `style-list` is a space-separated list of styles from {@link module:ansi-escape-sequences.style ansi.style}. For example `[bold white bg-red]{bold white text on a red background}`.
 
+**Kind**: static method of module:ansi-escape-sequences  
 **Params**
 
 | name       | type | description                                 |
@@ -170,6 +175,7 @@ Inline styling can be applied using the syntax `[style-list]{text to format}`, w
 ### ansi.cursor : `object`  
 cursor-related sequences
 
+**Kind**: static namespace of module:ansi-escape-sequences  
 
 * [.cursor](#module_ansi-escape-sequences.cursor) : `object`  
     * [.up([lines])](#module_ansi-escape-sequences.cursor.up) ⇒ `string`  
@@ -188,6 +194,7 @@ cursor-related sequences
 #### cursor.up([lines]) ⇒ `string`  
 Moves the cursor `lines` cells up. If the cursor is already at the edge of the screen, this has no effect
 
+**Kind**: static method of module:ansi-escape-sequences.cursor  
 **Params**
 
 | name  | type | description |
@@ -199,6 +206,7 @@ Moves the cursor `lines` cells up. If the cursor is already at the edge of the s
 #### cursor.down([lines]) ⇒ `string`  
 Moves the cursor `lines` cells down. If the cursor is already at the edge of the screen, this has no effect
 
+**Kind**: static method of module:ansi-escape-sequences.cursor  
 **Params**
 
 | name  | type | description |
@@ -210,6 +218,7 @@ Moves the cursor `lines` cells down. If the cursor is already at the edge of the
 #### cursor.forward([lines]) ⇒ `string`  
 Moves the cursor `lines` cells forward. If the cursor is already at the edge of the screen, this has no effect
 
+**Kind**: static method of module:ansi-escape-sequences.cursor  
 **Params**
 
 | name  | type | description |
@@ -221,6 +230,7 @@ Moves the cursor `lines` cells forward. If the cursor is already at the edge of 
 #### cursor.back([lines]) ⇒ `string`  
 Moves the cursor `lines` cells back. If the cursor is already at the edge of the screen, this has no effect
 
+**Kind**: static method of module:ansi-escape-sequences.cursor  
 **Params**
 
 | name  | type | description |
@@ -232,6 +242,7 @@ Moves the cursor `lines` cells back. If the cursor is already at the edge of the
 #### cursor.nextLine([lines]) ⇒ `string`  
 Moves cursor to beginning of the line n lines down.
 
+**Kind**: static method of module:ansi-escape-sequences.cursor  
 **Params**
 
 | name  | type | description |
@@ -243,6 +254,7 @@ Moves cursor to beginning of the line n lines down.
 #### cursor.previousLine([lines]) ⇒ `string`  
 Moves cursor to beginning of the line n lines up.
 
+**Kind**: static method of module:ansi-escape-sequences.cursor  
 **Params**
 
 | name  | type | description |
@@ -254,6 +266,7 @@ Moves cursor to beginning of the line n lines up.
 #### cursor.horizontalAbsolute(n) ⇒ `string`  
 Moves the cursor to column n.
 
+**Kind**: static method of module:ansi-escape-sequences.cursor  
 **Params**
 
 | name | type | description   |
@@ -265,6 +278,7 @@ Moves the cursor to column n.
 #### cursor.position(n, m) ⇒ `string`  
 Moves the cursor to row n, column m. The values are 1-based, and default to 1 (top left corner) if omitted.
 
+**Kind**: static method of module:ansi-escape-sequences.cursor  
 **Params**
 
 | name | type | description   |
@@ -277,16 +291,19 @@ Moves the cursor to row n, column m. The values are 1-based, and default to 1 (t
 #### cursor.hide : `string`  
 Hides the cursor
 
+**Kind**: static property of module:ansi-escape-sequences.cursor  
 
 <a name="module_ansi-escape-sequences.cursor.show"></a>
 #### cursor.show : `string`  
 Shows the cursor
 
+**Kind**: static property of module:ansi-escape-sequences.cursor  
 
 <a name="module_ansi-escape-sequences.erase"></a>
 ### ansi.erase : `object`  
 erase sequences.
 
+**Kind**: static namespace of module:ansi-escape-sequences  
 
 * [.erase](#module_ansi-escape-sequences.erase) : `object`  
     * [.display(n)](#module_ansi-escape-sequences.erase.display) ⇒ `string`  
@@ -297,6 +314,7 @@ erase sequences.
 #### erase.display(n) ⇒ `string`  
 Clears part of the screen. If n is 0 (or missing), clear from cursor to end of screen. If n is 1, clear from cursor to beginning of the screen. If n is 2, clear entire screen.
 
+**Kind**: static method of module:ansi-escape-sequences.erase  
 **Params**
 
 | name | type | description |
@@ -308,6 +326,7 @@ Clears part of the screen. If n is 0 (or missing), clear from cursor to end of s
 #### erase.inLine(n) ⇒ `string`  
 Erases part of the line. If n is zero (or missing), clear from cursor to the end of the line. If n is one, clear from cursor to beginning of the line. If n is two, clear entire line. Cursor position does not change.
 
+**Kind**: static method of module:ansi-escape-sequences.erase  
 **Params**
 
 | name | type | description |
