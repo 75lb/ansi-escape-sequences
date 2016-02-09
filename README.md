@@ -48,36 +48,36 @@ Various formatting styles (aka Select Graphic Rendition codes).
 
 **Properties**
 
-| name          | type      | default                            | description |
-| ------------- | --------- | ---------------------------------- | ----------- |
-| reset         |  `string` | `&quot;&bsol;u001b&lsqb;0m&quot;`  |             |
-| bold          |  `string` | `&quot;&bsol;u001b&lsqb;1m&quot;`  |             |
-| italic        |  `string` | `&quot;&bsol;u001b&lsqb;3m&quot;`  |             |
-| underline     |  `string` | `&quot;&bsol;u001b&lsqb;4m&quot;`  |             |
-| fontDefault   |  `string` | `&quot;&bsol;u001b&lsqb;10m&quot;` |             |
-| font2         |  `string` | `&quot;&bsol;u001b&lsqb;11m&quot;` |             |
-| font3         |  `string` | `&quot;&bsol;u001b&lsqb;12m&quot;` |             |
-| font4         |  `string` | `&quot;&bsol;u001b&lsqb;13m&quot;` |             |
-| font5         |  `string` | `&quot;&bsol;u001b&lsqb;14m&quot;` |             |
-| font6         |  `string` | `&quot;&bsol;u001b&lsqb;15m&quot;` |             |
-| imageNegative |  `string` | `&quot;&bsol;u001b&lsqb;7m&quot;`  |             |
-| imagePositive |  `string` | `&quot;&bsol;u001b&lsqb;27m&quot;` |             |
-| black         |  `string` | `&quot;&bsol;u001b&lsqb;30m&quot;` |             |
-| red           |  `string` | `&quot;&bsol;u001b&lsqb;31m&quot;` |             |
-| green         |  `string` | `&quot;&bsol;u001b&lsqb;32m&quot;` |             |
-| yellow        |  `string` | `&quot;&bsol;u001b&lsqb;33m&quot;` |             |
-| blue          |  `string` | `&quot;&bsol;u001b&lsqb;34m&quot;` |             |
-| magenta       |  `string` | `&quot;&bsol;u001b&lsqb;35m&quot;` |             |
-| cyan          |  `string` | `&quot;&bsol;u001b&lsqb;36m&quot;` |             |
-| white         |  `string` | `&quot;&bsol;u001b&lsqb;37m&quot;` |             |
-| "bg-black"    |  `string` | `&quot;&bsol;u001b&lsqb;40m&quot;` |             |
-| "bg-red"      |  `string` | `&quot;&bsol;u001b&lsqb;41m&quot;` |             |
-| "bg-green"    |  `string` | `&quot;&bsol;u001b&lsqb;42m&quot;` |             |
-| "bg-yellow"   |  `string` | `&quot;&bsol;u001b&lsqb;43m&quot;` |             |
-| "bg-blue"     |  `string` | `&quot;&bsol;u001b&lsqb;44m&quot;` |             |
-| "bg-magenta"  |  `string` | `&quot;&bsol;u001b&lsqb;45m&quot;` |             |
-| "bg-cyan"     |  `string` | `&quot;&bsol;u001b&lsqb;46m&quot;` |             |
-| "bg-white"    |  `string` | `&quot;&bsol;u001b&lsqb;47m&quot;` |             |
+| name          | type      | default        | description |
+| ------------- | --------- | -------------- | ----------- |
+| reset         |  `string` | `"\u001b[0m"`  |             |
+| bold          |  `string` | `"\u001b[1m"`  |             |
+| italic        |  `string` | `"\u001b[3m"`  |             |
+| underline     |  `string` | `"\u001b[4m"`  |             |
+| fontDefault   |  `string` | `"\u001b[10m"` |             |
+| font2         |  `string` | `"\u001b[11m"` |             |
+| font3         |  `string` | `"\u001b[12m"` |             |
+| font4         |  `string` | `"\u001b[13m"` |             |
+| font5         |  `string` | `"\u001b[14m"` |             |
+| font6         |  `string` | `"\u001b[15m"` |             |
+| imageNegative |  `string` | `"\u001b[7m"`  |             |
+| imagePositive |  `string` | `"\u001b[27m"` |             |
+| black         |  `string` | `"\u001b[30m"` |             |
+| red           |  `string` | `"\u001b[31m"` |             |
+| green         |  `string` | `"\u001b[32m"` |             |
+| yellow        |  `string` | `"\u001b[33m"` |             |
+| blue          |  `string` | `"\u001b[34m"` |             |
+| magenta       |  `string` | `"\u001b[35m"` |             |
+| cyan          |  `string` | `"\u001b[36m"` |             |
+| white         |  `string` | `"\u001b[37m"` |             |
+| "bg-black"    |  `string` | `"\u001b[40m"` |             |
+| "bg-red"      |  `string` | `"\u001b[41m"` |             |
+| "bg-green"    |  `string` | `"\u001b[42m"` |             |
+| "bg-yellow"   |  `string` | `"\u001b[43m"` |             |
+| "bg-blue"     |  `string` | `"\u001b[44m"` |             |
+| "bg-magenta"  |  `string` | `"\u001b[45m"` |             |
+| "bg-cyan"     |  `string` | `"\u001b[46m"` |             |
+| "bg-white"    |  `string` | `"\u001b[47m"` |             |
 
 **Example**
 ```js
