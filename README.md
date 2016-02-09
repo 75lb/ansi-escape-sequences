@@ -48,36 +48,36 @@ Various formatting styles (aka Select Graphic Rendition codes).
 
 **Properties**
 
-| name          | type      | default                          | description |
-| ------------- | --------- | -------------------------------- | ----------- |
-| reset         |  `string` | &quot;&bsol;u001b&lsqb;0m&quot;  |             |
-| bold          |  `string` | &quot;&bsol;u001b&lsqb;1m&quot;  |             |
-| italic        |  `string` | &quot;&bsol;u001b&lsqb;3m&quot;  |             |
-| underline     |  `string` | &quot;&bsol;u001b&lsqb;4m&quot;  |             |
-| fontDefault   |  `string` | &quot;&bsol;u001b&lsqb;10m&quot; |             |
-| font2         |  `string` | &quot;&bsol;u001b&lsqb;11m&quot; |             |
-| font3         |  `string` | &quot;&bsol;u001b&lsqb;12m&quot; |             |
-| font4         |  `string` | &quot;&bsol;u001b&lsqb;13m&quot; |             |
-| font5         |  `string` | &quot;&bsol;u001b&lsqb;14m&quot; |             |
-| font6         |  `string` | &quot;&bsol;u001b&lsqb;15m&quot; |             |
-| imageNegative |  `string` | &quot;&bsol;u001b&lsqb;7m&quot;  |             |
-| imagePositive |  `string` | &quot;&bsol;u001b&lsqb;27m&quot; |             |
-| black         |  `string` | &quot;&bsol;u001b&lsqb;30m&quot; |             |
-| red           |  `string` | &quot;&bsol;u001b&lsqb;31m&quot; |             |
-| green         |  `string` | &quot;&bsol;u001b&lsqb;32m&quot; |             |
-| yellow        |  `string` | &quot;&bsol;u001b&lsqb;33m&quot; |             |
-| blue          |  `string` | &quot;&bsol;u001b&lsqb;34m&quot; |             |
-| magenta       |  `string` | &quot;&bsol;u001b&lsqb;35m&quot; |             |
-| cyan          |  `string` | &quot;&bsol;u001b&lsqb;36m&quot; |             |
-| white         |  `string` | &quot;&bsol;u001b&lsqb;37m&quot; |             |
-| "bg-black"    |  `string` | &quot;&bsol;u001b&lsqb;40m&quot; |             |
-| "bg-red"      |  `string` | &quot;&bsol;u001b&lsqb;41m&quot; |             |
-| "bg-green"    |  `string` | &quot;&bsol;u001b&lsqb;42m&quot; |             |
-| "bg-yellow"   |  `string` | &quot;&bsol;u001b&lsqb;43m&quot; |             |
-| "bg-blue"     |  `string` | &quot;&bsol;u001b&lsqb;44m&quot; |             |
-| "bg-magenta"  |  `string` | &quot;&bsol;u001b&lsqb;45m&quot; |             |
-| "bg-cyan"     |  `string` | &quot;&bsol;u001b&lsqb;46m&quot; |             |
-| "bg-white"    |  `string` | &quot;&bsol;u001b&lsqb;47m&quot; |             |
+| name          | type      | default                            | description |
+| ------------- | --------- | ---------------------------------- | ----------- |
+| reset         |  `string` | `&quot;&bsol;u001b&lsqb;0m&quot;`  |             |
+| bold          |  `string` | `&quot;&bsol;u001b&lsqb;1m&quot;`  |             |
+| italic        |  `string` | `&quot;&bsol;u001b&lsqb;3m&quot;`  |             |
+| underline     |  `string` | `&quot;&bsol;u001b&lsqb;4m&quot;`  |             |
+| fontDefault   |  `string` | `&quot;&bsol;u001b&lsqb;10m&quot;` |             |
+| font2         |  `string` | `&quot;&bsol;u001b&lsqb;11m&quot;` |             |
+| font3         |  `string` | `&quot;&bsol;u001b&lsqb;12m&quot;` |             |
+| font4         |  `string` | `&quot;&bsol;u001b&lsqb;13m&quot;` |             |
+| font5         |  `string` | `&quot;&bsol;u001b&lsqb;14m&quot;` |             |
+| font6         |  `string` | `&quot;&bsol;u001b&lsqb;15m&quot;` |             |
+| imageNegative |  `string` | `&quot;&bsol;u001b&lsqb;7m&quot;`  |             |
+| imagePositive |  `string` | `&quot;&bsol;u001b&lsqb;27m&quot;` |             |
+| black         |  `string` | `&quot;&bsol;u001b&lsqb;30m&quot;` |             |
+| red           |  `string` | `&quot;&bsol;u001b&lsqb;31m&quot;` |             |
+| green         |  `string` | `&quot;&bsol;u001b&lsqb;32m&quot;` |             |
+| yellow        |  `string` | `&quot;&bsol;u001b&lsqb;33m&quot;` |             |
+| blue          |  `string` | `&quot;&bsol;u001b&lsqb;34m&quot;` |             |
+| magenta       |  `string` | `&quot;&bsol;u001b&lsqb;35m&quot;` |             |
+| cyan          |  `string` | `&quot;&bsol;u001b&lsqb;36m&quot;` |             |
+| white         |  `string` | `&quot;&bsol;u001b&lsqb;37m&quot;` |             |
+| "bg-black"    |  `string` | `&quot;&bsol;u001b&lsqb;40m&quot;` |             |
+| "bg-red"      |  `string` | `&quot;&bsol;u001b&lsqb;41m&quot;` |             |
+| "bg-green"    |  `string` | `&quot;&bsol;u001b&lsqb;42m&quot;` |             |
+| "bg-yellow"   |  `string` | `&quot;&bsol;u001b&lsqb;43m&quot;` |             |
+| "bg-blue"     |  `string` | `&quot;&bsol;u001b&lsqb;44m&quot;` |             |
+| "bg-magenta"  |  `string` | `&quot;&bsol;u001b&lsqb;45m&quot;` |             |
+| "bg-cyan"     |  `string` | `&quot;&bsol;u001b&lsqb;46m&quot;` |             |
+| "bg-white"    |  `string` | `&quot;&bsol;u001b&lsqb;47m&quot;` |             |
 
 **Example**
 ```js
@@ -92,34 +92,34 @@ style enum - used by `ansi.styles()`.
 
 | name          | type      | default | description |
 | ------------- | --------- | ------- | ----------- |
-| reset         |  `number` | 0       |             |
-| bold          |  `number` | 1       |             |
-| italic        |  `number` | 3       |             |
-| underline     |  `number` | 4       |             |
-| imageNegative |  `number` | 7       |             |
-| fontDefault   |  `number` | 10      |             |
-| font2         |  `number` | 11      |             |
-| font3         |  `number` | 12      |             |
-| font4         |  `number` | 13      |             |
-| font5         |  `number` | 14      |             |
-| font6         |  `number` | 15      |             |
-| imagePositive |  `number` | 27      |             |
-| black         |  `number` | 30      |             |
-| red           |  `number` | 31      |             |
-| green         |  `number` | 32      |             |
-| yellow        |  `number` | 33      |             |
-| blue          |  `number` | 34      |             |
-| magenta       |  `number` | 35      |             |
-| cyan          |  `number` | 36      |             |
-| white         |  `number` | 37      |             |
-| "bg-black"    |  `number` | 40      |             |
-| "bg-red"      |  `number` | 41      |             |
-| "bg-green"    |  `number` | 42      |             |
-| "bg-yellow"   |  `number` | 43      |             |
-| "bg-blue"     |  `number` | 44      |             |
-| "bg-magenta"  |  `number` | 45      |             |
-| "bg-cyan"     |  `number` | 46      |             |
-| "bg-white"    |  `number` | 47      |             |
+| reset         |  `number` | `0`     |             |
+| bold          |  `number` | `1`     |             |
+| italic        |  `number` | `3`     |             |
+| underline     |  `number` | `4`     |             |
+| imageNegative |  `number` | `7`     |             |
+| fontDefault   |  `number` | `10`    |             |
+| font2         |  `number` | `11`    |             |
+| font3         |  `number` | `12`    |             |
+| font4         |  `number` | `13`    |             |
+| font5         |  `number` | `14`    |             |
+| font6         |  `number` | `15`    |             |
+| imagePositive |  `number` | `27`    |             |
+| black         |  `number` | `30`    |             |
+| red           |  `number` | `31`    |             |
+| green         |  `number` | `32`    |             |
+| yellow        |  `number` | `33`    |             |
+| blue          |  `number` | `34`    |             |
+| magenta       |  `number` | `35`    |             |
+| cyan          |  `number` | `36`    |             |
+| white         |  `number` | `37`    |             |
+| "bg-black"    |  `number` | `40`    |             |
+| "bg-red"      |  `number` | `41`    |             |
+| "bg-green"    |  `number` | `42`    |             |
+| "bg-yellow"   |  `number` | `43`    |             |
+| "bg-blue"     |  `number` | `44`    |             |
+| "bg-magenta"  |  `number` | `45`    |             |
+| "bg-cyan"     |  `number` | `46`    |             |
+| "bg-white"    |  `number` | `47`    |             |
 
 
 <a name="module_ansi-escape-sequences.styles"></a>
