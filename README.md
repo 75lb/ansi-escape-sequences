@@ -24,7 +24,6 @@ var ansi = require('ansi-escape-sequences')
 
 * ansi-escape-sequences
     * [.style](#module_ansi-escape-sequences.style) : `enum`  
-    * [~eStyles](#module_ansi-escape-sequences..eStyles) : `enum`  
     * [.styles(effectArray)](#module_ansi-escape-sequences.styles) ⇒ `string`  
     * [.format(str, [styleArray])](#module_ansi-escape-sequences.format) ⇒ `string`  
     * [.cursor](#module_ansi-escape-sequences.cursor) : `object`  
@@ -84,44 +83,6 @@ Various formatting styles (aka Select Graphic Rendition codes).
 ```js
 console.log(ansi.style.red + 'this is red' + ansi.style.reset)
 ```
-
-<a name="module_ansi-escape-sequences..eStyles"></a>
-### ansi~eStyles : `enum`  
-style enum - used by `ansi.styles()`.
-
-**Kind**: inner enum of module:ansi-escape-sequences  
-
-| Property      | Type      | Default | Description |
-| ------------- | --------- | ------- | ----------- |
-| reset         |  `number` | `0`     |             |
-| bold          |  `number` | `1`     |             |
-| italic        |  `number` | `3`     |             |
-| underline     |  `number` | `4`     |             |
-| imageNegative |  `number` | `7`     |             |
-| fontDefault   |  `number` | `10`    |             |
-| font2         |  `number` | `11`    |             |
-| font3         |  `number` | `12`    |             |
-| font4         |  `number` | `13`    |             |
-| font5         |  `number` | `14`    |             |
-| font6         |  `number` | `15`    |             |
-| imagePositive |  `number` | `27`    |             |
-| black         |  `number` | `30`    |             |
-| red           |  `number` | `31`    |             |
-| green         |  `number` | `32`    |             |
-| yellow        |  `number` | `33`    |             |
-| blue          |  `number` | `34`    |             |
-| magenta       |  `number` | `35`    |             |
-| cyan          |  `number` | `36`    |             |
-| white         |  `number` | `37`    |             |
-| "bg-black"    |  `number` | `40`    |             |
-| "bg-red"      |  `number` | `41`    |             |
-| "bg-green"    |  `number` | `42`    |             |
-| "bg-yellow"   |  `number` | `43`    |             |
-| "bg-blue"     |  `number` | `44`    |             |
-| "bg-magenta"  |  `number` | `45`    |             |
-| "bg-cyan"     |  `number` | `46`    |             |
-| "bg-white"    |  `number` | `47`    |             |
-
 
 <a name="module_ansi-escape-sequences.styles"></a>
 ### ansi.styles(effectArray) ⇒ `string`  
