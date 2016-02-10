@@ -24,9 +24,9 @@ var ansi = require('ansi-escape-sequences')
 
 * ansi-escape-sequences
     * [.style](#module_ansi-escape-sequences.style) : `enum`  
-    * [.styles(effectArray)](#module_ansi-escape-sequences.styles) ⇒ `string`  
-    * [.format(str, [styleArray])](#module_ansi-escape-sequences.format) ⇒ `string`  
     * [.cursor](#module_ansi-escape-sequences.cursor) : `object`  
+        * [.hide](#module_ansi-escape-sequences.cursor.hide) : `string`  
+        * [.show](#module_ansi-escape-sequences.cursor.show) : `string`  
         * [.up([lines])](#module_ansi-escape-sequences.cursor.up) ⇒ `string`  
         * [.down([lines])](#module_ansi-escape-sequences.cursor.down) ⇒ `string`  
         * [.forward([lines])](#module_ansi-escape-sequences.cursor.forward) ⇒ `string`  
@@ -35,11 +35,11 @@ var ansi = require('ansi-escape-sequences')
         * [.previousLine([lines])](#module_ansi-escape-sequences.cursor.previousLine) ⇒ `string`  
         * [.horizontalAbsolute(n)](#module_ansi-escape-sequences.cursor.horizontalAbsolute) ⇒ `string`  
         * [.position(n, m)](#module_ansi-escape-sequences.cursor.position) ⇒ `string`  
-        * [.hide](#module_ansi-escape-sequences.cursor.hide) : `string`  
-        * [.show](#module_ansi-escape-sequences.cursor.show) : `string`  
     * [.erase](#module_ansi-escape-sequences.erase) : `object`  
         * [.display(n)](#module_ansi-escape-sequences.erase.display) ⇒ `string`  
         * [.inLine(n)](#module_ansi-escape-sequences.erase.inLine) ⇒ `string`  
+    * [.styles(effectArray)](#module_ansi-escape-sequences.styles) ⇒ `string`  
+    * [.format(str, [styleArray])](#module_ansi-escape-sequences.format) ⇒ `string`  
 
 
 <a name="module_ansi-escape-sequences.style"></a>
@@ -84,50 +84,6 @@ Various formatting styles (aka Select Graphic Rendition codes).
 console.log(ansi.style.red + 'this is red' + ansi.style.reset)
 ```
 
-<a name="module_ansi-escape-sequences.styles"></a>
-### ansi.styles(effectArray) ⇒ `string`  
-Returns an ansi sequence setting one or more effects
-
-**Kind**: static method of module:ansi-escape-sequences  
-
-| Param       | Type | Description                |
-| ----------- | ---- | -------------------------- |
-| effectArray | TYPE | a style, or list or styles |
-
-**Example**
-```js
-> ansi.styles('green')
-'\u001b[32m'
-
-> ansi.styles([ 'green', 'underline' ])
-'\u001b[32;4m'
-```
-
-<a name="module_ansi-escape-sequences.format"></a>
-### ansi.format(str, [styleArray]) ⇒ `string`  
-A convenience function, applying the provided styles to the input string and then resetting.
-
-Inline styling can be applied using the syntax `[style-list]{text to format}`, where `style-list` is a space-separated list of styles from {@link module:ansi-escape-sequences.style ansi.style}. For example `[bold white bg-red]{bold white text on a red background}`.
-
-**Kind**: static method of module:ansi-escape-sequences  
-
-| Param      | Type | Description                                 |
-| ---------- | ---- | ------------------------------------------- |
-| str        | TYPE | the string to format                        |
-| styleArray | TYPE | a list of styles to add to the input string |
-
-**Example**
-```js
-> ansi.format('what?', 'green')
-'\u001b[32mwhat?\u001b[0m'
-
-> ansi.format('what?', ['green', 'bold'])
-'\u001b[32;1mwhat?\u001b[0m'
-
-> ansi.format('[green bold]{what?}')
-'\u001b[32;1mwhat?\u001b[0m'
-```
-
 <a name="module_ansi-escape-sequences.cursor"></a>
 ### ansi.cursor : `object`  
 cursor-related sequences
@@ -135,6 +91,8 @@ cursor-related sequences
 **Kind**: static namespace of module:ansi-escape-sequences  
 
 * [.cursor](#module_ansi-escape-sequences.cursor) : `object`  
+    * [.hide](#module_ansi-escape-sequences.cursor.hide) : `string`  
+    * [.show](#module_ansi-escape-sequences.cursor.show) : `string`  
     * [.up([lines])](#module_ansi-escape-sequences.cursor.up) ⇒ `string`  
     * [.down([lines])](#module_ansi-escape-sequences.cursor.down) ⇒ `string`  
     * [.forward([lines])](#module_ansi-escape-sequences.cursor.forward) ⇒ `string`  
@@ -143,9 +101,19 @@ cursor-related sequences
     * [.previousLine([lines])](#module_ansi-escape-sequences.cursor.previousLine) ⇒ `string`  
     * [.horizontalAbsolute(n)](#module_ansi-escape-sequences.cursor.horizontalAbsolute) ⇒ `string`  
     * [.position(n, m)](#module_ansi-escape-sequences.cursor.position) ⇒ `string`  
-    * [.hide](#module_ansi-escape-sequences.cursor.hide) : `string`  
-    * [.show](#module_ansi-escape-sequences.cursor.show) : `string`  
 
+
+<a name="module_ansi-escape-sequences.cursor.hide"></a>
+#### cursor.hide : `string`  
+Hides the cursor
+
+**Kind**: static property of module:ansi-escape-sequences.cursor  
+
+<a name="module_ansi-escape-sequences.cursor.show"></a>
+#### cursor.show : `string`  
+Shows the cursor
+
+**Kind**: static property of module:ansi-escape-sequences.cursor  
 
 <a name="module_ansi-escape-sequences.cursor.up"></a>
 #### cursor.up([lines]) ⇒ `string`  
@@ -236,18 +204,6 @@ Moves the cursor to row n, column m. The values are 1-based, and default to 1 (t
 | m     | TYPE | column number |
 
 
-<a name="module_ansi-escape-sequences.cursor.hide"></a>
-#### cursor.hide : `string`  
-Hides the cursor
-
-**Kind**: static property of module:ansi-escape-sequences.cursor  
-
-<a name="module_ansi-escape-sequences.cursor.show"></a>
-#### cursor.show : `string`  
-Shows the cursor
-
-**Kind**: static property of module:ansi-escape-sequences.cursor  
-
 <a name="module_ansi-escape-sequences.erase"></a>
 ### ansi.erase : `object`  
 erase sequences.
@@ -280,6 +236,50 @@ Erases part of the line. If n is zero (or missing), clear from cursor to the end
 | ----- | ---- | ----------- |
 | n     | TYPE |             |
 
+
+<a name="module_ansi-escape-sequences.styles"></a>
+### ansi.styles(effectArray) ⇒ `string`  
+Returns an ansi sequence setting one or more effects
+
+**Kind**: static method of module:ansi-escape-sequences  
+
+| Param       | Type | Description                |
+| ----------- | ---- | -------------------------- |
+| effectArray | TYPE | a style, or list or styles |
+
+**Example**
+```js
+> ansi.styles('green')
+'\u001b[32m'
+
+> ansi.styles([ 'green', 'underline' ])
+'\u001b[32;4m'
+```
+
+<a name="module_ansi-escape-sequences.format"></a>
+### ansi.format(str, [styleArray]) ⇒ `string`  
+A convenience function, applying the provided styles to the input string and then resetting.
+
+Inline styling can be applied using the syntax `[style-list]{text to format}`, where `style-list` is a space-separated list of styles from {@link module:ansi-escape-sequences.style ansi.style}. For example `[bold white bg-red]{bold white text on a red background}`.
+
+**Kind**: static method of module:ansi-escape-sequences  
+
+| Param      | Type | Description                                 |
+| ---------- | ---- | ------------------------------------------- |
+| str        | TYPE | the string to format                        |
+| styleArray | TYPE | a list of styles to add to the input string |
+
+**Example**
+```js
+> ansi.format('what?', 'green')
+'\u001b[32mwhat?\u001b[0m'
+
+> ansi.format('what?', ['green', 'bold'])
+'\u001b[32;1mwhat?\u001b[0m'
+
+> ansi.format('[green bold]{what?}')
+'\u001b[32;1mwhat?\u001b[0m'
+```
 
 
 ## Install
