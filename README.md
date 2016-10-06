@@ -7,13 +7,6 @@
 # ansi-escape-sequences
 A simple library containing all known terminal [ansi escape codes and sequences](http://en.wikipedia.org/wiki/ANSI_escape_code). Useful for adding colour to your command-line output, or building a dynamic text user interface.
 
-## Command-line usage
-Format text in the terminal (bold red, in this case):
-<pre><code>
-$ echo yeah | ansi format bold red
-<strong>yeah</strong>
-</code></pre>
-
 ## API Reference
 **Example**  
 ```js
@@ -278,18 +271,6 @@ Inline styling can be applied using the syntax `[style-list]{text to format}`, w
 
 > ansi.format('[green bold]{what?}')
 '\u001b[32;1mwhat?\u001b[0m'
-```
-
-## Install
-As a library:
-
-```
-$ npm install ansi-escape-sequences --save
-```
-
-As a command-line tool:
-```
-$ npm install -g ansi-escape-sequences
 ```
 
 * * *
