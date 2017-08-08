@@ -1,7 +1,7 @@
-var TestRunner = require('test-runner')
-var ansi = require('../')
-var runner = new TestRunner()
-var a = require('core-assert')
+const TestRunner = require('test-runner')
+const ansi = require('../')
+const runner = new TestRunner()
+const a = require('assert')
 
 runner.test('format', function () {
   a.strictEqual(ansi.format('clive', ['red', 'underline']), '\u001b[31;4mclive\u001b[0m')

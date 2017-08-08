@@ -10,7 +10,7 @@ A simple library containing all known terminal [ansi escape codes and sequences]
 ## API Reference
 **Example**  
 ```js
-var ansi = require('ansi-escape-sequences')
+const ansi = require('ansi-escape-sequences')
 ```
 
 * [ansi-escape-sequences](#module_ansi-escape-sequences)
@@ -37,7 +37,7 @@ var ansi = require('ansi-escape-sequences')
 ## ansi.cursor
 cursor-related sequences
 
-**Kind**: static property of <code>[ansi-escape-sequences](#module_ansi-escape-sequences)</code>  
+**Kind**: static property of [<code>ansi-escape-sequences</code>](#module_ansi-escape-sequences)  
 
 * [.cursor](#module_ansi-escape-sequences.cursor)
     * [.hide](#module_ansi-escape-sequences.cursor.hide)
@@ -56,19 +56,19 @@ cursor-related sequences
 ### cursor.hide
 Hides the cursor
 
-**Kind**: static property of <code>[cursor](#module_ansi-escape-sequences.cursor)</code>  
+**Kind**: static property of [<code>cursor</code>](#module_ansi-escape-sequences.cursor)  
 <a name="module_ansi-escape-sequences.cursor.show"></a>
 
 ### cursor.show
 Shows the cursor
 
-**Kind**: static property of <code>[cursor](#module_ansi-escape-sequences.cursor)</code>  
+**Kind**: static property of [<code>cursor</code>](#module_ansi-escape-sequences.cursor)  
 <a name="module_ansi-escape-sequences.cursor.up"></a>
 
 ### cursor.up([lines]) ⇒ <code>string</code>
 Moves the cursor `lines` cells up. If the cursor is already at the edge of the screen, this has no effect
 
-**Kind**: static method of <code>[cursor](#module_ansi-escape-sequences.cursor)</code>  
+**Kind**: static method of [<code>cursor</code>](#module_ansi-escape-sequences.cursor)  
 
 | Param | Type | Default |
 | --- | --- | --- |
@@ -79,7 +79,7 @@ Moves the cursor `lines` cells up. If the cursor is already at the edge of the s
 ### cursor.down([lines]) ⇒ <code>string</code>
 Moves the cursor `lines` cells down. If the cursor is already at the edge of the screen, this has no effect
 
-**Kind**: static method of <code>[cursor](#module_ansi-escape-sequences.cursor)</code>  
+**Kind**: static method of [<code>cursor</code>](#module_ansi-escape-sequences.cursor)  
 
 | Param | Type | Default |
 | --- | --- | --- |
@@ -90,7 +90,7 @@ Moves the cursor `lines` cells down. If the cursor is already at the edge of the
 ### cursor.forward([lines]) ⇒ <code>string</code>
 Moves the cursor `lines` cells forward. If the cursor is already at the edge of the screen, this has no effect
 
-**Kind**: static method of <code>[cursor](#module_ansi-escape-sequences.cursor)</code>  
+**Kind**: static method of [<code>cursor</code>](#module_ansi-escape-sequences.cursor)  
 
 | Param | Type | Default |
 | --- | --- | --- |
@@ -101,7 +101,7 @@ Moves the cursor `lines` cells forward. If the cursor is already at the edge of 
 ### cursor.back([lines]) ⇒ <code>string</code>
 Moves the cursor `lines` cells back. If the cursor is already at the edge of the screen, this has no effect
 
-**Kind**: static method of <code>[cursor](#module_ansi-escape-sequences.cursor)</code>  
+**Kind**: static method of [<code>cursor</code>](#module_ansi-escape-sequences.cursor)  
 
 | Param | Type | Default |
 | --- | --- | --- |
@@ -112,7 +112,7 @@ Moves the cursor `lines` cells back. If the cursor is already at the edge of the
 ### cursor.nextLine([lines]) ⇒ <code>string</code>
 Moves cursor to beginning of the line n lines down.
 
-**Kind**: static method of <code>[cursor](#module_ansi-escape-sequences.cursor)</code>  
+**Kind**: static method of [<code>cursor</code>](#module_ansi-escape-sequences.cursor)  
 
 | Param | Type | Default |
 | --- | --- | --- |
@@ -123,7 +123,7 @@ Moves cursor to beginning of the line n lines down.
 ### cursor.previousLine([lines]) ⇒ <code>string</code>
 Moves cursor to beginning of the line n lines up.
 
-**Kind**: static method of <code>[cursor](#module_ansi-escape-sequences.cursor)</code>  
+**Kind**: static method of [<code>cursor</code>](#module_ansi-escape-sequences.cursor)  
 
 | Param | Type | Default |
 | --- | --- | --- |
@@ -134,7 +134,7 @@ Moves cursor to beginning of the line n lines up.
 ### cursor.horizontalAbsolute(n) ⇒ <code>string</code>
 Moves the cursor to column n.
 
-**Kind**: static method of <code>[cursor](#module_ansi-escape-sequences.cursor)</code>  
+**Kind**: static method of [<code>cursor</code>](#module_ansi-escape-sequences.cursor)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -145,7 +145,7 @@ Moves the cursor to column n.
 ### cursor.position(n, m) ⇒ <code>string</code>
 Moves the cursor to row n, column m. The values are 1-based, and default to 1 (top left corner) if omitted.
 
-**Kind**: static method of <code>[cursor](#module_ansi-escape-sequences.cursor)</code>  
+**Kind**: static method of [<code>cursor</code>](#module_ansi-escape-sequences.cursor)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -157,7 +157,7 @@ Moves the cursor to row n, column m. The values are 1-based, and default to 1 (t
 ## ansi.erase
 erase sequences
 
-**Kind**: static property of <code>[ansi-escape-sequences](#module_ansi-escape-sequences)</code>  
+**Kind**: static property of [<code>ansi-escape-sequences</code>](#module_ansi-escape-sequences)  
 
 * [.erase](#module_ansi-escape-sequences.erase)
     * [.display(n)](#module_ansi-escape-sequences.erase.display) ⇒ <code>string</code>
@@ -168,7 +168,7 @@ erase sequences
 ### erase.display(n) ⇒ <code>string</code>
 Clears part of the screen. If n is 0 (or missing), clear from cursor to end of screen. If n is 1, clear from cursor to beginning of the screen. If n is 2, clear entire screen.
 
-**Kind**: static method of <code>[erase](#module_ansi-escape-sequences.erase)</code>  
+**Kind**: static method of [<code>erase</code>](#module_ansi-escape-sequences.erase)  
 
 | Param | Type |
 | --- | --- |
@@ -179,7 +179,7 @@ Clears part of the screen. If n is 0 (or missing), clear from cursor to end of s
 ### erase.inLine(n) ⇒ <code>string</code>
 Erases part of the line. If n is zero (or missing), clear from cursor to the end of the line. If n is one, clear from cursor to beginning of the line. If n is two, clear entire line. Cursor position does not change.
 
-**Kind**: static method of <code>[erase](#module_ansi-escape-sequences.erase)</code>  
+**Kind**: static method of [<code>erase</code>](#module_ansi-escape-sequences.erase)  
 
 | Param | Type |
 | --- | --- |
@@ -190,7 +190,7 @@ Erases part of the line. If n is zero (or missing), clear from cursor to the end
 ## ansi.style : <code>enum</code>
 Various formatting styles (aka Select Graphic Rendition codes).
 
-**Kind**: static enum of <code>[ansi-escape-sequences](#module_ansi-escape-sequences)</code>  
+**Kind**: static enum of [<code>ansi-escape-sequences</code>](#module_ansi-escape-sequences)  
 **Properties**
 
 | Name | Type | Default |
@@ -233,11 +233,11 @@ console.log(ansi.style.red + 'this is red' + ansi.style.reset)
 ## ansi.styles(effectArray) ⇒ <code>string</code>
 Returns an ansi sequence setting one or more effects
 
-**Kind**: static method of <code>[ansi-escape-sequences](#module_ansi-escape-sequences)</code>  
+**Kind**: static method of [<code>ansi-escape-sequences</code>](#module_ansi-escape-sequences)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| effectArray | <code>string</code> &#124; <code>Array.&lt;string&gt;</code> | a style, or list or styles |
+| effectArray | <code>string</code> \| <code>Array.&lt;string&gt;</code> | a style, or list or styles |
 
 **Example**  
 ```js
@@ -254,7 +254,7 @@ A convenience function, applying the provided styles to the input string and the
 
 Inline styling can be applied using the syntax `[style-list]{text to format}`, where `style-list` is a space-separated list of styles from [ansi.style](#module_ansi-escape-sequences.style). For example `[bold white bg-red]{bold white text on a red background}`.
 
-**Kind**: static method of <code>[ansi-escape-sequences](#module_ansi-escape-sequences)</code>  
+**Kind**: static method of [<code>ansi-escape-sequences</code>](#module_ansi-escape-sequences)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -275,4 +275,4 @@ Inline styling can be applied using the syntax `[style-list]{text to format}`, w
 
 * * *
 
-&copy; 2014-16 Lloyd Brookes \<75pound@gmail.com\>. Documented by [jsdoc-to-markdown](https://github.com/jsdoc2md/jsdoc-to-markdown).
+&copy; 2014-17 Lloyd Brookes \<75pound@gmail.com\>. Documented by [jsdoc-to-markdown](https://github.com/jsdoc2md/jsdoc-to-markdown).
