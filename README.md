@@ -215,6 +215,7 @@ Various formatting styles (aka Select Graphic Rendition codes).
 | magenta | <code>string</code> | <code>&quot;\u001b[35m&quot;</code> | 
 | cyan | <code>string</code> | <code>&quot;\u001b[36m&quot;</code> | 
 | white | <code>string</code> | <code>&quot;\u001b[37m&quot;</code> | 
+| gray | <code>string</code> | <code>&quot;\u001b[90m&quot;</code> |
 | &quot;bg-black&quot; | <code>string</code> | <code>&quot;\u001b[40m&quot;</code> | 
 | &quot;bg-red&quot; | <code>string</code> | <code>&quot;\u001b[41m&quot;</code> | 
 | &quot;bg-green&quot; | <code>string</code> | <code>&quot;\u001b[42m&quot;</code> | 
@@ -223,6 +224,7 @@ Various formatting styles (aka Select Graphic Rendition codes).
 | &quot;bg-magenta&quot; | <code>string</code> | <code>&quot;\u001b[45m&quot;</code> | 
 | &quot;bg-cyan&quot; | <code>string</code> | <code>&quot;\u001b[46m&quot;</code> | 
 | &quot;bg-white&quot; | <code>string</code> | <code>&quot;\u001b[47m&quot;</code> | 
+| &quot;bg-gray&quot; | <code>string</code> | <code>&quot;\u001b[100m&quot;</code> |
 
 **Example**  
 ```js
