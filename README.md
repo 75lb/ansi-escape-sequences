@@ -259,7 +259,7 @@ A convenience function, applying the provided styles to the input string and the
 Inline styling can be applied using the syntax `[style-list]{text to format}`, where `style-list` is a space-separated list of styles from [ansi.style](#module_ansi-escape-sequences.style). For example `[bold white bg-red]{bold white text on a red background}`.
 
 Use a single backslash to prevent parsing of a sequence, or a double backslash
-to get a single '\' character.
+to get a single '\\' character.
 
 **Kind**: static method of [<code>ansi-escape-sequences</code>](#module_ansi-escape-sequences)  
 
