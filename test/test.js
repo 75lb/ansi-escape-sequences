@@ -21,5 +21,5 @@ runner.test('escaped inline format', function () {
 })
 
 runner.test('escaped escape sequence', function () {
-  a.strictEqual(ansi.format('\\[red]{not red} \\\\[red]{red\\\\}'), '')
+  a.strictEqual(ansi.format('\\[red]{not red} \\\\[red]{red\\\\}'), '[red]{not red} \\\u001b[31mred\\\u001b[0m')
 })
