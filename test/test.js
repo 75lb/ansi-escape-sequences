@@ -17,5 +17,9 @@ runner.test('nested inline format', function () {
 })
 
 runner.test('escaped inline format', function () {
-  a.strictEqual(ansi.format('[red]{all this \\} is red} \\[green]{not green}'), '\u001b[31mall this \\} is red\u001b[0m \\[green]{not green}')
+  a.strictEqual(ansi.format('[red]{all this \\} is red} \\[green]{not green}'), '\u001b[31mall this } is red\u001b[0m [green]{not green}')
+})
+
+runner.test('escaped escape sequence', function () {
+  a.strictEqual(ansi.format('\\[red]{not red} \\\\[red]{red\\\\}'), '')
 })
