@@ -20,6 +20,11 @@ runner.test('escaped inline format', function () {
   a.strictEqual(ansi.format('[red]{all this \\} is red} \\[green]{not green}'), '\u001b[31mall this } is red\u001b[0m [green]{not green}')
 })
 
+runner.test('escaped inline format 2', function() {
+  a.strictEqual(ansi.format('[red underline]{inside [green]{[bold]{nested} green}}'),
+        '\u001b[31;4minside \u001b[32m\u001b[1mnested\u001b[0m\u001b[31;4m\u001b[32m green\u001b[0m\u001b[31;4m\u001b[0m');
+})
+
 runner.test('escaped escape sequence', function () {
   a.strictEqual(ansi.format('\\[red]{not red} \\\\[red]{red\\\\}'), '[red]{not red} \\\u001b[31mred\\\u001b[0m')
 })
