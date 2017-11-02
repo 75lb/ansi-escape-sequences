@@ -23,3 +23,7 @@ runner.test('escaped inline format', function () {
 runner.test('escaped escape sequence', function () {
   a.strictEqual(ansi.format('\\[red]{not red} \\\\[red]{red\\\\}'), '[red]{not red} \\\u001b[31mred\\\u001b[0m')
 })
+
+runner.test('nested escape sequences', function () {
+  a.strictEqual(ansi.format('[red]{\\\\\\\\}'), '\u001b[31m\\\\\u001b[0m')
+})
