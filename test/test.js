@@ -27,3 +27,11 @@ runner.test('escaped escape sequence', function () {
 runner.test('nested escape sequences', function () {
   a.strictEqual(ansi.format('[red]{\\\\\\\\}'), '\u001b[31m\\\\\u001b[0m')
 })
+
+runner.test('unterminated format', function () {
+  a.strictEqual(ansi.format('[red]{uhoh'), 'uhoh')
+})
+
+runner.test('dangling close', function () {
+  a.strictEqual(ansi.format('uhoh}'), 'uhoh}')
+})
