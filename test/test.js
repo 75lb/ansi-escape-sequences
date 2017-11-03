@@ -55,7 +55,7 @@ runner.test('nested escape sequences', function () {
 runner.test('unterminated format', function () {
   a.strictEqual(
     ansi.format('[red]{uhoh'),
-    'uhoh'
+    '[red]{uhoh'
   )
 })
 
