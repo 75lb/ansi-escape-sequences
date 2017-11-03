@@ -52,6 +52,14 @@ runner.test('nested escape sequences', function () {
   )
 })
 
+runner.test('nested escape sequences 2', function () {
+  a.strictEqual(
+    ansi.format('[red]{[red]{\\[green]{asd\\}}}'),
+    '\u001b[31m\u001b[31m[green]{asd}\u001b[0m\u001b[31m\u001b[0m'
+  )
+})
+
+
 runner.test('unterminated format', function () {
   a.strictEqual(
     ansi.format('[red]{uhoh'),
