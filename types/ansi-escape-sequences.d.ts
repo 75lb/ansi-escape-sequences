@@ -78,7 +78,7 @@ export interface erase {
  * > ansi.styles([ 'green', 'underline' ])
  * '\u001b[32;4m'
  */
-export function styles (effectArray:string|array<string>): string
+export function styles (effectArray:string|Array<string>): string
 
 
 
@@ -100,7 +100,7 @@ export function styles (effectArray:string|array<string>): string
  * > ansi.format('[green bold]{what?}')
  * '\u001b[32;1mwhat?\u001b[0m'
  */
-export function format(str: string, styleArray: array<string>): string
+export function format(str: string, styleArray: Array<string>): string
 
 export interface style {
   reset: string
