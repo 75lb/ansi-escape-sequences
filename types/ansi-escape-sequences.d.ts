@@ -1,5 +1,7 @@
-export interface Cursor {
-  /**
+declare module 'ansi-escape-sequences' {
+
+  export interface Cursor {
+    /**
      * Moves the cursor `lines` cells up. If the cursor is already at the edge of the screen, this has no effect
      */
     up : (lines?: number) => string
@@ -50,7 +52,6 @@ export interface Cursor {
     show: string
   }
   
-  export const cursor:Cursor
   
   export interface Erase {
     /**
@@ -63,7 +64,6 @@ export interface Cursor {
      */
     inLine: (n?: number) => string
   }
-  export const erase:Erase
   
   /**
    * Returns an ansi sequence setting one or more effects
@@ -133,3 +133,6 @@ export interface Cursor {
   }
 
   export const style: Style
+  export const erase: Erase
+  export const cursor: Cursor
+}
