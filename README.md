@@ -215,16 +215,18 @@ Various formatting styles (aka Select Graphic Rendition codes).
 | magenta | <code>string</code> | <code>&quot;\u001b[35m&quot;</code> | 
 | cyan | <code>string</code> | <code>&quot;\u001b[36m&quot;</code> | 
 | white | <code>string</code> | <code>&quot;\u001b[37m&quot;</code> | 
-| gray | <code>string</code> | <code>&quot;\u001b[90m&quot;</code> |
-| &quot;bg-black&quot; | <code>string</code> | <code>&quot;\u001b[40m&quot;</code> | 
-| &quot;bg-red&quot; | <code>string</code> | <code>&quot;\u001b[41m&quot;</code> | 
-| &quot;bg-green&quot; | <code>string</code> | <code>&quot;\u001b[42m&quot;</code> | 
-| &quot;bg-yellow&quot; | <code>string</code> | <code>&quot;\u001b[43m&quot;</code> | 
-| &quot;bg-blue&quot; | <code>string</code> | <code>&quot;\u001b[44m&quot;</code> | 
-| &quot;bg-magenta&quot; | <code>string</code> | <code>&quot;\u001b[45m&quot;</code> | 
-| &quot;bg-cyan&quot; | <code>string</code> | <code>&quot;\u001b[46m&quot;</code> | 
-| &quot;bg-white&quot; | <code>string</code> | <code>&quot;\u001b[47m&quot;</code> | 
-| &quot;bg-gray&quot; | <code>string</code> | <code>&quot;\u001b[100m&quot;</code> |
+| grey | <code>string</code> | <code>&quot;\u001b[90m&quot;</code> | 
+| gray | <code>string</code> | <code>&quot;\u001b[90m&quot;</code> | 
+| "bg-black" | <code>string</code> | <code>&quot;\u001b[40m&quot;</code> | 
+| "bg-red" | <code>string</code> | <code>&quot;\u001b[41m&quot;</code> | 
+| "bg-green" | <code>string</code> | <code>&quot;\u001b[42m&quot;</code> | 
+| "bg-yellow" | <code>string</code> | <code>&quot;\u001b[43m&quot;</code> | 
+| "bg-blue" | <code>string</code> | <code>&quot;\u001b[44m&quot;</code> | 
+| "bg-magenta" | <code>string</code> | <code>&quot;\u001b[45m&quot;</code> | 
+| "bg-cyan" | <code>string</code> | <code>&quot;\u001b[46m&quot;</code> | 
+| "bg-white" | <code>string</code> | <code>&quot;\u001b[47m&quot;</code> | 
+| "bg-grey" | <code>string</code> | <code>&quot;\u001b[100m&quot;</code> | 
+| "bg-gray" | <code>string</code> | <code>&quot;\u001b[100m&quot;</code> | 
 
 **Example**  
 ```js
