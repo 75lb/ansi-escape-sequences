@@ -1,5 +1,5 @@
 const TestRunner = require('test-runner')
-const ansi = require('../')
+const ansi = require('./')
 const runner = new TestRunner()
 const a = require('assert')
 

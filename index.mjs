@@ -1,5 +1,4 @@
-'use strict'
-const arrayify = require('array-back')
+import arrayify from './node_modules/array-back/index.mjs'
 
 /* Control Sequence Initiator */
 const csi = '\x1b['
@@ -234,4 +233,4 @@ ansi.erase = {
   inLine: function (n) { return csi + (n || 0) + 'K' }
 }
 
-module.exports = ansi
+export default ansi
