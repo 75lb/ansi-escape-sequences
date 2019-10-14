@@ -1,12 +1,13 @@
-const TestRunner = require('test-runner')
+const Tom = require('test-runner').Tom
 const ansi = require('./')
-const runner = new TestRunner()
 const a = require('assert')
 
-runner.test('format', function () {
+const tom = module.exports = new Tom('ansi')
+
+tom.test('format', function () {
   a.strictEqual(ansi.format('clive', ['red', 'underline']), '\u001b[31;4mclive\u001b[0m')
 })
 
-runner.test('inline format', function () {
+tom.test('inline format', function () {
   a.strictEqual(ansi.format('before [red underline]{clive} after'), 'before \u001b[31;4mclive\u001b[0m after')
 })
