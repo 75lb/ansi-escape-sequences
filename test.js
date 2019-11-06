@@ -5,9 +5,16 @@ const a = require('assert')
 const tom = module.exports = new Tom('ansi')
 
 tom.test('format', function () {
-  a.strictEqual(ansi.format('clive', ['red', 'underline']), '\u001b[31;4mclive\u001b[0m')
+  const result = ansi.format('clive', ['red', 'underline'])
+  a.strictEqual(result, '\u001b[31m\u001b[4mclive\u001b[0m')
 })
 
 tom.test('inline format', function () {
-  a.strictEqual(ansi.format('before [red underline]{clive} after'), 'before \u001b[31;4mclive\u001b[0m after')
+  const result = ansi.format('before [red underline]{clive} after')
+  a.strictEqual(result, 'before \u001b[31m\u001b[4mclive\u001b[0m after')
+})
+
+tom.test('inline format rgb', function () {
+  const result = ansi.format('before [rgb(150,0,150) underline]{clive} after')
+  a.strictEqual(result, 'before \u001b[38;2;150;0;150m\u001b[4mclive\u001b[0m after')
 })

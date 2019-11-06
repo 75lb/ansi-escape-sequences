@@ -2,7 +2,7 @@
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
   (global = global || self, global.ansi = factory());
-}(this, function () { 'use strict';
+}(this, (function () { 'use strict';
 
   /**
    * Takes any input and guarantees an array back.
@@ -105,6 +105,13 @@
     white: '\x1b[37m',
     grey: '\x1b[90m',
     gray: '\x1b[90m',
+    brightRed: '\x1b[91m',
+    brightGreen: '\x1b[92m',
+    brightYellow: '\x1b[93m',
+    brightBlue: '\x1b[94m',
+    brightMagenta: '\x1b[95m',
+    brightCyan: '\x1b[96m',
+    brightWhite: '\x1b[97m',
     'bg-black': '\x1b[40m',
     'bg-red': '\x1b[41m',
     'bg-green': '\x1b[42m',
@@ -117,46 +124,9 @@
     'bg-gray': '\x1b[100m'
   };
 
-  /**
-   * style enum - used by `ansi.styles()`.
-   * @enum {number}
-   * @private
-   */
-  const eStyles = {
-    reset: 0,
-    bold: 1,
-    italic: 3,
-    underline: 4,
-    imageNegative: 7,
-    fontDefault: 10,
-    font2: 11,
-    font3: 12,
-    font4: 13,
-    font5: 14,
-    font6: 15,
-    imagePositive: 27,
-    black: 30,
-    red: 31,
-    green: 32,
-    yellow: 33,
-    blue: 34,
-    magenta: 35,
-    cyan: 36,
-    white: 37,
-    grey: 90,
-    gray: 90,
-    'bg-black': 40,
-    'bg-red': 41,
-    'bg-green': 42,
-    'bg-yellow': 43,
-    'bg-blue': 44,
-    'bg-magenta': 45,
-    'bg-cyan': 46,
-    'bg-white': 47,
-    'bg-grey': 100,
-    'bg-gray': 100
+  ansi.rgb = function (r, g, b) {
+    return `\x1b[38;2;${r};${g};${b}m`
   };
-
   /**
    * Returns an ansi sequence setting one or more effects
    * @param {string | string[]} - a style, or list or styles
@@ -170,7 +140,17 @@
    */
   ansi.styles = function (effectArray) {
     effectArray = arrayify(effectArray);
-    return csi + effectArray.map(function (effect) { return eStyles[effect] }).join(';') + 'm'
+    return effectArray
+      .map(function (effect) {
+        const rgbMatches = effect.match(/rgb\((\d+),\s*(\d+),\s*(\d+)\)/);
+        if (rgbMatches) {
+          const [full, r, g, b] = rgbMatches;
+          return ansi.rgb(r, g, b)
+        } else {
+          return ansi.style[effect]
+        }
+      })
+      .join('')
   };
 
   /**
@@ -192,7 +172,7 @@
    * '\u001b[32;1mwhat?\u001b[0m'
    */
   ansi.format = function (str, styleArray) {
-    const re = /\[([\w\s-]+)\]{([^]*?)}/;
+    const re = /\[([\w\s-\(\),]+)\]{([^]*?)}/;
     let matches;
     if (!str) return ''
 
@@ -300,4 +280,4 @@
 
   return ansi;
 
-}));
+})));
