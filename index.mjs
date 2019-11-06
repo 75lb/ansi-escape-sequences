@@ -56,11 +56,18 @@ ansi.style = {
   'bg-cyan': '\x1b[46m',
   'bg-white': '\x1b[47m',
   'bg-grey': '\x1b[100m',
-  'bg-gray': '\x1b[100m'
+  'bg-gray': '\x1b[100m',
+  'bg-brightRed': '\x1b[101m',
+  'bg-brightGreen': '\x1b[102m',
+  'bg-brightYellow': '\x1b[103m',
+  'bg-brightBlue': '\x1b[104m',
+  'bg-brightMagenta': '\x1b[105m',
+  'bg-brightCyan': '\x1b[106m',
+  'bg-brightWhite': '\x1b[107m'
 }
 
 /**
- * Returns a 24-bit "true colour" escape sequence.
+ * Returns a 24-bit "true colour" foreground escape sequence.
  * @param {number} r - Red value.
  * @param {number} g - Green value.
  * @param {number} b - Blue value.
@@ -72,6 +79,21 @@ ansi.style = {
 ansi.rgb = function (r, g, b) {
   return `\x1b[38;2;${r};${g};${b}m`
 }
+
+/**
+ * Returns a 24-bit "true colour" background escape sequence.
+ * @param {number} r - Red value.
+ * @param {number} g - Green value.
+ * @param {number} b - Blue value.
+ * @returns {string}
+ * @example
+ * > ansi.bgRgb(120, 0, 120)
+ * '\u001b[38;2;120;0;120m'
+ */
+ansi.bgRgb = function (r, g, b) {
+  return `\x1b[48;2;${r};${g};${b}m`
+}
+
 /**
  * Returns an ansi sequence setting one or more effects
  * @param {string | string[]} - a style, or list or styles
@@ -88,7 +110,11 @@ ansi.styles = function (effectArray) {
   return effectArray
     .map(function (effect) {
       const rgbMatches = effect.match(/rgb\((\d+),\s*(\d+),\s*(\d+)\)/)
-      if (rgbMatches) {
+      const bgRgbMatches = effect.match(/bg-rgb\((\d+),\s*(\d+),\s*(\d+)\)/)
+      if (bgRgbMatches) {
+        const [full, r, g, b] = bgRgbMatches
+        return ansi.bgRgb(r, g, b)
+      } else if (rgbMatches) {
         const [full, r, g, b] = rgbMatches
         return ansi.rgb(r, g, b)
       } else {
@@ -101,7 +127,7 @@ ansi.styles = function (effectArray) {
 /**
  * A convenience function, applying the provided styles to the input string and then resetting.
  *
- * Inline styling can be applied using the syntax `[style-list]{text to format}`, where `style-list` is a space-separated list of styles from {@link module:ansi-escape-sequences.style ansi.style}. For example `[bold white bg-red]{bold white text on a red background}`. 24-bit "true colour" values can be set using `rbg(n,n,n)` syntax (no spaces), for example `[rgb(255,128,0) underline]{orange underlined}`.
+ * Inline styling can be applied using the syntax `[style-list]{text to format}`, where `style-list` is a space-separated list of styles from {@link module:ansi-escape-sequences.style ansi.style}. For example `[bold white bg-red]{bold white text on a red background}`. 24-bit "true colour" values can be set using `rbg(n,n,n)` syntax (no spaces), for example `[rgb(255,128,0) underline]{orange underlined}`. Background 24-bit colours can be set using `bg-rbg(n,n,n)` syntax.
  *
  * @param {string} - the string to format
  * @param [styleArray] {string[]} - a list of styles to add to the input string
@@ -118,6 +144,9 @@ ansi.styles = function (effectArray) {
  *
  * > ansi.format('[rgb(255,128,0) bold]{something}')
  * '\u001b[38;2;255;128;0m\u001b[1msomething\u001b[0m'
+ *
+ * > ansi.format('[bg-rgb(255,128,0) bold]{something}')
+ * '\u001b[48;2;255;128;0m\u001b[1msomething\u001b[0m'
  */
 ansi.format = function (str, styleArray) {
   const re = /\[([\w\s-\(\),]+)\]{([^]*?)}/

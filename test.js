@@ -9,6 +9,11 @@ tom.test('format', function () {
   a.strictEqual(result, '\u001b[31m\u001b[4mclive\u001b[0m')
 })
 
+tom.test('format bg-rgb', function () {
+  const result = ansi.format('hello', 'bg-rgb(100,0,100)')
+  a.strictEqual(result, '\u001b[48;2;100;0;100mhello\u001b[0m')
+})
+
 tom.test('inline format', function () {
   const result = ansi.format('before [red underline]{clive} after')
   a.strictEqual(result, 'before \u001b[31m\u001b[4mclive\u001b[0m after')

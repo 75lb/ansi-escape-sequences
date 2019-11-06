@@ -30,6 +30,7 @@ const ansi = require('ansi-escape-sequences')
         * [.inLine(n)](#module_ansi-escape-sequences.erase.inLine) ⇒ <code>string</code>
     * [.style](#module_ansi-escape-sequences.style) : <code>enum</code>
     * [.rgb(r, g, b)](#module_ansi-escape-sequences.rgb) ⇒ <code>string</code>
+    * [.bgRgb(r, g, b)](#module_ansi-escape-sequences.bgRgb) ⇒ <code>string</code>
     * [.styles(effectArray)](#module_ansi-escape-sequences.styles) ⇒ <code>string</code>
     * [.format(str, [styleArray])](#module_ansi-escape-sequences.format) ⇒ <code>string</code>
 
@@ -235,6 +236,13 @@ Various formatting styles (aka Select Graphic Rendition codes).
 | "bg-white" | <code>string</code> | <code>&quot;\u001b[47m&quot;</code> | 
 | "bg-grey" | <code>string</code> | <code>&quot;\u001b[100m&quot;</code> | 
 | "bg-gray" | <code>string</code> | <code>&quot;\u001b[100m&quot;</code> | 
+| "bg-brightRed" | <code>string</code> | <code>&quot;\u001b[101m&quot;</code> | 
+| "bg-brightGreen" | <code>string</code> | <code>&quot;\u001b[102m&quot;</code> | 
+| "bg-brightYellow" | <code>string</code> | <code>&quot;\u001b[103m&quot;</code> | 
+| "bg-brightBlue" | <code>string</code> | <code>&quot;\u001b[104m&quot;</code> | 
+| "bg-brightMagenta" | <code>string</code> | <code>&quot;\u001b[105m&quot;</code> | 
+| "bg-brightCyan" | <code>string</code> | <code>&quot;\u001b[106m&quot;</code> | 
+| "bg-brightWhite" | <code>string</code> | <code>&quot;\u001b[107m&quot;</code> | 
 
 **Example**  
 ```js
@@ -243,7 +251,7 @@ console.log(ansi.style.red + 'this is red' + ansi.style.reset)
 <a name="module_ansi-escape-sequences.rgb"></a>
 
 ## ansi.rgb(r, g, b) ⇒ <code>string</code>
-Returns a 24-bit "true colour" escape sequence.
+Returns a 24-bit "true colour" foreground escape sequence.
 
 **Kind**: static method of [<code>ansi-escape-sequences</code>](#module_ansi-escape-sequences)  
 
@@ -256,6 +264,24 @@ Returns a 24-bit "true colour" escape sequence.
 **Example**  
 ```js
 > ansi.rgb(120, 0, 120)
+'\u001b[38;2;120;0;120m'
+```
+<a name="module_ansi-escape-sequences.bgRgb"></a>
+
+## ansi.bgRgb(r, g, b) ⇒ <code>string</code>
+Returns a 24-bit "true colour" background escape sequence.
+
+**Kind**: static method of [<code>ansi-escape-sequences</code>](#module_ansi-escape-sequences)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| r | <code>number</code> | Red value. |
+| g | <code>number</code> | Green value. |
+| b | <code>number</code> | Blue value. |
+
+**Example**  
+```js
+> ansi.bgRgb(120, 0, 120)
 '\u001b[38;2;120;0;120m'
 ```
 <a name="module_ansi-escape-sequences.styles"></a>
@@ -282,7 +308,7 @@ Returns an ansi sequence setting one or more effects
 ## ansi.format(str, [styleArray]) ⇒ <code>string</code>
 A convenience function, applying the provided styles to the input string and then resetting.
 
-Inline styling can be applied using the syntax `[style-list]{text to format}`, where `style-list` is a space-separated list of styles from [ansi.style](#module_ansi-escape-sequences.style). For example `[bold white bg-red]{bold white text on a red background}`. 24-bit "true colour" values can be set using `rbg(n,n,n)` syntax (no spaces), for example `[rgb(255,128,0) underline]{orange underlined}`.
+Inline styling can be applied using the syntax `[style-list]{text to format}`, where `style-list` is a space-separated list of styles from [ansi.style](#module_ansi-escape-sequences.style). For example `[bold white bg-red]{bold white text on a red background}`. 24-bit "true colour" values can be set using `rbg(n,n,n)` syntax (no spaces), for example `[rgb(255,128,0) underline]{orange underlined}`. Background 24-bit colours can be set using `bg-rbg(n,n,n)` syntax.
 
 **Kind**: static method of [<code>ansi-escape-sequences</code>](#module_ansi-escape-sequences)  
 
@@ -304,6 +330,9 @@ Inline styling can be applied using the syntax `[style-list]{text to format}`, w
 
 > ansi.format('[rgb(255,128,0) bold]{something}')
 '\u001b[38;2;255;128;0m\u001b[1msomething\u001b[0m'
+
+> ansi.format('[bg-rgb(255,128,0) bold]{something}')
+'\u001b[48;2;255;128;0m\u001b[1msomething\u001b[0m'
 ```
 
 ## Load anywhere
