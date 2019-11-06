@@ -101,7 +101,7 @@ ansi.styles = function (effectArray) {
 /**
  * A convenience function, applying the provided styles to the input string and then resetting.
  *
- * Inline styling can be applied using the syntax `[style-list]{text to format}`, where `style-list` is a space-separated list of styles from {@link module:ansi-escape-sequences.style ansi.style}. For example `[bold white bg-red]{bold white text on a red background}`. 24-bit "true colour" values can be set using a `rbg(n,n,n)` syntax (no spaces), for example `[rgb(255,128,0) underline]{orange underlined}`.
+ * Inline styling can be applied using the syntax `[style-list]{text to format}`, where `style-list` is a space-separated list of styles from {@link module:ansi-escape-sequences.style ansi.style}. For example `[bold white bg-red]{bold white text on a red background}`. 24-bit "true colour" values can be set using `rbg(n,n,n)` syntax (no spaces), for example `[rgb(255,128,0) underline]{orange underlined}`.
  *
  * @param {string} - the string to format
  * @param [styleArray] {string[]} - a list of styles to add to the input string
@@ -111,10 +111,13 @@ ansi.styles = function (effectArray) {
  * '\u001b[32mwhat?\u001b[0m'
  *
  * > ansi.format('what?', ['green', 'bold'])
- * '\u001b[32;1mwhat?\u001b[0m'
+ * '\u001b[32m\u001b[1mwhat?\u001b[0m'
  *
- * > ansi.format('[green bold]{what?}')
- * '\u001b[32;1mwhat?\u001b[0m'
+ * > ansi.format('something', ['rgb(255,128,0)', 'bold'])
+ * '\u001b[38;2;255;128;0m\u001b[1msomething\u001b[0m'
+ *
+ * > ansi.format('[rgb(255,128,0) bold]{something}')
+ * '\u001b[38;2;255;128;0m\u001b[1msomething\u001b[0m'
  */
 ansi.format = function (str, styleArray) {
   const re = /\[([\w\s-\(\),]+)\]{([^]*?)}/

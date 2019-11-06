@@ -282,7 +282,7 @@ Returns an ansi sequence setting one or more effects
 ## ansi.format(str, [styleArray]) ⇒ <code>string</code>
 A convenience function, applying the provided styles to the input string and then resetting.
 
-Inline styling can be applied using the syntax `[style-list]{text to format}`, where `style-list` is a space-separated list of styles from [ansi.style](#module_ansi-escape-sequences.style). For example `[bold white bg-red]{bold white text on a red background}`. 24-bit "true colour" values can be set using a `rbg(n,n,n)` syntax (no spaces), for example `[rgb(255,128,0) underline]{orange underlined}`.
+Inline styling can be applied using the syntax `[style-list]{text to format}`, where `style-list` is a space-separated list of styles from [ansi.style](#module_ansi-escape-sequences.style). For example `[bold white bg-red]{bold white text on a red background}`. 24-bit "true colour" values can be set using `rbg(n,n,n)` syntax (no spaces), for example `[rgb(255,128,0) underline]{orange underlined}`.
 
 **Kind**: static method of [<code>ansi-escape-sequences</code>](#module_ansi-escape-sequences)  
 
@@ -297,10 +297,13 @@ Inline styling can be applied using the syntax `[style-list]{text to format}`, w
 '\u001b[32mwhat?\u001b[0m'
 
 > ansi.format('what?', ['green', 'bold'])
-'\u001b[32;1mwhat?\u001b[0m'
+'\u001b[32m\u001b[1mwhat?\u001b[0m'
 
-> ansi.format('[green bold]{what?}')
-'\u001b[32;1mwhat?\u001b[0m'
+> ansi.format('something', ['rgb(255,128,0)', 'bold'])
+'\u001b[38;2;255;128;0m\u001b[1msomething\u001b[0m'
+
+> ansi.format('[rgb(255,128,0) bold]{something}')
+'\u001b[38;2;255;128;0m\u001b[1msomething\u001b[0m'
 ```
 
 ## Load anywhere
