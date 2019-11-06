@@ -29,6 +29,7 @@ const ansi = require('ansi-escape-sequences')
         * [.display(n)](#module_ansi-escape-sequences.erase.display) ⇒ <code>string</code>
         * [.inLine(n)](#module_ansi-escape-sequences.erase.inLine) ⇒ <code>string</code>
     * [.style](#module_ansi-escape-sequences.style) : <code>enum</code>
+    * [.rgb(r, g, b)](#module_ansi-escape-sequences.rgb) ⇒ <code>string</code>
     * [.styles(effectArray)](#module_ansi-escape-sequences.styles) ⇒ <code>string</code>
     * [.format(str, [styleArray])](#module_ansi-escape-sequences.format) ⇒ <code>string</code>
 
@@ -217,6 +218,13 @@ Various formatting styles (aka Select Graphic Rendition codes).
 | white | <code>string</code> | <code>&quot;\u001b[37m&quot;</code> | 
 | grey | <code>string</code> | <code>&quot;\u001b[90m&quot;</code> | 
 | gray | <code>string</code> | <code>&quot;\u001b[90m&quot;</code> | 
+| brightRed | <code>string</code> | <code>&quot;\u001b[91m&quot;</code> | 
+| brightGreen | <code>string</code> | <code>&quot;\u001b[92m&quot;</code> | 
+| brightYellow | <code>string</code> | <code>&quot;\u001b[93m&quot;</code> | 
+| brightBlue | <code>string</code> | <code>&quot;\u001b[94m&quot;</code> | 
+| brightMagenta | <code>string</code> | <code>&quot;\u001b[95m&quot;</code> | 
+| brightCyan | <code>string</code> | <code>&quot;\u001b[96m&quot;</code> | 
+| brightWhite | <code>string</code> | <code>&quot;\u001b[97m&quot;</code> | 
 | "bg-black" | <code>string</code> | <code>&quot;\u001b[40m&quot;</code> | 
 | "bg-red" | <code>string</code> | <code>&quot;\u001b[41m&quot;</code> | 
 | "bg-green" | <code>string</code> | <code>&quot;\u001b[42m&quot;</code> | 
@@ -231,6 +239,24 @@ Various formatting styles (aka Select Graphic Rendition codes).
 **Example**  
 ```js
 console.log(ansi.style.red + 'this is red' + ansi.style.reset)
+```
+<a name="module_ansi-escape-sequences.rgb"></a>
+
+## ansi.rgb(r, g, b) ⇒ <code>string</code>
+Returns a 24-bit "true colour" escape sequence.
+
+**Kind**: static method of [<code>ansi-escape-sequences</code>](#module_ansi-escape-sequences)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| r | <code>number</code> | Red value. |
+| g | <code>number</code> | Green value. |
+| b | <code>number</code> | Blue value. |
+
+**Example**  
+```js
+> ansi.rgb(120, 0, 120)
+'\u001b[38;2;120;0;120m'
 ```
 <a name="module_ansi-escape-sequences.styles"></a>
 
@@ -249,14 +275,14 @@ Returns an ansi sequence setting one or more effects
 '\u001b[32m'
 
 > ansi.styles([ 'green', 'underline' ])
-'\u001b[32;4m'
+'\u001b[32m\u001b[4m'
 ```
 <a name="module_ansi-escape-sequences.format"></a>
 
 ## ansi.format(str, [styleArray]) ⇒ <code>string</code>
 A convenience function, applying the provided styles to the input string and then resetting.
 
-Inline styling can be applied using the syntax `[style-list]{text to format}`, where `style-list` is a space-separated list of styles from [ansi.style](#module_ansi-escape-sequences.style). For example `[bold white bg-red]{bold white text on a red background}`.
+Inline styling can be applied using the syntax `[style-list]{text to format}`, where `style-list` is a space-separated list of styles from [ansi.style](#module_ansi-escape-sequences.style). For example `[bold white bg-red]{bold white text on a red background}`. 24-bit "true colour" values can be set using a `rbg(n,n,n)` syntax (no spaces), for example `[rgb(255,128,0) underline]{orange underlined}`.
 
 **Kind**: static method of [<code>ansi-escape-sequences</code>](#module_ansi-escape-sequences)  
 

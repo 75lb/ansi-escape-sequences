@@ -60,52 +60,15 @@ ansi.style = {
 }
 
 /**
- * style enum - used by `ansi.styles()`.
- * @enum {number}
- * @private
+ * Returns a 24-bit "true colour" escape sequence.
+ * @param {number} r - Red value.
+ * @param {number} g - Green value.
+ * @param {number} b - Blue value.
+ * @returns {string}
+ * @example
+ * > ansi.rgb(120, 0, 120)
+ * '\u001b[38;2;120;0;120m'
  */
-const eStyles = {
-  reset: 0,
-  bold: 1,
-  italic: 3,
-  underline: 4,
-  imageNegative: 7,
-  fontDefault: 10,
-  font2: 11,
-  font3: 12,
-  font4: 13,
-  font5: 14,
-  font6: 15,
-  imagePositive: 27,
-  black: 30,
-  red: 31,
-  green: 32,
-  yellow: 33,
-  blue: 34,
-  magenta: 35,
-  cyan: 36,
-  white: 37,
-  grey: 90,
-  gray: 90,
-  brightRed: 91,
-  brightGreen: 92,
-  brightYellow: 93,
-  brightBlue: 94,
-  brightMagenta: 95,
-  brightCyan: 96,
-  brightWhite: 97,
-  'bg-black': 40,
-  'bg-red': 41,
-  'bg-green': 42,
-  'bg-yellow': 43,
-  'bg-blue': 44,
-  'bg-magenta': 45,
-  'bg-cyan': 46,
-  'bg-white': 47,
-  'bg-grey': 100,
-  'bg-gray': 100
-}
-
 ansi.rgb = function (r, g, b) {
   return `\x1b[38;2;${r};${g};${b}m`
 }
@@ -118,7 +81,7 @@ ansi.rgb = function (r, g, b) {
  * '\u001b[32m'
  *
  * > ansi.styles([ 'green', 'underline' ])
- * '\u001b[32;4m'
+ * '\u001b[32m\u001b[4m'
  */
 ansi.styles = function (effectArray) {
   effectArray = arrayify(effectArray)
@@ -138,7 +101,7 @@ ansi.styles = function (effectArray) {
 /**
  * A convenience function, applying the provided styles to the input string and then resetting.
  *
- * Inline styling can be applied using the syntax `[style-list]{text to format}`, where `style-list` is a space-separated list of styles from {@link module:ansi-escape-sequences.style ansi.style}. For example `[bold white bg-red]{bold white text on a red background}`.
+ * Inline styling can be applied using the syntax `[style-list]{text to format}`, where `style-list` is a space-separated list of styles from {@link module:ansi-escape-sequences.style ansi.style}. For example `[bold white bg-red]{bold white text on a red background}`. 24-bit "true colour" values can be set using a `rbg(n,n,n)` syntax (no spaces), for example `[rgb(255,128,0) underline]{orange underlined}`.
  *
  * @param {string} - the string to format
  * @param [styleArray] {string[]} - a list of styles to add to the input string
