@@ -132,7 +132,7 @@
   };
 
   /**
-   * Returns a 24-bit "true colour" foreground escape sequence.
+   * Returns a 24-bit "true colour" foreground colour escape sequence.
    * @param {number} r - Red value.
    * @param {number} g - Green value.
    * @param {number} b - Blue value.
@@ -146,14 +146,14 @@
   };
 
   /**
-   * Returns a 24-bit "true colour" background escape sequence.
+   * Returns a 24-bit "true colour" background colour escape sequence.
    * @param {number} r - Red value.
    * @param {number} g - Green value.
    * @param {number} b - Blue value.
    * @returns {string}
    * @example
    * > ansi.bgRgb(120, 0, 120)
-   * '\u001b[38;2;120;0;120m'
+   * '\u001b[48;2;120;0;120m'
    */
   ansi.bgRgb = function (r, g, b) {
     return `\x1b[48;2;${r};${g};${b}m`
@@ -193,12 +193,14 @@
   };
 
   /**
-   * A convenience function, applying the provided styles to the input string and then resetting.
+   * A convenience function, applying the styles provided in `styleArray` to the input string.
    *
-   * Inline styling can be applied using the syntax `[style-list]{text to format}`, where `style-list` is a space-separated list of styles from {@link module:ansi-escape-sequences.style ansi.style}. For example `[bold white bg-red]{bold white text on a red background}`. 24-bit "true colour" values can be set using `rgb(n,n,n)` syntax (no spaces), for example `[rgb(255,128,0) underline]{orange underlined}`. Background 24-bit colours can be set using `bg-rgb(n,n,n)` syntax.
+   * Partial, inline styling can also be applied using the syntax `[style-list]{text to format}` anywhere within the input string, where `style-list` is a space-separated list of styles from {@link module:ansi-escape-sequences.style ansi.style}. For example `[bold white bg-red]{bold white text on a red background}`.
    *
-   * @param {string} - the string to format
-   * @param [styleArray] {string[]} - a list of styles to add to the input string
+   * 24-bit "true colour" values can be set using `rgb(n,n,n)` syntax (no spaces), for example `[rgb(255,128,0) underline]{orange underlined}`. Background 24-bit colours can be set using `bg-rgb(n,n,n)` syntax.
+   *
+   * @param {string} - The string to format. Can also include inline-formatting using the syntax `[style-list]{text to format}` anywhere within the string.
+   * @param [styleArray] {string|string[]} - One or more style strings to apply to the input string. Valid strings are any property from the [`ansi.style`](https://github.com/75lb/ansi-escape-sequences#ansistyle--enum) object (e.g. `red` or `bg-red`), `rgb(n,n,n)` or `bg-rgb(n,n,n)`.
    * @returns {string}
    * @example
    * > ansi.format('what?', 'green')
@@ -210,11 +212,11 @@
    * > ansi.format('something', ['rgb(255,128,0)', 'bold'])
    * '\u001b[38;2;255;128;0m\u001b[1msomething\u001b[0m'
    *
-   * > ansi.format('[rgb(255,128,0) bold]{something}')
-   * '\u001b[38;2;255;128;0m\u001b[1msomething\u001b[0m'
+   * > ansi.format('Inline styling: [rgb(255,128,0) bold]{something}')
+   * 'Inline styling: \u001b[38;2;255;128;0m\u001b[1msomething\u001b[0m'
    *
-   * > ansi.format('[bg-rgb(255,128,0) bold]{something}')
-   * '\u001b[48;2;255;128;0m\u001b[1msomething\u001b[0m'
+   * > ansi.format('Inline styling: [bg-rgb(255,128,0) bold]{something}')
+   * 'Inline styling: \u001b[48;2;255;128;0m\u001b[1msomething\u001b[0m'
    */
   ansi.format = function (str, styleArray) {
     const re = /\[([\w\s-\(\),]+)\]{([^]*?)}/;

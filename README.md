@@ -251,7 +251,7 @@ console.log(ansi.style.red + 'this is red' + ansi.style.reset)
 <a name="module_ansi-escape-sequences.rgb"></a>
 
 ## ansi.rgb(r, g, b) ⇒ <code>string</code>
-Returns a 24-bit "true colour" foreground escape sequence.
+Returns a 24-bit "true colour" foreground colour escape sequence.
 
 **Kind**: static method of [<code>ansi-escape-sequences</code>](#module_ansi-escape-sequences)  
 
@@ -269,7 +269,7 @@ Returns a 24-bit "true colour" foreground escape sequence.
 <a name="module_ansi-escape-sequences.bgRgb"></a>
 
 ## ansi.bgRgb(r, g, b) ⇒ <code>string</code>
-Returns a 24-bit "true colour" background escape sequence.
+Returns a 24-bit "true colour" background colour escape sequence.
 
 **Kind**: static method of [<code>ansi-escape-sequences</code>](#module_ansi-escape-sequences)  
 
@@ -282,7 +282,7 @@ Returns a 24-bit "true colour" background escape sequence.
 **Example**  
 ```js
 > ansi.bgRgb(120, 0, 120)
-'\u001b[38;2;120;0;120m'
+'\u001b[48;2;120;0;120m'
 ```
 <a name="module_ansi-escape-sequences.styles"></a>
 
@@ -309,16 +309,18 @@ Returns an ansi sequence setting one or more styles.
 <a name="module_ansi-escape-sequences.format"></a>
 
 ## ansi.format(str, [styleArray]) ⇒ <code>string</code>
-A convenience function, applying the provided styles to the input string and then resetting.
+A convenience function, applying the styles provided in `styleArray` to the input string.
 
-Inline styling can be applied using the syntax `[style-list]{text to format}`, where `style-list` is a space-separated list of styles from [ansi.style](#module_ansi-escape-sequences.style). For example `[bold white bg-red]{bold white text on a red background}`. 24-bit "true colour" values can be set using `rgb(n,n,n)` syntax (no spaces), for example `[rgb(255,128,0) underline]{orange underlined}`. Background 24-bit colours can be set using `bg-rgb(n,n,n)` syntax.
+Partial, inline styling can also be applied using the syntax `[style-list]{text to format}` anywhere within the input string, where `style-list` is a space-separated list of styles from [ansi.style](#module_ansi-escape-sequences.style). For example `[bold white bg-red]{bold white text on a red background}`.
+
+24-bit "true colour" values can be set using `rgb(n,n,n)` syntax (no spaces), for example `[rgb(255,128,0) underline]{orange underlined}`. Background 24-bit colours can be set using `bg-rgb(n,n,n)` syntax.
 
 **Kind**: static method of [<code>ansi-escape-sequences</code>](#module_ansi-escape-sequences)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| str | <code>string</code> | the string to format |
-| [styleArray] | <code>Array.&lt;string&gt;</code> | a list of styles to add to the input string |
+| str | <code>string</code> | The string to format. Can also include inline-formatting using the syntax `[style-list]{text to format}` anywhere within the string. |
+| [styleArray] | <code>string</code> \| <code>Array.&lt;string&gt;</code> | One or more style strings to apply to the input string. Valid strings are any property from the [`ansi.style`](https://github.com/75lb/ansi-escape-sequences#ansistyle--enum) object (e.g. `red` or `bg-red`), `rgb(n,n,n)` or `bg-rgb(n,n,n)`. |
 
 **Example**  
 ```js
@@ -331,11 +333,11 @@ Inline styling can be applied using the syntax `[style-list]{text to format}`, w
 > ansi.format('something', ['rgb(255,128,0)', 'bold'])
 '\u001b[38;2;255;128;0m\u001b[1msomething\u001b[0m'
 
-> ansi.format('[rgb(255,128,0) bold]{something}')
-'\u001b[38;2;255;128;0m\u001b[1msomething\u001b[0m'
+> ansi.format('Inline styling: [rgb(255,128,0) bold]{something}')
+'Inline styling: \u001b[38;2;255;128;0m\u001b[1msomething\u001b[0m'
 
-> ansi.format('[bg-rgb(255,128,0) bold]{something}')
-'\u001b[48;2;255;128;0m\u001b[1msomething\u001b[0m'
+> ansi.format('Inline styling: [bg-rgb(255,128,0) bold]{something}')
+'Inline styling: \u001b[48;2;255;128;0m\u001b[1msomething\u001b[0m'
 ```
 
 ## Load anywhere
