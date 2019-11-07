@@ -31,7 +31,7 @@ const ansi = require('ansi-escape-sequences')
     * [.style](#module_ansi-escape-sequences.style) : <code>enum</code>
     * [.rgb(r, g, b)](#module_ansi-escape-sequences.rgb) ⇒ <code>string</code>
     * [.bgRgb(r, g, b)](#module_ansi-escape-sequences.bgRgb) ⇒ <code>string</code>
-    * [.styles(effectArray)](#module_ansi-escape-sequences.styles) ⇒ <code>string</code>
+    * [.styles(styles)](#module_ansi-escape-sequences.styles) ⇒ <code>string</code>
     * [.format(str, [styleArray])](#module_ansi-escape-sequences.format) ⇒ <code>string</code>
 
 <a name="module_ansi-escape-sequences.cursor"></a>
@@ -286,14 +286,14 @@ Returns a 24-bit "true colour" background escape sequence.
 ```
 <a name="module_ansi-escape-sequences.styles"></a>
 
-## ansi.styles(effectArray) ⇒ <code>string</code>
-Returns an ansi sequence setting one or more effects
+## ansi.styles(styles) ⇒ <code>string</code>
+Returns an ansi sequence setting one or more styles.
 
 **Kind**: static method of [<code>ansi-escape-sequences</code>](#module_ansi-escape-sequences)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| effectArray | <code>string</code> \| <code>Array.&lt;string&gt;</code> | a style, or list or styles |
+| styles | <code>string</code> \| <code>Array.&lt;string&gt;</code> | One or more style strings. |
 
 **Example**  
 ```js
@@ -302,13 +302,16 @@ Returns an ansi sequence setting one or more effects
 
 > ansi.styles([ 'green', 'underline' ])
 '\u001b[32m\u001b[4m'
+
+> ansi.styles([ 'bg-red', 'rgb(200,200,200)' ])
+'\u001b[41m\u001b[38;2;200;200;200m'
 ```
 <a name="module_ansi-escape-sequences.format"></a>
 
 ## ansi.format(str, [styleArray]) ⇒ <code>string</code>
 A convenience function, applying the provided styles to the input string and then resetting.
 
-Inline styling can be applied using the syntax `[style-list]{text to format}`, where `style-list` is a space-separated list of styles from [ansi.style](#module_ansi-escape-sequences.style). For example `[bold white bg-red]{bold white text on a red background}`. 24-bit "true colour" values can be set using `rbg(n,n,n)` syntax (no spaces), for example `[rgb(255,128,0) underline]{orange underlined}`. Background 24-bit colours can be set using `bg-rbg(n,n,n)` syntax.
+Inline styling can be applied using the syntax `[style-list]{text to format}`, where `style-list` is a space-separated list of styles from [ansi.style](#module_ansi-escape-sequences.style). For example `[bold white bg-red]{bold white text on a red background}`. 24-bit "true colour" values can be set using `rgb(n,n,n)` syntax (no spaces), for example `[rgb(255,128,0) underline]{orange underlined}`. Background 24-bit colours can be set using `bg-rgb(n,n,n)` syntax.
 
 **Kind**: static method of [<code>ansi-escape-sequences</code>](#module_ansi-escape-sequences)  
 

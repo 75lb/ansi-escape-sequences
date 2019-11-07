@@ -154,8 +154,8 @@ ansi.bgRgb = function (r, g, b) {
 };
 
 /**
- * Returns an ansi sequence setting one or more effects
- * @param {string | string[]} - a style, or list or styles
+ * Returns an ansi sequence setting one or more styles.
+ * @param {string | string[]} - One or more style strings.
  * @returns {string}
  * @example
  * > ansi.styles('green')
@@ -163,10 +163,13 @@ ansi.bgRgb = function (r, g, b) {
  *
  * > ansi.styles([ 'green', 'underline' ])
  * '\u001b[32m\u001b[4m'
+ *
+ * > ansi.styles([ 'bg-red', 'rgb(200,200,200)' ])
+ * '\u001b[41m\u001b[38;2;200;200;200m'
  */
-ansi.styles = function (effectArray) {
-  effectArray = arrayify(effectArray);
-  return effectArray
+ansi.styles = function (styles) {
+  styles = arrayify(styles);
+  return styles
     .map(function (effect) {
       const rgbMatches = effect.match(/rgb\((\d+),\s*(\d+),\s*(\d+)\)/);
       const bgRgbMatches = effect.match(/bg-rgb\((\d+),\s*(\d+),\s*(\d+)\)/);
@@ -186,7 +189,7 @@ ansi.styles = function (effectArray) {
 /**
  * A convenience function, applying the provided styles to the input string and then resetting.
  *
- * Inline styling can be applied using the syntax `[style-list]{text to format}`, where `style-list` is a space-separated list of styles from {@link module:ansi-escape-sequences.style ansi.style}. For example `[bold white bg-red]{bold white text on a red background}`. 24-bit "true colour" values can be set using `rbg(n,n,n)` syntax (no spaces), for example `[rgb(255,128,0) underline]{orange underlined}`. Background 24-bit colours can be set using `bg-rbg(n,n,n)` syntax.
+ * Inline styling can be applied using the syntax `[style-list]{text to format}`, where `style-list` is a space-separated list of styles from {@link module:ansi-escape-sequences.style ansi.style}. For example `[bold white bg-red]{bold white text on a red background}`. 24-bit "true colour" values can be set using `rgb(n,n,n)` syntax (no spaces), for example `[rgb(255,128,0) underline]{orange underlined}`. Background 24-bit colours can be set using `bg-rgb(n,n,n)` syntax.
  *
  * @param {string} - the string to format
  * @param [styleArray] {string[]} - a list of styles to add to the input string
