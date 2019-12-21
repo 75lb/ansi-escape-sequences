@@ -62,7 +62,7 @@
       return Array.from(input)
     }
 
-    return [ input ]
+    return [input]
   }
 
   /* Control Sequence Initiator */
