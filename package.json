@@ -1,7 +1,7 @@
 {
   "name": "ansi-escape-sequences",
   "author": "Lloyd Brookes <75pound@gmail.com>",
-  "version": "5.1.2",
+  "version": "6.0.0",
   "description": "A simple library containing all known terminal ansi escape codes and sequences.",
   "repository": "https://github.com/75lb/ansi-escape-sequences",
   "main": "dist/index.js",
