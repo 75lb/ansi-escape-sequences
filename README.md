@@ -3,7 +3,6 @@
 [![Gihub repo dependents](https://badgen.net/github/dependents-repo/75lb/ansi-escape-sequences)](https://github.com/75lb/ansi-escape-sequences/network/dependents?dependent_type=REPOSITORY)
 [![Gihub package dependents](https://badgen.net/github/dependents-pkg/75lb/ansi-escape-sequences)](https://github.com/75lb/ansi-escape-sequences/network/dependents?dependent_type=PACKAGE)
 [![Build Status](https://travis-ci.org/75lb/ansi-escape-sequences.svg?branch=master)](https://travis-ci.org/75lb/ansi-escape-sequences)
-ansi-escape-sequences)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](https://github.com/feross/standard)
 
 # ansi-escape-sequences
