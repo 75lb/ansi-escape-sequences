@@ -1,8 +1,8 @@
-const Tom = require('test-runner').Tom
-const ansi = require('./')
-const a = require('assert').strict
-
-const tom = module.exports = new Tom('ansi')
+import TestRunner from 'test-runner'
+import ansi from './index.mjs'
+import assert from 'assert'
+const a = assert.strict
+const tom = new TestRunner.Tom()
 
 tom.test('format', function () {
   const result = ansi.format('clive', ['red', 'underline'])
@@ -23,3 +23,5 @@ tom.test('inline format rgb', function () {
   const result = ansi.format('before [rgb(150,0,150) underline]{clive} after')
   a.equal(result, 'before \u001b[38;2;150;0;150m\u001b[4mclive\u001b[0m after')
 })
+
+export default tom

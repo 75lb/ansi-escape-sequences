@@ -15,12 +15,12 @@
     "cursor"
   ],
   "engines": {
-    "node": ">=10"
+    "node": ">=14"
   },
   "scripts": {
-    "test": "npm run dist && test-runner test.js",
+    "test": "npm run dist && test-runner test.mjs",
     "docs": "jsdoc2md -c jsdoc.conf -d 1 -t README.hbs index.mjs > README.md",
-    "dist": "rollup index.mjs -f umd -n ansi -o dist/index.js && rollup index.mjs -f esm -o dist/index.mjs"
+    "dist": "rollup -c"
   },
   "dependencies": {
     "array-back": "^5.0.0"
@@ -28,6 +28,7 @@
   "devDependencies": {
     "jsdoc-to-markdown": "^7.0.0",
     "rollup": "^2.40.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
     "test-runner": "^0.8.13"
   },
   "files": [

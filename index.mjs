@@ -1,4 +1,4 @@
-import arrayify from './node_modules/array-back/index.mjs'
+import arrayify from 'array-back/index.mjs'
 
 /* Control Sequence Initiator */
 const csi = '\x1b['
