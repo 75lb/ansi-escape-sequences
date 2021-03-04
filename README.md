@@ -1,13 +1,17 @@
-[![view on npm](http://img.shields.io/npm/v/ansi-escape-sequences.svg)](https://www.npmjs.org/package/ansi-escape-sequences)
-[![npm module downloads](http://img.shields.io/npm/dt/ansi-escape-sequences.svg)](https://www.npmjs.org/package/ansi-escape-sequences)
+[![view on npm](https://badgen.net/npm/v/ansi-escape-sequences)](https://www.npmjs.org/package/ansi-escape-sequences)
+[![npm module downloads](https://badgen.net/npm/dt/ansi-escape-sequences)](https://www.npmjs.org/package/ansi-escape-sequences)
+[![Gihub repo dependents](https://badgen.net/github/dependents-repo/75lb/ansi-escape-sequences)](https://github.com/75lb/ansi-escape-sequences/network/dependents?dependent_type=REPOSITORY)
+[![Gihub package dependents](https://badgen.net/github/dependents-pkg/75lb/ansi-escape-sequences)](https://github.com/75lb/ansi-escape-sequences/network/dependents?dependent_type=PACKAGE)
 [![Build Status](https://travis-ci.org/75lb/ansi-escape-sequences.svg?branch=master)](https://travis-ci.org/75lb/ansi-escape-sequences)
-[![Dependency Status](https://badgen.net/david/dep/75lb/ansi-escape-sequences)](https://david-dm.org/75lb/ansi-escape-sequences)
+ansi-escape-sequences)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](https://github.com/feross/standard)
 
 # ansi-escape-sequences
+
 A simple library containing all known terminal [ansi escape codes and sequences](http://en.wikipedia.org/wiki/ANSI_escape_code). Useful for adding colour to your command-line output, or building a dynamic text user interface.
 
 ## API Reference
+
 **Example**  
 ```js
 const ansi = require('ansi-escape-sequences')
@@ -370,6 +374,6 @@ Old browser (adds `window.ansi`):
 
 * * *
 
-&copy; 2014-20 Lloyd Brookes \<75pound@gmail.com\>.
+&copy; 2014-21 Lloyd Brookes \<75pound@gmail.com\>.
 
 Tested by [test-runner](https://github.com/test-runner-js/test-runner). Documented by [jsdoc-to-markdown](https://github.com/jsdoc2md/jsdoc-to-markdown).
