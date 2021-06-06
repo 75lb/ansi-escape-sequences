@@ -4,7 +4,11 @@
   "version": "6.0.1",
   "description": "A simple library containing all known terminal ansi escape codes and sequences.",
   "repository": "https://github.com/75lb/ansi-escape-sequences",
-  "main": "dist/index.js",
+  "main": "./index.mjs",
+  "exports": {
+    "import": "./index.mjs",
+    "require": "./dist/index.cjs"
+  },
   "license": "MIT",
   "keywords": [
     "ansi",
@@ -23,13 +27,13 @@
     "dist": "rollup -c"
   },
   "dependencies": {
-    "array-back": "^5.0.0"
+    "array-back": "^6.0.1"
   },
   "devDependencies": {
-    "jsdoc-to-markdown": "^7.0.0",
-    "rollup": "^2.40.0",
+    "jsdoc-to-markdown": "^7.0.1",
+    "rollup": "^2.51.0",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "test-runner": "^0.8.13"
+    "test-runner": "^0.9.2"
   },
   "files": [
     "index.mjs",

@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Takes any input and guarantees an array back.
  *
@@ -315,4 +317,4 @@ ansi.erase = {
   inLine: function (n) { return csi + (n || 0) + 'K' }
 };
 
-export default ansi;
+module.exports = ansi;

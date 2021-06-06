@@ -4,18 +4,9 @@ module.exports = [
   {
     input: 'index.mjs',
     output: {
-      file: 'dist/index.js',
-      format: 'umd',
-      name: 'ansi'
-    },
-    external: [],
-    plugins: [resolve({ preferBuiltins: true })]
-  },
-  {
-    input: 'index.mjs',
-    output: {
-      file: 'dist/index.mjs',
-      format: 'esm'
+      file: 'dist/index.cjs',
+      format: 'cjs',
+      exports: 'auto'
     },
     external: [],
     plugins: [resolve({ preferBuiltins: true })]
