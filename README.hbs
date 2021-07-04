@@ -2,7 +2,7 @@
 [![npm module downloads](https://badgen.net/npm/dt/ansi-escape-sequences)](https://www.npmjs.org/package/ansi-escape-sequences)
 [![Gihub repo dependents](https://badgen.net/github/dependents-repo/75lb/ansi-escape-sequences)](https://github.com/75lb/ansi-escape-sequences/network/dependents?dependent_type=REPOSITORY)
 [![Gihub package dependents](https://badgen.net/github/dependents-pkg/75lb/ansi-escape-sequences)](https://github.com/75lb/ansi-escape-sequences/network/dependents?dependent_type=PACKAGE)
-[![Build Status](https://travis-ci.org/75lb/ansi-escape-sequences.svg?branch=master)](https://travis-ci.org/75lb/ansi-escape-sequences)
+[![Node.js CI](https://github.com/75lb/ansi-escape-sequences/actions/workflows/node.js.yml/badge.svg)](https://github.com/75lb/ansi-escape-sequences/actions/workflows/node.js.yml)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](https://github.com/feross/standard)
 
 # ansi-escape-sequences
