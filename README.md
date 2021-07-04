@@ -365,12 +365,6 @@ Within a modern browser ECMAScript Module:
 import ansi from './node_modules/ansi-escape-sequences/dist/index.mjs'
 ```
 
-Old browser (adds `window.ansi`):
-
-```html
-<script nomodule src="./node_modules/ansi-escape-sequences/dist/index.js"></script>
-```
-
 * * *
 
 &copy; 2014-21 Lloyd Brookes \<75pound@gmail.com\>.
