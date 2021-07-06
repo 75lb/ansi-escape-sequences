@@ -211,6 +211,7 @@ ansi.styles = function (styles) {
 ansi.format = function (str, styleArray) {
   const re = /\[([\w\s-\(\),]+)\]{([^]*?)}/;
   let matches;
+  str = String(str);
   if (!str) return ''
 
   while (matches = str.match(re)) {

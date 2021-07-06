@@ -9,6 +9,11 @@ tom.test('format', function () {
   a.equal(result, '\u001b[31m\u001b[4mclive\u001b[0m')
 })
 
+tom.test('format number', function () {
+  const result = ansi.format(-100, ['red', 'underline'])
+  a.equal(result, '\u001b[31m\u001b[4m-100\u001b[0m')
+})
+
 tom.test('format bg-rgb', function () {
   const result = ansi.format('hello', 'bg-rgb(100,0,100)')
   a.equal(result, '\u001b[48;2;100;0;100mhello\u001b[0m')
