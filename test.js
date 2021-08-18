@@ -1,7 +1,7 @@
 import TestRunner from 'test-runner'
-import ansi from './index.mjs'
-import assert from 'assert'
-const a = assert.strict
+import ansi from 'ansi-escape-sequences'
+import { strict as a } from 'assert'
+
 const tom = new TestRunner.Tom()
 
 tom.test('format', function () {

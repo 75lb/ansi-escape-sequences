@@ -316,4 +316,4 @@ ansi.erase = {
   inLine: function (n) { return csi + (n || 0) + 'K' }
 };
 
-export default ansi;
+export { ansi as default };

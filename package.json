@@ -4,8 +4,9 @@
   "version": "6.1.1",
   "description": "A simple library containing all known terminal ansi escape codes and sequences.",
   "repository": "https://github.com/75lb/ansi-escape-sequences",
+  "type": "module",
   "exports": {
-    "import": "./index.mjs",
+    "import": "./index.js",
     "require": "./dist/index.cjs"
   },
   "license": "MIT",
@@ -18,24 +19,25 @@
     "cursor"
   ],
   "engines": {
-    "node": ">=14"
+    "node": ">=12.17"
   },
   "scripts": {
-    "test": "npm run dist && test-runner test.mjs",
-    "docs": "jsdoc2md -c jsdoc.conf -d 1 -t README.hbs index.mjs > README.md",
+    "test": "npm run dist && npm run test:ci",
+    "test:ci": "test-runner test.js",
+    "docs": "jsdoc2md -d 1 -t README.hbs index.js > README.md",
     "dist": "rollup -c"
   },
   "dependencies": {
-    "array-back": "^6.1.2"
+    "array-back": "^6.2.0"
   },
   "devDependencies": {
-    "@rollup/plugin-node-resolve": "^13.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.4",
     "jsdoc-to-markdown": "^7.0.1",
-    "rollup": "^2.52.7",
-    "test-runner": "^0.9.6"
+    "rollup": "^2.56.2",
+    "test-runner": "^0.9.8"
   },
   "files": [
-    "index.mjs",
+    "index.js",
     "dist"
   ]
 }
