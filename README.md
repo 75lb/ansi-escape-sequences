@@ -13,7 +13,7 @@ A simple library containing all known terminal [ansi escape codes and sequences]
 
 **Example**  
 ```js
-const ansi = require('ansi-escape-sequences')
+import ansi from 'ansi-escape-sequences'
 ```
 
 * [ansi-escape-sequences](#module_ansi-escape-sequences)
