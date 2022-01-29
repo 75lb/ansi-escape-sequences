@@ -62,7 +62,7 @@ const csi = '\x1b[';
  * @exports ansi-escape-sequences
  * @typicalname ansi
  * @example
- * const ansi = require('ansi-escape-sequences')
+ * import ansi from 'ansi-escape-sequences'
  */
 const ansi = {};
 
