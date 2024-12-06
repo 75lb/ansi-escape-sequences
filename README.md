@@ -367,6 +367,6 @@ import ansi from './node_modules/ansi-escape-sequences/dist/index.mjs'
 
 * * *
 
-&copy; 2014-24 Lloyd Brookes \<opensource@75lb.com\>.
+&copy; 2014-25 Lloyd Brookes \<opensource@75lb.com\>.
 
 Tested by [test-runner](https://github.com/test-runner-js/test-runner). Documented by [jsdoc-to-markdown](https://github.com/jsdoc2md/jsdoc-to-markdown).

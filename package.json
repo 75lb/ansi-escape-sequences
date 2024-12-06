@@ -33,7 +33,6 @@
   "dependencies": {
     "array-back": "^6.2.2"
   },
-  "devDependencies": {},
   "peerDependencies": {
     "@75lb/nature": "latest"
   },
