@@ -228,21 +228,43 @@ function format (str, styleArray) {
     : str
 }
 
-/*~
- * cursor-related sequences
+/*
+cursor-related sequences
 */
 const cursor = {
   /*~
-   * Moves the cursor `lines` cells up. If the cursor is already at the edge of the screen, this has no effect
-   * @param [lines=1] {number}
-   * @return {string}
+  cursor.up (lines)
+
+  Moves the cursor `lines` cells up. If the cursor is already at the edge of the screen, this has no effect
+
+  Params
+    Param | Type   | Description
+    ---   | ---    | ---
+    lines | number | Defaults to 1
+
+  Data
+    id: cursor.up
+    parent: ansi-escape-sequences
+    codeType: Function
+    returns: String
   */
   up: function (lines) { return csi + (lines || 1) + 'A' },
 
   /*~
-   * Moves the cursor `lines` cells down. If the cursor is already at the edge of the screen, this has no effect
-   * @param [lines=1] {number}
-   * @return {string}
+  cursor.down (lines)
+
+  Moves the cursor `lines` cells down. If the cursor is already at the edge of the screen, this has no effect
+
+  Params
+    Param | Type   | Description
+    ---   | ---    | ---
+    lines | number | Defaults to 1
+
+  Data
+    id: cursor.down
+    parent: ansi-escape-sequences
+    codeType: Function
+    returns: String
   */
   down: function (lines) { return csi + (lines || 1) + 'B' },
 
