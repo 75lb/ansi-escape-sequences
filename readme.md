@@ -5,7 +5,7 @@
   - [rgb (r, g, b)](#api-rgb) <sup><mark>Function, Named Export</mark></sup>
   - [bgRgb (r, g, b)](#api-bgRgb) <sup><mark>Function, Named Export</mark></sup>
 
-## ansi-escape-sequences
+# ansi-escape-sequences
 
 Something
 
@@ -17,7 +17,7 @@ Something
 
 <a id="api-style"></a>
 
-### style
+## style
 
 Various formatting styles (aka Select Graphic Rendition codes).
 
@@ -33,7 +33,7 @@ console.log(ansi.style.red + 'this is red' + ansi.style.reset)
 
 <a id="api-rgb"></a>
 
-### rgb (r, g, b)
+## rgb (r, g, b)
 
 Returns a 24-bit "true colour" foreground colour escape sequence.
 
@@ -42,6 +42,8 @@ Returns a 24-bit "true colour" foreground colour escape sequence.
 
 **Params**
 
+Param                 | Type             | Description
+---                   | ---              | ---
 r | Number | Red value.
 g | Number | Green value.
 b | Number | Blue value.
@@ -55,7 +57,7 @@ b | Number | Blue value.
 
 <a id="api-bgRgb"></a>
 
-### bgRgb (r, g, b)
+## bgRgb (r, g, b)
 
 Returns a 24-bit "true colour" background colour escape sequence.
 
@@ -64,6 +66,8 @@ Returns a 24-bit "true colour" background colour escape sequence.
 
 **Params**
 
+Param                 | Type             | Description
+---                   | ---              | ---
 r | Number | Red value.
 g | Number | Green value.
 b | Number | Blue value.

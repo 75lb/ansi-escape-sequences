@@ -81,6 +81,9 @@ rgb (r, g, b)
 Returns a 24-bit "true colour" foreground colour escape sequence.
 
 Params
+
+  Param                 | Type             | Description
+  ---                   | ---              | ---
   r | Number | Red value.
   g | Number | Green value.
   b | Number | Blue value.
@@ -105,6 +108,8 @@ bgRgb (r, g, b)
 Returns a 24-bit "true colour" background colour escape sequence.
 
 Params
+  Param                 | Type             | Description
+  ---                   | ---              | ---
   r | Number | Red value.
   g | Number | Green value.
   b | Number | Blue value.
