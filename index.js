@@ -14,12 +14,12 @@ Data
 const csi = '\x1b['
 
 /*~
-ansi.style
+style
 
 Various formatting styles (aka Select Graphic Rendition codes).
 
 Data
-  id: ansi.style
+  id: style
   parent: ansi-escape-sequences
   codeType: Enum, Named Export
 
@@ -76,7 +76,7 @@ const style = {
 }
 
 /*~
-ansi.rgb (r, g, b)
+rgb (r, g, b)
 
 Returns a 24-bit "true colour" foreground colour escape sequence.
 
@@ -86,13 +86,13 @@ Params
   b | Number | Blue value.
 
 Data
-  id: ansi.rgb
+  id: rgb
   parent: ansi-escape-sequences
   codeType: Function, Named Export
   returns: String
 
 Example
-  > ansi.rgb(120, 0, 120)
+  > rgb(120, 0, 120)
   '\u001b[38;2;120;0;120m'
 */
 function rgb (r, g, b) {
@@ -110,11 +110,11 @@ Params
   b | Number | Blue value.
 
 Example
-  > ansi.bgRgb(120, 0, 120)
+  > bgRgb(120, 0, 120)
   '\u001b[48;2;120;0;120m'
 
 Data
-  id: ansi.bgRgb
+  id: bgRgb
   parent: ansi-escape-sequences
   codeType: Function, Named Export
   returns: String
