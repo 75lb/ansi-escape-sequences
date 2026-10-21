@@ -8,6 +8,9 @@ Something
 Data
   id: ansi-escape-sequences
   codeType: Package
+
+Example
+  import * as ansi from 'ansi-escape-sequences'
 */
 
 /* Control Sequence Initiator */
@@ -129,18 +132,28 @@ function bgRgb (r, g, b) {
 }
 
 /*~
- * Returns an ansi sequence setting one or more styles.
- * @param {string | string[]} - One or more style strings.
- * @returns {string}
- * @example
- * > ansi.styles('green')
- * '\u001b[32m'
- *
- * > ansi.styles([ 'green', 'underline' ])
- * '\u001b[32m\u001b[4m'
- *
- * > ansi.styles([ 'bg-red', 'rgb(200,200,200)' ])
- * '\u001b[41m\u001b[38;2;200;200;200m'
+styles (styles)
+
+Returns an ansi sequence setting one or more styles.
+
+Params
+  Param                 | Type             | Description
+  ---                   | ---              | ---
+  styles | string\|string[] | One or more style strings.
+
+Data
+  id: styles
+  parent: ansi-escape-sequences
+  codeType: Function, Named Export
+  returns: String
+
+Example
+  > ansi.styles('green')
+  '\u001b[32m'
+  > ansi.styles([ 'green', 'underline' ])
+  '\u001b[32m\u001b[4m'
+  > ansi.styles([ 'bg-red', 'rgb(200,200,200)' ])
+  '\u001b[41m\u001b[38;2;200;200;200m'
 */
 function styles (styles) {
   styles = arrayify(styles)
@@ -162,30 +175,41 @@ function styles (styles) {
 }
 
 /*~
- * A convenience function, applying the styles provided in `styleArray` to the input string.
- *
- * Partial, inline styling can also be applied using the syntax `[style-list]{text to format}` anywhere within the input string, where `style-list` is a space-separated list of styles from {@link module:ansi-escape-sequences.style ansi.style}. For example `[bold white bg-red]{bold white text on a red background}`.
- *
- * 24-bit "true colour" values can be set using `rgb(n,n,n)` syntax (no spaces), for example `[rgb(255,128,0) underline]{orange underlined}`. Background 24-bit colours can be set using `bg-rgb(n,n,n)` syntax.
- *
- * @param {string} - The string to format. Can also include inline-formatting using the syntax `[style-list]{text to format}` anywhere within the string.
- * @param [styleArray] {string|string[]} - One or more style strings to apply to the input string. Valid strings are any property from the [`ansi.style`](https://github.com/75lb/ansi-escape-sequences#ansistyle--enum) object (e.g. `red` or `bg-red`), `rgb(n,n,n)` or `bg-rgb(n,n,n)`.
- * @returns {string}
- * @example
- * > ansi.format('what?', 'green')
- * '\u001b[32mwhat?\u001b[0m'
- *
- * > ansi.format('what?', ['green', 'bold'])
- * '\u001b[32m\u001b[1mwhat?\u001b[0m'
- *
- * > ansi.format('something', ['rgb(255,128,0)', 'bold'])
- * '\u001b[38;2;255;128;0m\u001b[1msomething\u001b[0m'
- *
- * > ansi.format('Inline styling: [rgb(255,128,0) bold]{something}')
- * 'Inline styling: \u001b[38;2;255;128;0m\u001b[1msomething\u001b[0m'
- *
- * > ansi.format('Inline styling: [bg-rgb(255,128,0) bold]{something}')
- * 'Inline styling: \u001b[48;2;255;128;0m\u001b[1msomething\u001b[0m'
+format (str, styleArray)
+
+A convenience function, applying the styles provided in `styleArray` to the input string.
+
+Partial, inline styling can also be applied using the syntax `[style-list]{text to format}` anywhere within the input string, where `style-list` is a space-separated list of styles from {@link module:ansi-escape-sequences.style ansi.style}. For example `[bold white bg-red]{bold white text on a red background}`.
+
+24-bit "true colour" values can be set using `rgb(n,n,n)` syntax (no spaces), for example `[rgb(255,128,0) underline]{orange underlined}`. Background 24-bit colours can be set using `bg-rgb(n,n,n)` syntax.
+
+Params
+  Param                 | Type             | Description
+  ---                   | ---              | ---
+  str | string | The string to format. Can also include inline-formatting using the syntax `[style-list]{text to format}` anywhere within the string.
+  [styleArray] | string\|string[] | One or more style strings to apply to the input string. Valid strings are any property from the [`ansi.style`](https://github.com/75lb/ansi-escape-sequences#ansistyle--enum) object (e.g. `red` or `bg-red`), `rgb(n,n,n)` or `bg-rgb(n,n,n)`.
+
+Data
+  id: format
+  parent: ansi-escape-sequences
+  codeType: Function, Named Export
+  returns: String
+
+Example
+  > ansi.format('what?', 'green')
+  '\u001b[32mwhat?\u001b[0m'
+
+  > ansi.format('what?', ['green', 'bold'])
+  '\u001b[32m\u001b[1mwhat?\u001b[0m'
+
+  > ansi.format('something', ['rgb(255,128,0)', 'bold'])
+  '\u001b[38;2;255;128;0m\u001b[1msomething\u001b[0m'
+
+  > ansi.format('Inline styling: [rgb(255,128,0) bold]{something}')
+  'Inline styling: \u001b[38;2;255;128;0m\u001b[1msomething\u001b[0m'
+
+  > ansi.format('Inline styling: [bg-rgb(255,128,0) bold]{something}')
+  'Inline styling: \u001b[48;2;255;128;0m\u001b[1msomething\u001b[0m'
 */
 function format (str, styleArray) {
   const re = /\[([\w\s-\(\),]+)\]{([^]*?)}/
