@@ -41,5 +41,3 @@ import ansi from './node_modules/ansi-escape-sequences/dist/index.mjs'
 * * *
 
 &copy; 2014-26 Lloyd Brookes \<opensource@75lb.com\>.
-
-Documented by [jsdoc-to-markdown](https://github.com/jsdoc2md/jsdoc-to-markdown).

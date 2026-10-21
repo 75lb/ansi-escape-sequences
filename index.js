@@ -1,21 +1,31 @@
 import arrayify from 'array-back'
 
+/*~
+ansi-escape-sequences
+
+Something
+
+Data
+  id: ansi-escape-sequences
+  codeType: Package
+*/
+
 /* Control Sequence Initiator */
 const csi = '\x1b['
 
-/**
- * @exports ansi-escape-sequences
- * @typicalname ansi
- * @example
- * import ansi from 'ansi-escape-sequences'
- */
+/*~
+ansi.style : `enum`
 
-/**
- * Various formatting styles (aka Select Graphic Rendition codes).
- * @enum {string}
- * @example
- * console.log(ansi.style.red + 'this is red' + ansi.style.reset)
- */
+Various formatting styles (aka Select Graphic Rendition codes).
+
+Data
+  id: ansi.style
+  parent: ansi-escape-sequences
+  codeType: Enum, Named Export
+
+Example
+  console.log(ansi.style.red + 'this is red' + ansi.style.reset)
+*/
 const style = {
   reset: '\x1b[0m',
   bold: '\x1b[1m',
@@ -65,16 +75,26 @@ const style = {
   'bg-brightWhite': '\x1b[107m'
 }
 
-/**
- * Returns a 24-bit "true colour" foreground colour escape sequence.
- * @param {number} r - Red value.
- * @param {number} g - Green value.
- * @param {number} b - Blue value.
- * @returns {string}
- * @example
- * > ansi.rgb(120, 0, 120)
- * '\u001b[38;2;120;0;120m'
- */
+/*~
+ansi.rgb
+
+Returns a 24-bit "true colour" foreground colour escape sequence.
+
+Params
+  r | Number | Red value.
+  g | Number | Green value.
+  b | Number | Blue value.
+
+Data
+  id: ansi.rgb
+  parent: ansi-escape-sequences
+  codeType: Function, Named Export
+  returns: String
+
+Example
+  > ansi.rgb(120, 0, 120)
+  '\u001b[38;2;120;0;120m'
+*/
 function rgb (r, g, b) {
   return `\x1b[38;2;${r};${g};${b}m`
 }
