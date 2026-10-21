@@ -9,7 +9,6 @@ const csi = '\x1b['
  * @example
  * import ansi from 'ansi-escape-sequences'
  */
-const ansi = {}
 
 /**
  * Various formatting styles (aka Select Graphic Rendition codes).
@@ -17,7 +16,7 @@ const ansi = {}
  * @example
  * console.log(ansi.style.red + 'this is red' + ansi.style.reset)
  */
-ansi.style = {
+const style = {
   reset: '\x1b[0m',
   bold: '\x1b[1m',
   italic: '\x1b[3m',
@@ -76,7 +75,7 @@ ansi.style = {
  * > ansi.rgb(120, 0, 120)
  * '\u001b[38;2;120;0;120m'
  */
-ansi.rgb = function (r, g, b) {
+function rgb (r, g, b) {
   return `\x1b[38;2;${r};${g};${b}m`
 }
 
@@ -90,7 +89,7 @@ ansi.rgb = function (r, g, b) {
  * > ansi.bgRgb(120, 0, 120)
  * '\u001b[48;2;120;0;120m'
  */
-ansi.bgRgb = function (r, g, b) {
+function bgRgb (r, g, b) {
   return `\x1b[48;2;${r};${g};${b}m`
 }
 
@@ -108,7 +107,7 @@ ansi.bgRgb = function (r, g, b) {
  * > ansi.styles([ 'bg-red', 'rgb(200,200,200)' ])
  * '\u001b[41m\u001b[38;2;200;200;200m'
  */
-ansi.styles = function (styles) {
+function styles (styles) {
   styles = arrayify(styles)
   return styles
     .map(function (effect) {
@@ -116,12 +115,12 @@ ansi.styles = function (styles) {
       const bgRgbMatches = effect.match(/bg-rgb\((\d+),\s*(\d+),\s*(\d+)\)/)
       if (bgRgbMatches) {
         const [full, r, g, b] = bgRgbMatches
-        return ansi.bgRgb(r, g, b)
+        return bgRgb(r, g, b)
       } else if (rgbMatches) {
         const [full, r, g, b] = rgbMatches
-        return ansi.rgb(r, g, b)
+        return rgb(r, g, b)
       } else {
-        return ansi.style[effect]
+        return style[effect]
       }
     })
     .join('')
@@ -153,7 +152,7 @@ ansi.styles = function (styles) {
  * > ansi.format('Inline styling: [bg-rgb(255,128,0) bold]{something}')
  * 'Inline styling: \u001b[48;2;255;128;0m\u001b[1msomething\u001b[0m'
  */
-ansi.format = function (str, styleArray) {
+function format (str, styleArray) {
   const re = /\[([\w\s-\(\),]+)\]{([^]*?)}/
   let matches
   str = String(str)
@@ -162,18 +161,18 @@ ansi.format = function (str, styleArray) {
   while (matches = str.match(re)) {
     const inlineStyles = matches[1].split(/\s+/)
     const inlineString = matches[2]
-    str = str.replace(matches[0], ansi.format(inlineString, inlineStyles))
+    str = str.replace(matches[0], format(inlineString, inlineStyles))
   }
 
   return (styleArray && styleArray.length)
-    ? ansi.styles(styleArray) + str + ansi.style.reset
+    ? styles(styleArray) + str + style.reset
     : str
 }
 
 /**
  * cursor-related sequences
  */
-ansi.cursor = {
+const cursor = {
   /**
    * Moves the cursor `lines` cells up. If the cursor is already at the edge of the screen, this has no effect
    * @param [lines=1] {number}
@@ -245,7 +244,7 @@ ansi.cursor = {
 /**
  * erase sequences
  */
-ansi.erase = {
+const erase = {
   /**
    * Clears part of the screen. If n is 0 (or missing), clear from cursor to end of screen. If n is 1, clear from cursor to beginning of the screen. If n is 2, clear entire screen.
    * @param n {number}
@@ -261,4 +260,4 @@ ansi.erase = {
   inLine: function (n) { return csi + (n || 0) + 'K' }
 }
 
-export default ansi
+export { style, rgb, bgRgb, styles, format, cursor, erase }

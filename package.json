@@ -8,10 +8,7 @@
     "url": "git+https://github.com/75lb/ansi-escape-sequences.git"
   },
   "type": "module",
-  "exports": {
-    "import": "./index.js",
-    "require": "./dist/index.cjs"
-  },
+  "exports": "./index.js",
   "licence": "MIT",
   "keywords": [
     "ansi",
@@ -22,13 +19,13 @@
     "cursor"
   ],
   "engines": {
-    "node": ">=12.17"
+    "node": ">=20"
   },
   "scripts": {
     "test": "npm run dist && npm run test:ci",
-    "test:ci": "75lb-nature test-runner test.js",
-    "docs": "75lb-nature jsdoc2md -d 1 -t README.hbs index.js > README.md",
-    "dist": "75lb-nature cjs-build index.js && 75lb-nature simple-rollup index.js"
+    "test:ci": "75lb-nature test-runner test/test.js test/test.cjs",
+    "docs": "",
+    "dist": "75lb-nature simple-rollup index.js"
   },
   "dependencies": {
     "array-back": "^6.2.3"

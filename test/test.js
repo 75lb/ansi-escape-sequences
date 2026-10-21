@@ -1,5 +1,5 @@
-import ansi from 'ansi-escape-sequences'
-import { strict as a } from 'assert'
+import * as ansi from 'ansi-escape-sequences'
+import { strict as a } from 'node:assert'
 
 const [test, only, skip] = [new Map(), new Map(), new Map()]
 
