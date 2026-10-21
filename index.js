@@ -14,7 +14,7 @@ Data
 const csi = '\x1b['
 
 /*~
-ansi.style : `enum`
+ansi.style
 
 Various formatting styles (aka Select Graphic Rendition codes).
 
@@ -76,7 +76,7 @@ const style = {
 }
 
 /*~
-ansi.rgb
+ansi.rgb (r, g, b)
 
 Returns a 24-bit "true colour" foreground colour escape sequence.
 
@@ -99,21 +99,31 @@ function rgb (r, g, b) {
   return `\x1b[38;2;${r};${g};${b}m`
 }
 
-/**
- * Returns a 24-bit "true colour" background colour escape sequence.
- * @param {number} r - Red value.
- * @param {number} g - Green value.
- * @param {number} b - Blue value.
- * @returns {string}
- * @example
- * > ansi.bgRgb(120, 0, 120)
- * '\u001b[48;2;120;0;120m'
- */
+/*~
+bgRgb (r, g, b)
+
+Returns a 24-bit "true colour" background colour escape sequence.
+
+Params
+  r | Number | Red value.
+  g | Number | Green value.
+  b | Number | Blue value.
+
+Example
+  > ansi.bgRgb(120, 0, 120)
+  '\u001b[48;2;120;0;120m'
+
+Data
+  id: ansi.bgRgb
+  parent: ansi-escape-sequences
+  codeType: Function, Named Export
+  returns: String
+*/
 function bgRgb (r, g, b) {
   return `\x1b[48;2;${r};${g};${b}m`
 }
 
-/**
+/*~
  * Returns an ansi sequence setting one or more styles.
  * @param {string | string[]} - One or more style strings.
  * @returns {string}
@@ -126,7 +136,7 @@ function bgRgb (r, g, b) {
  *
  * > ansi.styles([ 'bg-red', 'rgb(200,200,200)' ])
  * '\u001b[41m\u001b[38;2;200;200;200m'
- */
+*/
 function styles (styles) {
   styles = arrayify(styles)
   return styles
@@ -146,7 +156,7 @@ function styles (styles) {
     .join('')
 }
 
-/**
+/*~
  * A convenience function, applying the styles provided in `styleArray` to the input string.
  *
  * Partial, inline styling can also be applied using the syntax `[style-list]{text to format}` anywhere within the input string, where `style-list` is a space-separated list of styles from {@link module:ansi-escape-sequences.style ansi.style}. For example `[bold white bg-red]{bold white text on a red background}`.
@@ -171,7 +181,7 @@ function styles (styles) {
  *
  * > ansi.format('Inline styling: [bg-rgb(255,128,0) bold]{something}')
  * 'Inline styling: \u001b[48;2;255;128;0m\u001b[1msomething\u001b[0m'
- */
+*/
 function format (str, styleArray) {
   const re = /\[([\w\s-\(\),]+)\]{([^]*?)}/
   let matches
@@ -189,94 +199,94 @@ function format (str, styleArray) {
     : str
 }
 
-/**
+/*~
  * cursor-related sequences
- */
+*/
 const cursor = {
-  /**
+  /*~
    * Moves the cursor `lines` cells up. If the cursor is already at the edge of the screen, this has no effect
    * @param [lines=1] {number}
    * @return {string}
-   */
+  */
   up: function (lines) { return csi + (lines || 1) + 'A' },
 
-  /**
+  /*~
    * Moves the cursor `lines` cells down. If the cursor is already at the edge of the screen, this has no effect
    * @param [lines=1] {number}
    * @return {string}
-   */
+  */
   down: function (lines) { return csi + (lines || 1) + 'B' },
 
-  /**
+  /*~
    * Moves the cursor `lines` cells forward. If the cursor is already at the edge of the screen, this has no effect
    * @param [lines=1] {number}
    * @return {string}
-   */
+  */
   forward: function (lines) { return csi + (lines || 1) + 'C' },
 
-  /**
+  /*~
    * Moves the cursor `lines` cells back. If the cursor is already at the edge of the screen, this has no effect
    * @param [lines=1] {number}
    * @return {string}
-   */
+  */
   back: function (lines) { return csi + (lines || 1) + 'D' },
 
-  /**
+  /*~
    * Moves cursor to beginning of the line n lines down.
    * @param [lines=1] {number}
    * @return {string}
-   */
+  */
   nextLine: function (lines) { return csi + (lines || 1) + 'E' },
 
-  /**
+  /*~
    * Moves cursor to beginning of the line n lines up.
    * @param [lines=1] {number}
    * @return {string}
-   */
+  */
   previousLine: function (lines) { return csi + (lines || 1) + 'F' },
 
-  /**
+  /*~
    * Moves the cursor to column n.
    * @param n {number} - column number
    * @return {string}
-   */
+  */
   horizontalAbsolute: function (n) { return csi + n + 'G' },
 
-  /**
+  /*~
    * Moves the cursor to row n, column m. The values are 1-based, and default to 1 (top left corner) if omitted.
    * @param n {number} - row number
    * @param m {number} - column number
    * @return {string}
-   */
+  */
   position: function (n, m) { return csi + (n || 1) + ';' + (m || 1) + 'H' },
 
-  /**
+  /*~
    * Hides the cursor
-   */
+  */
   hide: csi + '?25l',
 
-  /**
+  /*~
    * Shows the cursor
-   */
+  */
   show: csi + '?25h'
 }
 
-/**
+/*~
  * erase sequences
- */
+*/
 const erase = {
-  /**
+  /*~
    * Clears part of the screen. If n is 0 (or missing), clear from cursor to end of screen. If n is 1, clear from cursor to beginning of the screen. If n is 2, clear entire screen.
    * @param n {number}
    * @return {string}
-   */
+  */
   display: function (n) { return csi + (n || 0) + 'J' },
 
-  /**
+  /*~
    * Erases part of the line. If n is zero (or missing), clear from cursor to the end of the line. If n is one, clear from cursor to beginning of the line. If n is two, clear entire line. Cursor position does not change.
    * @param n {number}
    * @return {string}
-   */
+  */
   inLine: function (n) { return csi + (n || 0) + 'K' }
 }
 
