@@ -1,20 +1,20 @@
 <a id="api-ansi-escape-sequences"></a>
 
-- [ansi-escape-sequences](#api-ansi-escape-sequences) <sup><mark>Package</mark></sup>
-  - [style](#api-style) <sup><mark>Enum, Named Export</mark></sup>
-  - [rgb (r, g, b)](#api-rgb) <sup><mark>Function, Named Export</mark></sup>
-  - [bgRgb (r, g, b)](#api-bgRgb) <sup><mark>Function, Named Export</mark></sup>
-  - [styles (styles)](#api-styles) <sup><mark>Function, Named Export</mark></sup>
-  - [format (str, styleArray)](#api-format) <sup><mark>Function, Named Export</mark></sup>
-  - [cursor](#api-cursor) 
-    - [cursor.up (lines)](#api-cursor.up) <sup><mark>Function</mark></sup>
-    - [cursor.down (lines)](#api-cursor.down) <sup><mark>Function</mark></sup>
-    - [cursor.forward (lines)](#api-cursor.forward) <sup><mark>Function</mark></sup>
-    - [cursor.back (lines)](#api-cursor.back) <sup><mark>Function</mark></sup>
-    - [cursor.nextLine (lines)](#api-cursor.nextLine) <sup><mark>Function</mark></sup>
-    - [cursor.previousLine (lines)](#api-cursor.previousLine) <sup><mark>Function</mark></sup>
-    - [cursor.horizontalAbsolute (lines)](#api-cursor.horizontalAbsolute) <sup><mark>Function</mark></sup>
-    - [cursor.position (lines)](#api-cursor.position) <sup><mark>Function</mark></sup>
+- [ansi-escape-sequences](#api-ansi-escape-sequences) 
+  - [style](#api-style) <sup><mark>Named Export</mark></sup>
+  - [rgb (r, g, b)](#api-rgb) <sup><mark>Named Export</mark></sup>
+  - [bgRgb (r, g, b)](#api-bgRgb) <sup><mark>Named Export</mark></sup>
+  - [styles (styles)](#api-styles) <sup><mark>Named Export</mark></sup>
+  - [format (str, styleArray)](#api-format) <sup><mark>Named Export</mark></sup>
+  - [cursor](#api-cursor) <sup><mark>Named Export</mark></sup>
+    - [cursor.up (lines)](#api-cursor.up) 
+    - [cursor.down (lines)](#api-cursor.down) 
+    - [cursor.forward (lines)](#api-cursor.forward) 
+    - [cursor.back (lines)](#api-cursor.back) 
+    - [cursor.nextLine (lines)](#api-cursor.nextLine) 
+    - [cursor.previousLine (lines)](#api-cursor.previousLine) 
+    - [cursor.horizontalAbsolute (lines)](#api-cursor.horizontalAbsolute) 
+    - [cursor.position (lines)](#api-cursor.position)
 
 # ansi-escape-sequences
 
@@ -37,7 +37,7 @@ import * as ansi from 'ansi-escape-sequences'
 
 Various formatting styles (aka Select Graphic Rendition codes).
 
-**Type**: Enum, Named Export
+**Type**: Enum
 
 
 
@@ -53,7 +53,7 @@ console.log(ansi.style.red + 'this is red' + ansi.style.reset)
 
 Returns a 24-bit "true colour" foreground colour escape sequence.
 
-**Type**: Function, Named Export  
+**Type**: Function  
 **Returns**: `String`
 
 **Params**
@@ -77,7 +77,7 @@ b | Number | Blue value.
 
 Returns a 24-bit "true colour" background colour escape sequence.
 
-**Type**: Function, Named Export  
+**Type**: Function  
 **Returns**: `String`
 
 **Params**
@@ -101,7 +101,7 @@ b | Number | Blue value.
 
 Returns an ansi sequence setting one or more styles.
 
-**Type**: Function, Named Export  
+**Type**: Function  
 **Returns**: `String`
 
 **Params**
@@ -131,7 +131,7 @@ Partial, inline styling can also be applied using the syntax `[style-list]{text 
 
 24-bit "true colour" values can be set using `rgb(n,n,n)` syntax (no spaces), for example `[rgb(255,128,0) underline]{orange underlined}`. Background 24-bit colours can be set using `bg-rgb(n,n,n)` syntax.
 
-**Type**: Function, Named Export  
+**Type**: Function  
 **Returns**: `String`
 
 **Params**
@@ -165,6 +165,8 @@ str | string | The string to format. Can also include inline-formatting using th
 ## cursor
 
 Cursor-related sequences.
+
+**Type**: Object
 
 
 

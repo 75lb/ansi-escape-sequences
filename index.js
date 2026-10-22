@@ -24,7 +24,8 @@ Various formatting styles (aka Select Graphic Rendition codes).
 Data
   id: style
   parent: ansi-escape-sequences
-  codeType: Enum, Named Export
+  codeType: Enum
+  exportType: Named
 
 Example
   console.log(ansi.style.red + 'this is red' + ansi.style.reset)
@@ -94,7 +95,8 @@ Params
 Data
   id: rgb
   parent: ansi-escape-sequences
-  codeType: Function, Named Export
+  codeType: Function
+  exportType: Named
   returns: String
 
 Example
@@ -124,7 +126,8 @@ Example
 Data
   id: bgRgb
   parent: ansi-escape-sequences
-  codeType: Function, Named Export
+  codeType: Function
+  exportType: Named
   returns: String
 */
 function bgRgb (r, g, b) {
@@ -144,7 +147,8 @@ Params
 Data
   id: styles
   parent: ansi-escape-sequences
-  codeType: Function, Named Export
+  codeType: Function
+  exportType: Named
   returns: String
 
 Example
@@ -192,7 +196,8 @@ Params
 Data
   id: format
   parent: ansi-escape-sequences
-  codeType: Function, Named Export
+  codeType: Function
+  exportType: Named
   returns: String
 
 Example
@@ -236,6 +241,8 @@ Cursor-related sequences.
 Data
   id: cursor
   parent: ansi-escape-sequences
+  codeType: Object
+  exportType: Named
 */
 const cursor = {
   /*~
