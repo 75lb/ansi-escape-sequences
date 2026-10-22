@@ -5,18 +5,21 @@
   - [rgb (r, g, b)](#api-rgb) <sup><mark>Named Export</mark></sup>
   - [bgRgb (r, g, b)](#api-bgRgb) <sup><mark>Named Export</mark></sup>
   - [styles (styles)](#api-styles) <sup><mark>Named Export</mark></sup>
-  - [format (str, styleArray)](#api-format) <sup><mark>Named Export</mark></sup>
+  - [format (str, [styleArray])](#api-format) <sup><mark>Named Export</mark></sup>
   - [cursor](#api-cursor) <sup><mark>Named Export</mark></sup>
-    - [.up (lines)](#api-cursor.up) 
-    - [.down (lines)](#api-cursor.down) 
-    - [.forward (lines)](#api-cursor.forward) 
-    - [.back (lines)](#api-cursor.back) 
-    - [.nextLine (lines)](#api-cursor.nextLine) 
-    - [.previousLine (lines)](#api-cursor.previousLine) 
+    - [.up ([lines])](#api-cursor.up) 
+    - [.down ([lines])](#api-cursor.down) 
+    - [.forward ([lines])](#api-cursor.forward) 
+    - [.back ([lines])](#api-cursor.back) 
+    - [.nextLine ([lines])](#api-cursor.nextLine) 
+    - [.previousLine ([lines])](#api-cursor.previousLine) 
     - [.horizontalAbsolute (lines)](#api-cursor.horizontalAbsolute) 
     - [.position (lines)](#api-cursor.position) 
     - [.hide](#api-cursor.hide) 
-    - [.show](#api-cursor.show)
+    - [.show](#api-cursor.show) 
+  - [erase](#api-erase) <sup><mark>Named Export</mark></sup>
+    - [.display ([lines])](#api-erase.display) 
+    - [.inLine ([lines])](#api-erase.inLine)
 
 # ansi-escape-sequences
 
@@ -125,7 +128,7 @@ styles | string\|string[] | One or more style strings.
 
 <a id="api-format"></a>
 
-## format (str, styleArray)
+## format (str, [styleArray])
 
 A convenience function, applying the styles provided in `styleArray` to the input string.
 
@@ -176,7 +179,7 @@ Cursor-related sequences.
 
 <a id="api-cursor.up"></a>
 
-### .up (lines)
+### .up ([lines])
 
 Moves the cursor `lines` cells up. If the cursor is already at the edge of the screen, this has no effect
 
@@ -192,7 +195,7 @@ lines | number | Defaults to 1
 
 <a id="api-cursor.down"></a>
 
-### .down (lines)
+### .down ([lines])
 
 Moves the cursor `lines` cells down. If the cursor is already at the edge of the screen, this has no effect
 
@@ -208,7 +211,7 @@ lines | number | Defaults to 1
 
 <a id="api-cursor.forward"></a>
 
-### .forward (lines)
+### .forward ([lines])
 
 Moves the cursor `lines` cells forward. If the cursor is already at the edge of the screen, this has no effect
 
@@ -224,7 +227,7 @@ lines | number | Defaults to 1
 
 <a id="api-cursor.back"></a>
 
-### .back (lines)
+### .back ([lines])
 
 Moves the cursor `lines` cells back. If the cursor is already at the edge of the screen, this has no effect
 
@@ -240,7 +243,7 @@ lines | number | Defaults to 1
 
 <a id="api-cursor.nextLine"></a>
 
-### .nextLine (lines)
+### .nextLine ([lines])
 
 Moves cursor to beginning of the line n lines down.
 
@@ -256,7 +259,7 @@ lines | number | Defaults to 1
 
 <a id="api-cursor.previousLine"></a>
 
-### .previousLine (lines)
+### .previousLine ([lines])
 
 Moves cursor to beginning of the line n lines up.
 
@@ -325,5 +328,49 @@ Shows the cursor.
 **Returns**: `String`
 
 
+
+
+<a id="api-erase"></a>
+
+## erase
+
+Erase sequences.
+
+**Type**: Object
+
+
+
+
+
+<a id="api-erase.display"></a>
+
+### .display ([lines])
+
+Clears part of the screen. If n is 0 (or missing), clear from cursor to end of screen. If n is 1, clear from cursor to beginning of the screen. If n is 2, clear entire screen.
+
+**Type**: Function  
+**Returns**: `String`
+
+**Params**
+
+Param | Type   | Description
+---   | ---    | ---
+n | number | Row number
+
+
+<a id="api-erase.inLine"></a>
+
+### .inLine ([lines])
+
+Erases part of the line. If n is zero (or missing), clear from cursor to the end of the line. If n is one, clear from cursor to beginning of the line. If n is two, clear entire line. Cursor position does not change.
+
+**Type**: Function  
+**Returns**: `String`
+
+**Params**
+
+Param | Type   | Description
+---   | ---    | ---
+n | number | Row number
 
 

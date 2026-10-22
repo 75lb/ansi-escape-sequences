@@ -179,7 +179,7 @@ function styles (styles) {
 }
 
 /*~
-format (str, styleArray)
+format (str, [styleArray])
 
 A convenience function, applying the styles provided in `styleArray` to the input string.
 
@@ -246,7 +246,7 @@ Data
 */
 const cursor = {
   /*~
-  .up (lines)
+  .up ([lines])
 
   Moves the cursor `lines` cells up. If the cursor is already at the edge of the screen, this has no effect
 
@@ -264,7 +264,7 @@ const cursor = {
   up: function (lines) { return csi + (lines || 1) + 'A' },
 
   /*~
-  .down (lines)
+  .down ([lines])
 
   Moves the cursor `lines` cells down. If the cursor is already at the edge of the screen, this has no effect
 
@@ -282,7 +282,7 @@ const cursor = {
   down: function (lines) { return csi + (lines || 1) + 'B' },
 
   /*~
-  .forward (lines)
+  .forward ([lines])
 
   Moves the cursor `lines` cells forward. If the cursor is already at the edge of the screen, this has no effect
 
@@ -300,7 +300,7 @@ const cursor = {
   forward: function (lines) { return csi + (lines || 1) + 'C' },
 
   /*~
-  .back (lines)
+  .back ([lines])
 
   Moves the cursor `lines` cells back. If the cursor is already at the edge of the screen, this has no effect
 
@@ -318,7 +318,7 @@ const cursor = {
   back: function (lines) { return csi + (lines || 1) + 'D' },
 
   /*~
-  .nextLine (lines)
+  .nextLine ([lines])
 
   Moves cursor to beginning of the line n lines down.
 
@@ -336,7 +336,7 @@ const cursor = {
   nextLine: function (lines) { return csi + (lines || 1) + 'E' },
 
   /*~
-  .previousLine (lines)
+  .previousLine ([lines])
 
   Moves cursor to beginning of the line n lines up.
 
@@ -418,20 +418,51 @@ const cursor = {
 }
 
 /*~
- * erase sequences
+erase
+
+Erase sequences.
+
+Data
+  id: erase
+  parent: ansi-escape-sequences
+  codeType: Object
+  exportType: Named
 */
+
 const erase = {
   /*~
-   * Clears part of the screen. If n is 0 (or missing), clear from cursor to end of screen. If n is 1, clear from cursor to beginning of the screen. If n is 2, clear entire screen.
-   * @param n {number}
-   * @return {string}
+  .display ([lines])
+
+  Clears part of the screen. If n is 0 (or missing), clear from cursor to end of screen. If n is 1, clear from cursor to beginning of the screen. If n is 2, clear entire screen.
+
+  Params
+    Param | Type   | Description
+    ---   | ---    | ---
+    n | number | Row number
+
+  Data
+    id: erase.display
+    parent: erase
+    codeType: Function
+    returns: String
   */
   display: function (n) { return csi + (n || 0) + 'J' },
 
   /*~
-   * Erases part of the line. If n is zero (or missing), clear from cursor to the end of the line. If n is one, clear from cursor to beginning of the line. If n is two, clear entire line. Cursor position does not change.
-   * @param n {number}
-   * @return {string}
+  .inLine ([lines])
+
+  Erases part of the line. If n is zero (or missing), clear from cursor to the end of the line. If n is one, clear from cursor to beginning of the line. If n is two, clear entire line. Cursor position does not change.
+
+  Params
+    Param | Type   | Description
+    ---   | ---    | ---
+    n | number | Row number
+
+  Data
+    id: erase.inLine
+    parent: erase
+    codeType: Function
+    returns: String
   */
   inLine: function (n) { return csi + (n || 0) + 'K' }
 }
