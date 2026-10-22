@@ -6,14 +6,15 @@
   - [bgRgb (r, g, b)](#api-bgRgb) <sup><mark>Function, Named Export</mark></sup>
   - [styles (styles)](#api-styles) <sup><mark>Function, Named Export</mark></sup>
   - [format (str, styleArray)](#api-format) <sup><mark>Function, Named Export</mark></sup>
-  - [cursor.up (lines)](#api-cursor.up) <sup><mark>Function</mark></sup>
-  - [cursor.down (lines)](#api-cursor.down) <sup><mark>Function</mark></sup>
-  - [cursor.forward (lines)](#api-cursor.forward) <sup><mark>Function</mark></sup>
-  - [cursor.back (lines)](#api-cursor.back) <sup><mark>Function</mark></sup>
-  - [cursor.nextLine (lines)](#api-cursor.nextLine) <sup><mark>Function</mark></sup>
-  - [cursor.previousLine (lines)](#api-cursor.previousLine) <sup><mark>Function</mark></sup>
-  - [cursor.horizontalAbsolute (lines)](#api-cursor.horizontalAbsolute) <sup><mark>Function</mark></sup>
-  - [cursor.position (lines)](#api-cursor.position) <sup><mark>Function</mark></sup>
+  - [cursor](#api-cursor) 
+    - [cursor.up (lines)](#api-cursor.up) <sup><mark>Function</mark></sup>
+    - [cursor.down (lines)](#api-cursor.down) <sup><mark>Function</mark></sup>
+    - [cursor.forward (lines)](#api-cursor.forward) <sup><mark>Function</mark></sup>
+    - [cursor.back (lines)](#api-cursor.back) <sup><mark>Function</mark></sup>
+    - [cursor.nextLine (lines)](#api-cursor.nextLine) <sup><mark>Function</mark></sup>
+    - [cursor.previousLine (lines)](#api-cursor.previousLine) <sup><mark>Function</mark></sup>
+    - [cursor.horizontalAbsolute (lines)](#api-cursor.horizontalAbsolute) <sup><mark>Function</mark></sup>
+    - [cursor.position (lines)](#api-cursor.position) <sup><mark>Function</mark></sup>
 
 # ansi-escape-sequences
 
@@ -159,9 +160,19 @@ str | string | The string to format. Can also include inline-formatting using th
 'Inline styling: \u001b[48;2;255;128;0m\u001b[1msomething\u001b[0m'
 ```
 
+<a id="api-cursor"></a>
+
+## cursor
+
+Cursor-related sequences.
+
+
+
+
+
 <a id="api-cursor.up"></a>
 
-## cursor.up (lines)
+### cursor.up (lines)
 
 Moves the cursor `lines` cells up. If the cursor is already at the edge of the screen, this has no effect
 
@@ -177,7 +188,7 @@ lines | number | Defaults to 1
 
 <a id="api-cursor.down"></a>
 
-## cursor.down (lines)
+### cursor.down (lines)
 
 Moves the cursor `lines` cells down. If the cursor is already at the edge of the screen, this has no effect
 
@@ -193,7 +204,7 @@ lines | number | Defaults to 1
 
 <a id="api-cursor.forward"></a>
 
-## cursor.forward (lines)
+### cursor.forward (lines)
 
 Moves the cursor `lines` cells forward. If the cursor is already at the edge of the screen, this has no effect
 
@@ -209,7 +220,7 @@ lines | number | Defaults to 1
 
 <a id="api-cursor.back"></a>
 
-## cursor.back (lines)
+### cursor.back (lines)
 
 Moves the cursor `lines` cells back. If the cursor is already at the edge of the screen, this has no effect
 
@@ -225,7 +236,7 @@ lines | number | Defaults to 1
 
 <a id="api-cursor.nextLine"></a>
 
-## cursor.nextLine (lines)
+### cursor.nextLine (lines)
 
 Moves cursor to beginning of the line n lines down.
 
@@ -241,7 +252,7 @@ lines | number | Defaults to 1
 
 <a id="api-cursor.previousLine"></a>
 
-## cursor.previousLine (lines)
+### cursor.previousLine (lines)
 
 Moves cursor to beginning of the line n lines up.
 
@@ -257,7 +268,7 @@ lines | number | Defaults to 1
 
 <a id="api-cursor.horizontalAbsolute"></a>
 
-## cursor.horizontalAbsolute (lines)
+### cursor.horizontalAbsolute (lines)
 
 Moves the cursor to column n.
 
@@ -273,7 +284,7 @@ n | number | Column number
 
 <a id="api-cursor.position"></a>
 
-## cursor.position (lines)
+### cursor.position (lines)
 
 Moves the cursor to row n, column m. The values are 1-based, and default to 1 (top left corner) if omitted.
 

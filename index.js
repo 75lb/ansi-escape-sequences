@@ -228,8 +228,14 @@ function format (str, styleArray) {
     : str
 }
 
-/*
-cursor-related sequences
+/*~
+cursor
+
+Cursor-related sequences.
+
+Data
+  id: cursor
+  parent: ansi-escape-sequences
 */
 const cursor = {
   /*~
@@ -244,7 +250,7 @@ const cursor = {
 
   Data
     id: cursor.up
-    parent: ansi-escape-sequences
+    parent: cursor
     codeType: Function
     returns: String
   */
@@ -262,7 +268,7 @@ const cursor = {
 
   Data
     id: cursor.down
-    parent: ansi-escape-sequences
+    parent: cursor
     codeType: Function
     returns: String
   */
@@ -280,7 +286,7 @@ const cursor = {
 
   Data
     id: cursor.forward
-    parent: ansi-escape-sequences
+    parent: cursor
     codeType: Function
     returns: String
   */
@@ -298,7 +304,7 @@ const cursor = {
 
   Data
     id: cursor.back
-    parent: ansi-escape-sequences
+    parent: cursor
     codeType: Function
     returns: String
   */
@@ -316,7 +322,7 @@ const cursor = {
 
   Data
     id: cursor.nextLine
-    parent: ansi-escape-sequences
+    parent: cursor
     codeType: Function
     returns: String
   */
@@ -334,7 +340,7 @@ const cursor = {
 
   Data
     id: cursor.previousLine
-    parent: ansi-escape-sequences
+    parent: cursor
     codeType: Function
     returns: String
   */
@@ -352,7 +358,7 @@ const cursor = {
 
   Data
     id: cursor.horizontalAbsolute
-    parent: ansi-escape-sequences
+    parent: cursor
     codeType: Function
     returns: String
   */
@@ -371,7 +377,7 @@ const cursor = {
 
   Data
     id: cursor.position
-    parent: ansi-escape-sequences
+    parent: cursor
     codeType: Function
     returns: String
   */
