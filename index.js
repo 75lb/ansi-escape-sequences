@@ -269,45 +269,111 @@ const cursor = {
   down: function (lines) { return csi + (lines || 1) + 'B' },
 
   /*~
-   * Moves the cursor `lines` cells forward. If the cursor is already at the edge of the screen, this has no effect
-   * @param [lines=1] {number}
-   * @return {string}
+  cursor.forward (lines)
+
+  Moves the cursor `lines` cells forward. If the cursor is already at the edge of the screen, this has no effect
+
+  Params
+    Param | Type   | Description
+    ---   | ---    | ---
+    lines | number | Defaults to 1
+
+  Data
+    id: cursor.forward
+    parent: ansi-escape-sequences
+    codeType: Function
+    returns: String
   */
   forward: function (lines) { return csi + (lines || 1) + 'C' },
 
   /*~
-   * Moves the cursor `lines` cells back. If the cursor is already at the edge of the screen, this has no effect
-   * @param [lines=1] {number}
-   * @return {string}
+  cursor.back (lines)
+
+  Moves the cursor `lines` cells back. If the cursor is already at the edge of the screen, this has no effect
+
+  Params
+    Param | Type   | Description
+    ---   | ---    | ---
+    lines | number | Defaults to 1
+
+  Data
+    id: cursor.back
+    parent: ansi-escape-sequences
+    codeType: Function
+    returns: String
   */
   back: function (lines) { return csi + (lines || 1) + 'D' },
 
   /*~
-   * Moves cursor to beginning of the line n lines down.
-   * @param [lines=1] {number}
-   * @return {string}
+  cursor.nextLine (lines)
+
+  Moves cursor to beginning of the line n lines down.
+
+  Params
+    Param | Type   | Description
+    ---   | ---    | ---
+    lines | number | Defaults to 1
+
+  Data
+    id: cursor.nextLine
+    parent: ansi-escape-sequences
+    codeType: Function
+    returns: String
   */
   nextLine: function (lines) { return csi + (lines || 1) + 'E' },
 
   /*~
-   * Moves cursor to beginning of the line n lines up.
-   * @param [lines=1] {number}
-   * @return {string}
+  cursor.previousLine (lines)
+
+  Moves cursor to beginning of the line n lines up.
+
+  Params
+    Param | Type   | Description
+    ---   | ---    | ---
+    lines | number | Defaults to 1
+
+  Data
+    id: cursor.previousLine
+    parent: ansi-escape-sequences
+    codeType: Function
+    returns: String
   */
   previousLine: function (lines) { return csi + (lines || 1) + 'F' },
 
   /*~
-   * Moves the cursor to column n.
-   * @param n {number} - column number
-   * @return {string}
+  cursor.horizontalAbsolute (lines)
+
+  Moves the cursor to column n.
+
+  Params
+    Param | Type   | Description
+    ---   | ---    | ---
+    n | number | Column number
+
+  Data
+    id: cursor.horizontalAbsolute
+    parent: ansi-escape-sequences
+    codeType: Function
+    returns: String
   */
   horizontalAbsolute: function (n) { return csi + n + 'G' },
 
   /*~
-   * Moves the cursor to row n, column m. The values are 1-based, and default to 1 (top left corner) if omitted.
-   * @param n {number} - row number
-   * @param m {number} - column number
-   * @return {string}
+  cursor.position (lines)
+
+  Moves the cursor to row n, column m. The values are 1-based, and default to 1 (top left corner) if omitted.
+
+  Params
+    Param | Type   | Description
+    ---   | ---    | ---
+    n | number | Row number
+    m | number | Column number
+
+  Data
+    id: cursor.position
+    parent: ansi-escape-sequences
+    codeType: Function
+    returns: String
   */
   position: function (n, m) { return csi + (n || 1) + ';' + (m || 1) + 'H' },
 
