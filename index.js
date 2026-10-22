@@ -246,7 +246,7 @@ Data
 */
 const cursor = {
   /*~
-  cursor.up (lines)
+  .up (lines)
 
   Moves the cursor `lines` cells up. If the cursor is already at the edge of the screen, this has no effect
 
@@ -264,7 +264,7 @@ const cursor = {
   up: function (lines) { return csi + (lines || 1) + 'A' },
 
   /*~
-  cursor.down (lines)
+  .down (lines)
 
   Moves the cursor `lines` cells down. If the cursor is already at the edge of the screen, this has no effect
 
@@ -282,7 +282,7 @@ const cursor = {
   down: function (lines) { return csi + (lines || 1) + 'B' },
 
   /*~
-  cursor.forward (lines)
+  .forward (lines)
 
   Moves the cursor `lines` cells forward. If the cursor is already at the edge of the screen, this has no effect
 
@@ -300,7 +300,7 @@ const cursor = {
   forward: function (lines) { return csi + (lines || 1) + 'C' },
 
   /*~
-  cursor.back (lines)
+  .back (lines)
 
   Moves the cursor `lines` cells back. If the cursor is already at the edge of the screen, this has no effect
 
@@ -318,7 +318,7 @@ const cursor = {
   back: function (lines) { return csi + (lines || 1) + 'D' },
 
   /*~
-  cursor.nextLine (lines)
+  .nextLine (lines)
 
   Moves cursor to beginning of the line n lines down.
 
@@ -336,7 +336,7 @@ const cursor = {
   nextLine: function (lines) { return csi + (lines || 1) + 'E' },
 
   /*~
-  cursor.previousLine (lines)
+  .previousLine (lines)
 
   Moves cursor to beginning of the line n lines up.
 
@@ -354,7 +354,7 @@ const cursor = {
   previousLine: function (lines) { return csi + (lines || 1) + 'F' },
 
   /*~
-  cursor.horizontalAbsolute (lines)
+  .horizontalAbsolute (lines)
 
   Moves the cursor to column n.
 
@@ -372,7 +372,7 @@ const cursor = {
   horizontalAbsolute: function (n) { return csi + n + 'G' },
 
   /*~
-  cursor.position (lines)
+  .position (lines)
 
   Moves the cursor to row n, column m. The values are 1-based, and default to 1 (top left corner) if omitted.
 
@@ -391,12 +391,28 @@ const cursor = {
   position: function (n, m) { return csi + (n || 1) + ';' + (m || 1) + 'H' },
 
   /*~
-   * Hides the cursor
+  .hide
+
+  Hides the cursor.
+
+  Data
+    id: cursor.hide
+    parent: cursor
+    codeType: Property
+    returns: String
   */
   hide: csi + '?25l',
 
   /*~
-   * Shows the cursor
+  .show
+
+  Shows the cursor.
+
+  Data
+    id: cursor.show
+    parent: cursor
+    codeType: Property
+    returns: String
   */
   show: csi + '?25h'
 }

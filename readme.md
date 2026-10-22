@@ -7,14 +7,16 @@
   - [styles (styles)](#api-styles) <sup><mark>Named Export</mark></sup>
   - [format (str, styleArray)](#api-format) <sup><mark>Named Export</mark></sup>
   - [cursor](#api-cursor) <sup><mark>Named Export</mark></sup>
-    - [cursor.up (lines)](#api-cursor.up) 
-    - [cursor.down (lines)](#api-cursor.down) 
-    - [cursor.forward (lines)](#api-cursor.forward) 
-    - [cursor.back (lines)](#api-cursor.back) 
-    - [cursor.nextLine (lines)](#api-cursor.nextLine) 
-    - [cursor.previousLine (lines)](#api-cursor.previousLine) 
-    - [cursor.horizontalAbsolute (lines)](#api-cursor.horizontalAbsolute) 
-    - [cursor.position (lines)](#api-cursor.position)
+    - [.up (lines)](#api-cursor.up) 
+    - [.down (lines)](#api-cursor.down) 
+    - [.forward (lines)](#api-cursor.forward) 
+    - [.back (lines)](#api-cursor.back) 
+    - [.nextLine (lines)](#api-cursor.nextLine) 
+    - [.previousLine (lines)](#api-cursor.previousLine) 
+    - [.horizontalAbsolute (lines)](#api-cursor.horizontalAbsolute) 
+    - [.position (lines)](#api-cursor.position) 
+    - [.hide](#api-cursor.hide) 
+    - [.show](#api-cursor.show)
 
 # ansi-escape-sequences
 
@@ -174,7 +176,7 @@ Cursor-related sequences.
 
 <a id="api-cursor.up"></a>
 
-### cursor.up (lines)
+### .up (lines)
 
 Moves the cursor `lines` cells up. If the cursor is already at the edge of the screen, this has no effect
 
@@ -190,7 +192,7 @@ lines | number | Defaults to 1
 
 <a id="api-cursor.down"></a>
 
-### cursor.down (lines)
+### .down (lines)
 
 Moves the cursor `lines` cells down. If the cursor is already at the edge of the screen, this has no effect
 
@@ -206,7 +208,7 @@ lines | number | Defaults to 1
 
 <a id="api-cursor.forward"></a>
 
-### cursor.forward (lines)
+### .forward (lines)
 
 Moves the cursor `lines` cells forward. If the cursor is already at the edge of the screen, this has no effect
 
@@ -222,7 +224,7 @@ lines | number | Defaults to 1
 
 <a id="api-cursor.back"></a>
 
-### cursor.back (lines)
+### .back (lines)
 
 Moves the cursor `lines` cells back. If the cursor is already at the edge of the screen, this has no effect
 
@@ -238,7 +240,7 @@ lines | number | Defaults to 1
 
 <a id="api-cursor.nextLine"></a>
 
-### cursor.nextLine (lines)
+### .nextLine (lines)
 
 Moves cursor to beginning of the line n lines down.
 
@@ -254,7 +256,7 @@ lines | number | Defaults to 1
 
 <a id="api-cursor.previousLine"></a>
 
-### cursor.previousLine (lines)
+### .previousLine (lines)
 
 Moves cursor to beginning of the line n lines up.
 
@@ -270,7 +272,7 @@ lines | number | Defaults to 1
 
 <a id="api-cursor.horizontalAbsolute"></a>
 
-### cursor.horizontalAbsolute (lines)
+### .horizontalAbsolute (lines)
 
 Moves the cursor to column n.
 
@@ -286,7 +288,7 @@ n | number | Column number
 
 <a id="api-cursor.position"></a>
 
-### cursor.position (lines)
+### .position (lines)
 
 Moves the cursor to row n, column m. The values are 1-based, and default to 1 (top left corner) if omitted.
 
@@ -299,5 +301,29 @@ Param | Type   | Description
 ---   | ---    | ---
 n | number | Row number
 m | number | Column number
+
+
+<a id="api-cursor.hide"></a>
+
+### .hide
+
+Hides the cursor.
+
+**Type**: Property  
+**Returns**: `String`
+
+
+
+
+<a id="api-cursor.show"></a>
+
+### .show
+
+Shows the cursor.
+
+**Type**: Property  
+**Returns**: `String`
+
+
 
 
